@@ -6,16 +6,18 @@ DEATH_PROBABILITY = 10
 FACTOR_INCREASE_BASE_RATE_MUTATION = 10**2
 KILL_NEIGHBOR = 30
 RANDOM_DEATH = 10**3
+PREDEFINED_SPATIAL_BOUNDARY = 0.95 #TODO: Check this value
 
 class SimulationGlobals:
 
-    def __init__(self, base_mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death):
+    def __init__(self, base_mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death, predefined_spatial_boundary):
         self.m = base_mutation_rate
         self.tl = telomer_length
         self.e = death_probability
         self.i = factor_increase_base_rate_mutation
         self.g = kill_neighbor
         self.a = random_death
+        self.predefined_spatial_boundary = predefined_spatial_boundary
 
 class Tests:
 
@@ -47,10 +49,12 @@ class Tests:
         return '1'"""
 
     """
-        Test 3: 
+        Test 3: factor de crecimiento dentro de umbral 
     """
-    def growth_factor_cheking(self, sg):
-        pass
+    def growth_factor_cheking(self, sg, spatial_boundary):
+        if spatial_boundary > self.predefined_spatial_boundary and sg == 0:
+            return False
+        return True
 
     """
         Test 4: matar a un vecino, si el vecindario está completo, probabilidad de matar a un vecino 1/g.
@@ -72,8 +76,10 @@ class Tests:
             return True
         return False
 
-    def mitosis_test(self): #TODO: poner parámetros
-        pass
+    def mitosis_test(self, checking_results):
+        if checking_results == (True, False, False):
+            return True
+        return False
 
 
 class Genome:
@@ -180,7 +186,7 @@ if __name__ == "__main__":
     """grid = Grid(10,10,10, None)
     print(grid.grid)"""
 
-    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH)
+    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH, PREDEFINED_SPATIAL_BOUNDARY)
 
     #first_cell = Genome(0, 0, 0, 0, 0, 0, 50)
 
