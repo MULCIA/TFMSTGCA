@@ -99,9 +99,10 @@ class Genome:
 
 class Cell:
 
-    def __init__(self, position, sg, igi, ea, ei, gi, tl):
+    def __init__(self, position, sg, igi, ea, ei, gi, tl, m):
         self.position = position
         self.tl = tl
+        self.m = m
         self.genome = Genome(sg, igi, ea, ei, gi)
 
     def decrease_telomer(self):
@@ -151,7 +152,7 @@ class Automata:
 
     def build(self):
         position = (self.dimension/2,self.dimension/2,self.dimension/2)
-        first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl)
+        first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)
         self.cells[position] = first_cell
         grid = Grid(self.dimension,self.dimension,self.dimension, first_cell)
         self.mitotic_agenda[self.future_mitotic_event()] = position
