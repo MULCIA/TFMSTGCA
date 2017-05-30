@@ -21,6 +21,6 @@ To develop this project, and for running it, Python3 is required. But, first of 
 
 ## Running
 
-For running it type:
+For running it, type:
 
 `$ python3 main.py`
