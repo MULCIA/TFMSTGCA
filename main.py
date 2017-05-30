@@ -29,12 +29,15 @@ class Tests:
     def test_1(self):
         if np.random.random() < 1/self.simulationGlobals.a:
             return True
-        return '1'
+        return False
 
     """
         Test 2: muerte por mutaciones, con n mutaciones sufridas tiene probabilidad de muerte n/e.
     """
     def test_2(self, n, ea):
+        if ea == 0 and np.random.randint(0,n) < n/self.simulationGlobals.e:
+            return True
+        return False
         """if cell in cells:
             cell_genome = cells[cell]
             n = cell_genome.mutations()
@@ -43,7 +46,6 @@ class Tests:
                     print("Muerte por mutaciones")
                     return '0'
         return '1'"""
-        pass
 
     """
         Test 3: 
@@ -55,20 +57,21 @@ class Tests:
         Test 4: matar a un vecino, si el vecindario está completo, probabilidad de matar a un vecino 1/g.
     """
     def test_4(self, is_neighborhood_full, igi):
+        if is_neighborhood_full and igi == 1 and np.random.random() < 1/self.simulationGlobals.g:
+            return True
+        return False
         """full = check_full_neighborhood(cell, cells)
         if full and cell.igi and np.random.random() < 1/self.simulationGlobals.g:
             return '1'
         return '0'"""
-        pass
 
     """
         Test 5: muerte por acortamiento de telomero. 
     """
     def test_5(self, tl, ei):
-        if tl == 0 and not ei:
-            return '0'
-        else:
-            return '1'
+        if tl == 0 and ei == 0:
+            return True
+        return False
 
 
 class Genome:
@@ -98,18 +101,23 @@ class Genome:
         return count
 
     def __str__(self):
-        return str(self.sg) + ', ' + str(self.igi) + ', ' + str(self.ea) + ', ' + str(self.ag) + ', ' + str(self.ei) + ', ' + str(self.mt) + ', ' + str(self.tl)
+        return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ag) + str(self.ei) + str(self.mt)
 
 class Cell:
 
     def __init__(self, position, sg, igi, ea, ag, ei, mt, tl):
         self.position = position
         self.tl = tl
-        self.gnome = Genome(sg, igi, ea, ag, ei, mt)
+        self.genome = Genome(sg, igi, ea, ag, ei, mt)
 
     def decrease_telomer(self):
         self.tl -= 1
 
+    def mutations(self):
+        return self.genome.mutations()
+
+    def __str__(self):
+        return str(self.genome)
 
 class Grid:
 
@@ -123,7 +131,7 @@ class Grid:
     def build(self):
         grid = np.empty((self.height,self.width,self.depth))
         grid = grid.astype(np.str_)
-        grid.fill(-1)
+        grid.fill('')
         return grid
 
     def initialization(self, first_cell):
