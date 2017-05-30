@@ -1,6 +1,6 @@
 import numpy as np
 
-MUTATION_RATE = 10**5 
+BASE_MUTATION_RATE = 10**5 
 TELOMER_LENGTH = 50
 DEATH_PROBABILITY = 10
 FACTOR_INCREASE_BASE_RATE_MUTATION = 10**2
@@ -9,8 +9,8 @@ RANDOM_DEATH = 10**3
 
 class SimulationGlobals:
 
-    def __init__(self, mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death):
-        self.m = mutation_rate
+    def __init__(self, base_mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death):
+        self.m = base_mutation_rate
         self.tl = telomer_length
         self.e = death_probability
         self.i = factor_increase_base_rate_mutation
@@ -25,7 +25,7 @@ class Tests:
     """ 
         Test 1: muerte aleatoria de la célula, con probabilidad 1/a.
     """
-    def test_1(self):
+    def random_death_test(self):
         if np.random.random() < 1/self.simulationGlobals.a:
             return True
         return False
@@ -33,7 +33,7 @@ class Tests:
     """
         Test 2: muerte por mutaciones, con n mutaciones sufridas tiene probabilidad de muerte n/e.
     """
-    def test_2(self, n, ea):
+    def genetic_damage_test(self, n, ea):
         if ea == 0 and np.random.randint(0,n) < n/self.simulationGlobals.e:
             return True
         return False
@@ -49,13 +49,13 @@ class Tests:
     """
         Test 3: 
     """
-    def test_3(self):
+    def growth_factor_cheking(self, sg):
         pass
 
     """
         Test 4: matar a un vecino, si el vecindario está completo, probabilidad de matar a un vecino 1/g.
     """
-    def test_4(self, is_neighborhood_full, igi):
+    def ignore_growth_inhibit_checking(self, is_neighborhood_full, igi):
         if is_neighborhood_full and igi == 1 and np.random.random() < 1/self.simulationGlobals.g:
             return True
         return False
@@ -67,40 +67,47 @@ class Tests:
     """
         Test 5: muerte por acortamiento de telomero. 
     """
-    def test_5(self, tl, ei):
+    def limitless_replicative_potencial_checking(self, tl, ei):
         if tl == 0 and ei == 0:
             return True
         return False
 
+    def mitosis_test(self): #TODO: poner parámetros
+        pass
+
 
 class Genome:
     
-    def __init__(self, sg, igi, ea, ag, ei, mt):
+    def __init__(self, sg, igi, ea, ag, ei, mt, gi):
         self.sg = sg
         self.igi = igi
         self.ea = ea
         self.ag = ag
         self.ei = ei
         self.mt = mt
+        self.gi = gi
 
     def mutations(self):
         return sum(vars(self).values())
 
     def __str__(self):
-        return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ag) + str(self.ei) + str(self.mt)
+        return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ag) + str(self.ei) + str(self.mt) + str(self.gi)
 
 class Cell:
 
-    def __init__(self, position, sg, igi, ea, ag, ei, mt, tl):
+    def __init__(self, position, sg, igi, ea, ag, ei, mt, gi, tl):
         self.position = position
         self.tl = tl
-        self.genome = Genome(sg, igi, ea, ag, ei, mt)
+        self.genome = Genome(sg, igi, ea, ag, ei, mt, gi)
 
     def decrease_telomer(self):
         self.tl -= 1
 
     def mutations(self):
         return self.genome.mutations()
+
+    def perform_mitosis(self):
+        pass
 
     def __str__(self):
         return str(self.genome)
@@ -140,11 +147,14 @@ class Automata:
 
     def build(self):
         position = (self.dimension/2,self.dimension/2,self.dimension/2)
-        first_cell = Cell(position, 0, 0, 0, 0, 0, 0, self.simulationGlobals.tl)
+        first_cell = Cell(position, 0, 0, 0, 0, 0, 0, 0, self.simulationGlobals.tl)
         self.cells[position] = first_cell
         grid = Grid(self.dimension,self.dimension,self.dimension, first_cell)
         self.mitotic_agenda[self.future_mitotic_event()] = position
         return grid
+
+    def push_event(self):
+        pass
 
     def future_mitotic_event(self):
         return np.random.randint(5,11)
@@ -170,7 +180,7 @@ if __name__ == "__main__":
     """grid = Grid(10,10,10, None)
     print(grid.grid)"""
 
-    simulationGlobals = SimulationGlobals(MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH)
+    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH)
 
     #first_cell = Genome(0, 0, 0, 0, 0, 0, 50)
 
