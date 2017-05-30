@@ -85,20 +85,7 @@ class Genome:
         self.mt = mt
 
     def mutations(self):
-        count = 0
-        if self.sg:
-            count += 1
-        if self.igi:
-            count += 1
-        if self.ea:
-            count += 1
-        if self.ag:
-            count += 1
-        if self.ei:
-            count += 1
-        if self.mt:
-            count += 1
-        return count
+        return sum(self.__dict__.values())
 
     def __str__(self):
         return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ag) + str(self.ei) + str(self.mt)
@@ -190,4 +177,8 @@ if __name__ == "__main__":
     automata = Automata(3, 10, simulationGlobals)
 
     print(automata.grid.grid)
+
+
+
+
 
