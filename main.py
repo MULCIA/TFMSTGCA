@@ -1,11 +1,12 @@
+import random
 import numpy as np
 
 # In each cell
-BASE_MUTATION_RATE = 10**5
+BASE_MUTATION_RATE = 10**5 #TODO: Check if correct value is 10**5 or 10**(-5)
 TELOMER_LENGTH = 50
 
 # Global
-DEATH_PROBABILITY = 10
+EVADE_APOPTOSIS = 10
 FACTOR_INCREASE_BASE_RATE_MUTATION = 10**2
 KILL_NEIGHBOR_PROBABILITY = 30
 RANDOM_CELL_DEATH = 10**3
@@ -19,10 +20,10 @@ MAX_FUTURE_MITOTIC_EVENT = 10
 
 class SimulationGlobals:
 
-    def __init__(self, base_mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death, predefined_spatial_boundary, min_future_mitotic_event, max_future_mitotic_event):
+    def __init__(self, base_mutation_rate, telomer_length, evade_apoptosis, factor_increase_base_rate_mutation, kill_neighbor, random_death, predefined_spatial_boundary, min_future_mitotic_event, max_future_mitotic_event):
         self.m = base_mutation_rate
         self.tl = telomer_length
-        self.e = death_probability
+        self.e = evade_apoptosis
         self.i = factor_increase_base_rate_mutation
         self.g = kill_neighbor
         self.a = random_death
@@ -117,17 +118,24 @@ class Cell:
     def mutations(self):
         return self.genome.mutations()
 
-    def add_mutations(self): #TODO: Add mutations as part of permorm mitotic event.
-        pass
+    def add_mutations(self):
+        vars = [var for var in vars(self) if var == 0]
+        if len(vars) > 0:
+            for var in vars:
+                if np.random.random() < self.m:
+                    setattr(self, var, 1)
 
-    def kill_neighbor(self, neighbors): #TODO: Choose neighbor to kill between neighbors received.
-        pass
+    def kill_neighbor(self, neighbors):
+        if len(neighbors) > 0:
+            return random.choice(neighbors)
+        return None
 
-    def perform_mitosis(self, position, i):
+    def perform_mitosis(self, position, i): #TODO: Check if add_mutations() performs only on new cell.
         self.decrease_telomer()
         self.increment_base_muration_rate(i)
-        self.add_mutations()
-        return Cell(position, self.sg, self.igi, self.ea, self.ei, self.gi, self.tl, self.m)
+        new_cell = Cell(position, self.sg, self.igi, self.ea, self.ei, self.gi, self.tl, self.m)
+        new_cell.add_mutations()
+        return new_cell
 
     def __str__(self):
         return str(self.genome)
@@ -188,7 +196,7 @@ class Automata:
 
 if __name__ == "__main__":
 
-    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR_PROBABILITY, RANDOM_CELL_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
+    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, EVADE_APOPTOSIS, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR_PROBABILITY, RANDOM_CELL_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
 
     automata = Automata(3, 10, simulationGlobals)
 
