@@ -4,9 +4,8 @@ MUTATION_RATE = 10**5
 TELOMER_LENGTH = 50
 DEATH_PROBABILITY = 10
 FACTOR_INCREASE_BASE_RATE_MUTATION = 10**2
-KILL_NRIGHBOR = 30
+KILL_NEIGHBOR = 30
 RANDOM_DEATH = 10**3
-
 
 class SimulationGlobals:
 
@@ -85,7 +84,7 @@ class Genome:
         self.mt = mt
 
     def mutations(self):
-        return sum(self.__dict__.values())
+        return sum(vars(self).values())
 
     def __str__(self):
         return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ag) + str(self.ei) + str(self.mt)
@@ -168,7 +167,7 @@ if __name__ == "__main__":
     """grid = Grid(10,10,10, None)
     print(grid.grid)"""
 
-    simulationGlobals = SimulationGlobals(MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NRIGHBOR, RANDOM_DEATH)
+    simulationGlobals = SimulationGlobals(MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH)
 
     #first_cell = Genome(0, 0, 0, 0, 0, 0, 50)
 
@@ -177,8 +176,6 @@ if __name__ == "__main__":
     automata = Automata(3, 10, simulationGlobals)
 
     print(automata.grid.grid)
-
-
 
 
 
