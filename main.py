@@ -75,6 +75,9 @@ class Tests:
             return True
         return False
 
+    """
+        Check if applicable mitotic event from Test 3 to Test 5 results.
+    """
     def mitosis_test(self, checking_results):
         if checking_results == (True, False, False):
             return True
@@ -114,7 +117,10 @@ class Cell:
     def mutations(self):
         return self.genome.mutations()
 
-    def add_mutations(self): #TODO: Make this method
+    def add_mutations(self): #TODO: Add mutations as part of permorm mitotic event.
+        pass
+
+    def kill_neighbor(self, neighbors): #TODO: Choose neighbor to kill between neighbors received.
         pass
 
     def perform_mitosis(self, position, i):
@@ -143,6 +149,9 @@ class Grid:
 
     def initialization(self, first_cell):
         self.grid[self.__middle__(self.height)][self.__middle__(self.width)][self.__middle__(self.depth)] = first_cell
+
+    def neighbor(self, position): #TODO: return list of positions occupied in the neighborhood.
+        pass
 
     def __middle__(self, value):
         return int(value/2)
