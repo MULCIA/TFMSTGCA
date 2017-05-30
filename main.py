@@ -43,13 +43,13 @@ class Tests:
                     print("Muerte por mutaciones")
                     return '0'
         return '1'"""
-        raise
+        pass
 
     """
         Test 3: 
     """
     def test_3(self):
-        raise
+        pass
 
     """
         Test 4: matar a un vecino, si el vecindario está completo, probabilidad de matar a un vecino 1/g.
@@ -59,7 +59,7 @@ class Tests:
         if full and cell.igi and np.random.random() < 1/self.simulationGlobals.g:
             return '1'
         return '0'"""
-        raise
+        pass
 
     """
         Test 5: muerte por acortamiento de telomero. 
@@ -73,17 +73,13 @@ class Tests:
 
 class Genome:
     
-    def __init__(self, sg, igi, ea, ag, ei, mt, tl):
+    def __init__(self, sg, igi, ea, ag, ei, mt):
         self.sg = sg
         self.igi = igi
         self.ea = ea
         self.ag = ag
         self.ei = ei
         self.mt = mt
-        self.tl = tl
-
-    def decrease_telomer(self):
-        self.tl -= 1
 
     def mutations(self):
         count = 0
@@ -108,7 +104,11 @@ class Cell:
 
     def __init__(self, position, sg, igi, ea, ag, ei, mt, tl):
         self.position = position
-        self.gnome = Genome(sg, igi, ea, ag, ei, mt, tl)
+        self.tl = tl
+        self.gnome = Genome(sg, igi, ea, ag, ei, mt)
+
+    def decrease_telomer(self):
+        self.tl -= 1
 
 
 class Grid:
@@ -153,7 +153,7 @@ class Automata:
         return np.random.randint(5,11)
 
     def run(self):
-        raise
+        pass
 
 
 if __name__ == "__main__":
