@@ -7,10 +7,12 @@ FACTOR_INCREASE_BASE_RATE_MUTATION = 10**2
 KILL_NEIGHBOR = 30
 RANDOM_DEATH = 10**3
 PREDEFINED_SPATIAL_BOUNDARY = 0.95 #TODO: Check this value
+MIN_FUTURE_MITOTIC_EVENT = 5
+MAX_FUTURE_MITOTIC_EVENT = 10
 
 class SimulationGlobals:
 
-    def __init__(self, base_mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death, predefined_spatial_boundary):
+    def __init__(self, base_mutation_rate, telomer_length, death_probability, factor_increase_base_rate_mutation, kill_neighbor, random_death, predefined_spatial_boundary, min_future_mitotic_event, max_future_mitotic_event):
         self.m = base_mutation_rate
         self.tl = telomer_length
         self.e = death_probability
@@ -18,6 +20,8 @@ class SimulationGlobals:
         self.g = kill_neighbor
         self.a = random_death
         self.predefined_spatial_boundary = predefined_spatial_boundary
+        self.min_future_mitotic_event = min_future_mitotic_event
+        self.max_future_mitotic_event = max_future_mitotic_event
 
 class Tests:
 
@@ -162,7 +166,7 @@ class Automata:
         pass
 
     def future_mitotic_event(self):
-        return np.random.randint(5,11)
+        return np.random.randint(self.simulationGlobals.min_future_mitotic_event,self.simulationGlobals.max_future_mitotic_event+1)
 
     def run(self):
         pass
@@ -185,7 +189,7 @@ if __name__ == "__main__":
     """grid = Grid(10,10,10, None)
     print(grid.grid)"""
 
-    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH, PREDEFINED_SPATIAL_BOUNDARY)
+    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
 
     #first_cell = Genome(0, 0, 0, 0, 0, 0, 50)
 
