@@ -1,12 +1,19 @@
 import numpy as np
 
-BASE_MUTATION_RATE = 10**5 
+# In each cell
+BASE_MUTATION_RATE = 10**5
 TELOMER_LENGTH = 50
+
+# Global
 DEATH_PROBABILITY = 10
 FACTOR_INCREASE_BASE_RATE_MUTATION = 10**2
-KILL_NEIGHBOR = 30
-RANDOM_DEATH = 10**3
-PREDEFINED_SPATIAL_BOUNDARY = 0.95 #TODO: Check this value
+KILL_NEIGHBOR_PROBABILITY = 30
+RANDOM_CELL_DEATH = 10**3
+
+# Growth factor
+PREDEFINED_SPATIAL_BOUNDARY = 0.95 #TODO: Check this value. Other posibility is 0.858.
+
+# Random parameters for generating future mitotic event
 MIN_FUTURE_MITOTIC_EVENT = 5
 MAX_FUTURE_MITOTIC_EVENT = 10
 
@@ -43,14 +50,6 @@ class Tests:
         if ea == 0 and np.random.randint(0,n) < n/self.simulationGlobals.e:
             return True
         return False
-        """if cell in cells:
-            cell_genome = cells[cell]
-            n = cell_genome.mutations()
-            if not cell_genome.ea:
-                if np.random.randint(0,n) < n/self.simulationGlobals.e:
-                    print("Muerte por mutaciones")
-                    return '0'
-        return '1'"""
 
     """
         Test 3: factor de crecimiento dentro de umbral 
@@ -67,10 +66,6 @@ class Tests:
         if is_neighborhood_full and igi == 1 and np.random.random() < 1/self.simulationGlobals.g:
             return True
         return False
-        """full = check_full_neighborhood(cell, cells)
-        if full and cell.igi and np.random.random() < 1/self.simulationGlobals.g:
-            return '1'
-        return '0'"""
 
     """
         Test 5: muerte por acortamiento de telomero. 
@@ -112,11 +107,21 @@ class Cell:
     def decrease_telomer(self):
         self.tl -= 1
 
+    def increment_base_muration_rate(self, i):
+        if self.gi == 1:
+            self.m *= i
+
     def mutations(self):
         return self.genome.mutations()
 
-    def perform_mitosis(self):
+    def add_mutations(self): #TODO: Make this method
         pass
+
+    def perform_mitosis(self, position, i):
+        self.decrease_telomer()
+        self.increment_base_muration_rate(i)
+        self.add_mutations()
+        return Cell(position, self.sg, self.igi, self.ea, self.ei, self.gi, self.tl, self.m)
 
     def __str__(self):
         return str(self.genome)
@@ -166,13 +171,23 @@ class Automata:
         pass
 
     def future_mitotic_event(self):
-        return np.random.randint(self.simulationGlobals.min_future_mitotic_event,self.simulationGlobals.max_future_mitotic_event+1)
+        return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
 
     def run(self):
         pass
 
 
 if __name__ == "__main__":
+
+    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR_PROBABILITY, RANDOM_CELL_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
+
+    automata = Automata(3, 10, simulationGlobals)
+
+    print(automata.grid.grid)
+
+    #first_cell = Genome(0, 0, 0, 0, 0, 0, 50)
+
+    #grid = Grid(3,3,3)
 
     """height = 10
     width = 10
@@ -188,16 +203,6 @@ if __name__ == "__main__":
 
     """grid = Grid(10,10,10, None)
     print(grid.grid)"""
-
-    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, DEATH_PROBABILITY, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR, RANDOM_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
-
-    #first_cell = Genome(0, 0, 0, 0, 0, 0, 50)
-
-    #grid = Grid(3,3,3)
-
-    automata = Automata(3, 10, simulationGlobals)
-
-    print(automata.grid.grid)
 
 
 
