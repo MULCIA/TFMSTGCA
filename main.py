@@ -121,7 +121,10 @@ class Grid:
         return grid
 
     def initialization(self, first_cell):
-        self.grid[int(self.height/2)][int(self.width/2)][int(self.depth/2)] = first_cell
+        self.grid[self.__middle__(self.height)][self.__middle__(self.width)][self.__middle__(self.depth)] = first_cell
+
+    def __middle__(self, value):
+        return int(value/2)
 
 class Automata:
     
