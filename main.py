@@ -127,7 +127,7 @@ class Cell:
 
     def kill_neighbor(self, neighbors):
         if len(neighbors) > 0:
-            return random.choice(neighbors)
+            return np.random.choice(neighbors)
         return None
 
     def perform_mitosis(self, position, i): #TODO: Check if add_mutations() performs only on new cell.
