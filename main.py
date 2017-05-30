@@ -84,27 +84,25 @@ class Tests:
 
 class Genome:
     
-    def __init__(self, sg, igi, ea, ag, ei, mt, gi):
+    def __init__(self, sg, igi, ea, ei, gi):
         self.sg = sg
         self.igi = igi
         self.ea = ea
-        self.ag = ag
         self.ei = ei
-        self.mt = mt
         self.gi = gi
 
     def mutations(self):
         return sum(vars(self).values())
 
     def __str__(self):
-        return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ag) + str(self.ei) + str(self.mt) + str(self.gi)
+        return str(self.sg) + str(self.igi) + str(self.ea) + str(self.ei) + str(self.gi)
 
 class Cell:
 
-    def __init__(self, position, sg, igi, ea, ag, ei, mt, gi, tl):
+    def __init__(self, position, sg, igi, ea, ei, gi, tl):
         self.position = position
         self.tl = tl
-        self.genome = Genome(sg, igi, ea, ag, ei, mt, gi)
+        self.genome = Genome(sg, igi, ea, ei, gi)
 
     def decrease_telomer(self):
         self.tl -= 1
@@ -153,7 +151,7 @@ class Automata:
 
     def build(self):
         position = (self.dimension/2,self.dimension/2,self.dimension/2)
-        first_cell = Cell(position, 0, 0, 0, 0, 0, 0, 0, self.simulationGlobals.tl)
+        first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl)
         self.cells[position] = first_cell
         grid = Grid(self.dimension,self.dimension,self.dimension, first_cell)
         self.mitotic_agenda[self.future_mitotic_event()] = position
