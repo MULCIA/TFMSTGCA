@@ -23,4 +23,4 @@ To develop this project, and for running it, Python3 is required. But, first of 
 
 For running it, type:
 
-`$ python3 main.py`
+`$ python3 automata.py`
