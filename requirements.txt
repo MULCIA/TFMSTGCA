@@ -1,4 +1,3 @@
-unittest
 coverage
 coveralls
 numpy

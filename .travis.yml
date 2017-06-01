@@ -2,6 +2,7 @@ language: python
 python:
  - "3.6"
 install: pip install -r requirements.txt
-script: sh run_travis.sh
-script: python3 -m unittest -v tests 
+script: 
+  - sh run_travis.sh
+  - py.test --cov-report term-missing --cov app -v
 after_success: coveralls
