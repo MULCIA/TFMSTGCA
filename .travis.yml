@@ -4,5 +4,5 @@ python:
 install: pip install -r requirements.txt
 script: 
   - sh run_travis.sh
-  - python3 tests.py
+  - coverage run --source=TFMSTGCA setup.py tests
 after_success: coveralls
