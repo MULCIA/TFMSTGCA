@@ -2,6 +2,8 @@
 
 Final work of the masters on Simulation of tumor growths with cellular automata.
 
+[![Build Status](https://travis-ci.org/MULCIA/TFMSTGCA.svg?branch=master)](https://travis-ci.org/MULCIA/TFMSTGCA)
+
 ## Introduction
 
 This project pretend to reproduce "Analysis of behaviour transitions in tumour growth using a cellular automaton simulation" paper from José Santos and Ángel Monteagudo (2014).
