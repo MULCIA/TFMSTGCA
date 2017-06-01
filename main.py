@@ -159,8 +159,22 @@ class Grid:
     def initialization(self, first_cell):
         self.grid[self.__middle__(self.height)][self.__middle__(self.width)][self.__middle__(self.depth)] = first_cell
 
-    def neighbor(self, position): #TODO: return list of positions occupied in the neighborhood.
-        pass
+    def interval(x, delta, cube_dimension):
+        return [i for i in [-1, 0, 1] if x + 1 >= 1 + delta and x + i <= cube_dimension - 1 + delta]
+
+    def neighborhood(self, origin):
+        #TODO: Check if it is on some side of the cube, in this case modify intervals.
+        neighbor = dict() # Keys: occupied and empties
+        a,b,c = (1,1,1)
+        x0,y0,z0 = origin
+        cube_positions = [(a+i,b+j,c+k) for i in interval(a, x0, cube_dimension) for j in interval(b, y0, cube_dimension) for k in interval(c, z0, cube_dimension) if (i,j,k) != (0,0,0)]
+        cube = [self.grid[x][y][x] for x,y,z in cube_positions]
+        neighbor['occupied'] = [cell for cell in cube if cell != '']
+        neighbor['empties'] = [cell for cell in cube if cell == '']
+        return neighbor
+
+    def neighbor(self, origin): #TODO: return list of positions occupied in the neighborhood.
+        return self.neighborhood(origin)['occupied']
 
     def __middle__(self, value):
         return int(value/2)
@@ -222,6 +236,8 @@ if __name__ == "__main__":
     simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, EVADE_APOPTOSIS, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR_PROBABILITY, RANDOM_CELL_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
 
     automata = Automata(3, 10, simulationGlobals)
+
+    #print(automata.grid.grid[1][1][1])
 
     automata.run()
 
