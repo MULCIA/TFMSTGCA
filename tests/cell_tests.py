@@ -18,3 +18,6 @@ class TestCell(TestCase):
     def test_decrease_telomer(self):
         self.cell.decrease_telomer()
         self.assertEqual(self.cell.tl, 49)
+
+if __name__ == '__main__':
+    unittest.main()
