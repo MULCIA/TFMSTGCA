@@ -173,9 +173,6 @@ class Grid:
         neighbor['empties'] = [cell for cell in cube if cell == '']
         return neighbor
 
-    def neighbor(self, origin): #TODO: return list of positions occupied in the neighborhood.
-        return self.neighborhood(origin)['occupied']
-
     def __middle__(self, value):
         return int(value/2)
 
