@@ -167,8 +167,8 @@ class Grid:
 
     def classify_neighborhood(self, cube):
         neighbor = dict()
-        neighbor['occupied'] = [cell for cell in cube if str(cell) != '']
-        neighbor['empties'] = [cell for cell in cube if str(cell) == '']
+        neighbor['occupied'] = [cell.position for cell in cube if str(cell) != '']
+        neighbor['empties'] = [cell.position for cell in cube if str(cell) == '']
         return neighbor
 
     def interval(x, delta, cube_dimension):
