@@ -169,8 +169,8 @@ class Grid:
         x0,y0,z0 = origin
         cube_positions = [(a+i,b+j,c+k) for i in interval(a, x0, cube_dimension) for j in interval(b, y0, cube_dimension) for k in interval(c, z0, cube_dimension) if (i,j,k) != (0,0,0)]
         cube = [self.grid[x][y][x] for x,y,z in cube_positions]
-        neighbor['occupied'] = [cell for cell in cube if cell != '']
-        neighbor['empties'] = [cell for cell in cube if cell == '']
+        neighbor['occupied'] = [cell for cell in cube if str(cell) != '']
+        neighbor['empties'] = [cell for cell in cube if str(cell) == '']
         return neighbor
 
     def __middle__(self, value):
