@@ -1,5 +1,5 @@
 from globals import *
-from tests import *
+from experiments import *
 from cell import *
 from grid import *
 import numpy as np
