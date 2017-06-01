@@ -159,18 +159,26 @@ class Grid:
     def initialization(self, first_cell):
         self.grid[self.__middle__(self.height)][self.__middle__(self.width)][self.__middle__(self.depth)] = first_cell
 
+    def filter_side_positions(self, origin, positions):
+        pass
+
+    def extract_cube_from_grid(self, positions):
+        return [self.grid[x][y][x] for x,y,z in positions]
+
+    def classify_neighborhood(self, cube):
+        neighbor = dict()
+        neighbor['occupied'] = [cell for cell in cube if str(cell) != '']
+        neighbor['empties'] = [cell for cell in cube if str(cell) == '']
+        return neighbor
+
     def interval(x, delta, cube_dimension):
         return [i for i in [-1, 0, 1] if x + 1 >= 1 + delta and x + i <= cube_dimension - 1 + delta]
 
     def neighborhood(self, origin):
-        #TODO: Check if it is on some side of the cube, in this case modify intervals.
-        neighbor = dict() # Keys: occupied and empties
-        a,b,c = (1,1,1)
         x0,y0,z0 = origin
-        cube_positions = [(a+i,b+j,c+k) for i in interval(a, x0, cube_dimension) for j in interval(b, y0, cube_dimension) for k in interval(c, z0, cube_dimension) if (i,j,k) != (0,0,0)]
-        cube = [self.grid[x][y][x] for x,y,z in cube_positions]
-        neighbor['occupied'] = [cell for cell in cube if str(cell) != '']
-        neighbor['empties'] = [cell for cell in cube if str(cell) == '']
+        cube_positions = [(i+1,j+1,k+1) for i in interval(a, x0, cube_dimension) for j in interval(b, y0, cube_dimension) for k in interval(c, z0, cube_dimension) if (i,j,k) != (0,0,0)]
+        cube = self.extract_cube_from_grid(self.filter_side_positions(origin, cube_positions))
+        neighbor = classify_neighborhood(cube)
         return neighbor
 
     def __middle__(self, value):
