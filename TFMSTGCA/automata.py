@@ -1,5 +1,6 @@
 from globals import *
-from experiments import *
+from experiments import Tests
+from genome import *
 from cell import *
 from grid import *
 import numpy as np

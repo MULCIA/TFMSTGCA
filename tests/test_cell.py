@@ -9,10 +9,7 @@ class TestCell(TestCase):
         self.genome = Genome(1,1,1,1,1)
         self.cell = Cell(position, 1,1,1,1,1, 50, 10**5)
 
-    def test_get_genome_mutations(self):
-        self.assertEqual(self.genome.mutations(), 5)
-
-    def test_get_genome_mutations(self):
+    def test_get_mutations(self):
         self.assertEqual(self.cell.mutations(), 5)
 
     def test_decrease_telomer(self):
