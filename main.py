@@ -1,4 +1,3 @@
-import random
 import numpy as np
 
 # In each cell
@@ -196,7 +195,6 @@ class Automata:
         self.mitotic_agenda = {}
         self.grid = self.build()
         
-
     def build(self):
         position = (int(self.dimension/2),int(self.dimension/2),int(self.dimension/2))
         first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)
