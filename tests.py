@@ -1,1 +1,8 @@
-print("All tests passed! haha")
+import unittest
+
+class TestMocked(unittest.TestCase):
+	def test(self):
+		self.assertTrue(True)
+
+if __name__ == '__main__':
+    unittest.main()
