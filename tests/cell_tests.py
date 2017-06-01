@@ -16,4 +16,5 @@ class TestCell(TestCase):
         self.assertEqual(self.cell.mutations(), 5)
 
     def test_decrease_telomer(self):
-        self.assertEqual(self.cell.decrease_telomer, 49)
+        self.cell.decrease_telomer()
+        self.assertEqual(self.cell.tl, 49)
