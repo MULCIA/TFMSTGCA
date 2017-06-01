@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='TFMSTGCA',
     version='0.1.1',
-    url='https://github.com/MULCIA/TFMSTGCA', https://github.com/MULCIA/TFMSTGCA
+    url='https://github.com/MULCIA/TFMSTGCA',
     license='MIT License',
     author='Sergio Rodriguez',
     author_email='sergiorodriguezcalvo@gmail.com',
