@@ -1,0 +1,12 @@
+doc-warnings: true
+test-warnings: false
+strictness: high
+max-line-length: 300
+uses:
+  - python
+  - coverage
+  - coveralls
+  - numpy
+autodetect: true
+python-targets:
+  - 3
