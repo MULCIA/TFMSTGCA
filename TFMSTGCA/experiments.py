@@ -1,5 +1,4 @@
 import numpy as np
-from .simulation_globals import SimulationGlobals
 
 class Experiments(object):
 

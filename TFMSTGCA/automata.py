@@ -1,7 +1,5 @@
 import numpy as np
-from .simulation_globals import SimulationGlobals
 from .experiments import Experiments
-from .genome import Genome
 from .cell import Cell
 from .grid import Grid
 
@@ -52,6 +50,6 @@ class Automata(object):
                 events = self.pop_events(it)
                 for pos in events:
                     current_cell = self.cells[pos]
-                    apply_random_cell_death(pos) if self.experiments.random_death_test() else None
-                    apply_genetic_damage_death(pos) if self.experiments.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea) else None
+                    self.apply_random_cell_death(pos) if self.experiments.random_death_test() else None
+                    self.apply_genetic_damage_death(pos) if self.experiments.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea) else None
                     #TODO: Rest of experiments.
