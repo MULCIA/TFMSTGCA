@@ -50,5 +50,10 @@ class TestExperiments(TestCase):
         result = [self.experiments.random_death_test() for i in range(10**4)]
         self.assertTrue(1 <= result.count(True) <= 30)
 
+    def test_probability_genetic_damage(self):
+        self.experiments.simulationGlobals.e = 10
+        result = [self.experiments.genetic_damage_test(5, 0) for i in range(100)]
+        self.assertTrue(35 <= result.count(True) <= 65)
+
 if __name__ == '__main__':
     unittest.main()
