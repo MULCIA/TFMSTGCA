@@ -1,5 +1,5 @@
 import numpy as np
-from genome import Genome
+from .genome import Genome
 
 class Cell(object):
 

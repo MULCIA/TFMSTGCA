@@ -1,4 +1,5 @@
-from TFMSTGCA import SimulationGlobals, Automata
+from TFMSTGCA.simulation_globals import *
+from TFMSTGCA.automata import Automata
 
 if __name__ == "__main__":
 

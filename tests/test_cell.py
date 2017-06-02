@@ -1,5 +1,6 @@
 from unittest import TestCase
-from TFMSTGCA import *
+from TFMSTGCA.cell import Cell
+from TFMSTGCA.genome import Genome
 
 class TestCell(TestCase):
     

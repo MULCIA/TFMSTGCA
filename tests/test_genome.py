@@ -1,5 +1,5 @@
 from unittest import TestCase
-from TFMSTGCA import *
+from TFMSTGCA.genome import Genome
 
 class TestGenome(TestCase):
     
