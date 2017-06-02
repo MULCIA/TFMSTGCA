@@ -7,7 +7,7 @@ from .grid import Grid
 
 class Automata(object):
     
-    def __init__(self, dimension, iterations, simulationGlobals):
+    def __init__(self, dimension, iterations, simulationGlobals = SimulationGlobals(10**5,50,10,10**2,30,10**3,0.95,5,10)):
         self.dimension = dimension
         self.size = self.dimension**3
         self.iterations = iterations
