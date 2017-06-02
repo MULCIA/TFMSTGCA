@@ -1,5 +1,4 @@
 import numpy as np
-from .simulation_globals import SimulationGlobals
 from .experiments import Tests
 from .genome import Genome
 from .cell import Cell
