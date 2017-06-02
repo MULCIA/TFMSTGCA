@@ -1,7 +1,7 @@
-from genome import *
 import numpy as np
+from genome import *
 
-class Cell:
+class Cell(object):
 
     def __init__(self, position, sg, igi, ea, ei, gi, tl, m):
         self.position = position

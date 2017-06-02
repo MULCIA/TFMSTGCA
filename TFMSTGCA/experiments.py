@@ -1,6 +1,6 @@
 import numpy as np
 
-class Tests:
+class Tests(object):
 
     def __init__(self, simulationGlobals):
         self. simulationGlobals = simulationGlobals

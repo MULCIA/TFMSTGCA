@@ -1,11 +1,11 @@
+import numpy as np
 from globals import *
 from experiments import Tests
 from genome import *
 from cell import *
 from grid import *
-import numpy as np
 
-class Automata:
+class Automata(object):
     
     def __init__(self, dimension, iterations, simulationGlobals):
         self.dimension = dimension

@@ -1,6 +1,6 @@
 import numpy as np
 
-class Grid:
+class Grid(object):
 
     def __init__(self, height, width, depth, first_cell):
         self.height = height

@@ -15,7 +15,7 @@ PREDEFINED_SPATIAL_BOUNDARY = 0.95 #TODO: Check this value. Other posibility is 
 MIN_FUTURE_MITOTIC_EVENT = 5
 MAX_FUTURE_MITOTIC_EVENT = 10
 
-class SimulationGlobals:
+class SimulationGlobals(object):
 
     def __init__(self, base_mutation_rate, telomer_length, evade_apoptosis, factor_increase_base_rate_mutation, kill_neighbor, random_death, predefined_spatial_boundary, min_future_mitotic_event, max_future_mitotic_event):
         self.m = base_mutation_rate
