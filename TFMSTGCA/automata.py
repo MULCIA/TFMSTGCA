@@ -1,9 +1,10 @@
 import numpy as np
-from globals import *
+from simulation_globals import SimulationGlobals
 from experiments import Tests
-from genome import *
-from cell import *
-from grid import *
+from genome import Genome
+from cell import Cell
+from grid import Grid
+from automata import Automata
 
 class Automata(object):
     
@@ -55,11 +56,3 @@ class Automata(object):
                     apply_random_cell_death(pos) if self.tests.random_death_test() else None
                     apply_genetic_damage_death(pos) if self.tests.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea) else None
                     #TODO: Rest of tests.
-
-if __name__ == "__main__":
-
-    simulationGlobals = SimulationGlobals(BASE_MUTATION_RATE, TELOMER_LENGTH, EVADE_APOPTOSIS, FACTOR_INCREASE_BASE_RATE_MUTATION, KILL_NEIGHBOR_PROBABILITY, RANDOM_CELL_DEATH, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
-
-    automata = Automata(3, 10, simulationGlobals)
-
-    automata.run()

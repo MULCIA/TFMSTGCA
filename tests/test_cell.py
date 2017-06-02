@@ -1,5 +1,5 @@
 from unittest import TestCase
-from TFMSTGCA.cell import *
+from TFMSTGCA import *
 
 class TestCell(TestCase):
     
