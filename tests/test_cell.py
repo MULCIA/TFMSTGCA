@@ -26,5 +26,11 @@ class TestCell(TestCase):
         self.cell.increment_base_muration_rate(10)
         self.assertEqual(self.cell.m, 10**5 * 10)
 
+    def test_kill_neighbor(self):
+        result = self.cell.kill_neighbor([])
+        self.assertEqual(result, None)
+
+    #TODO: test perform_mitosis
+
 if __name__ == '__main__':
     unittest.main()
