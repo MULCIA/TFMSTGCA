@@ -17,5 +17,14 @@ class TestCell(TestCase):
         self.cell.decrease_telomer()
         self.assertEqual(self.cell.tl, 49)
 
+    def test_increment_base_muration_rate_gi_0(self):
+        self.cell.genome.gi = 0
+        self.cell.increment_base_muration_rate(10)
+        self.assertEqual(self.cell.m, 10**5)
+
+    def test_increment_base_muration_rate_gi_1(self):
+        self.cell.increment_base_muration_rate(10)
+        self.assertEqual(self.cell.m, 10**5 * 10)
+
 if __name__ == '__main__':
     unittest.main()

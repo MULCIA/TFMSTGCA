@@ -13,7 +13,7 @@ class Cell(object):
         self.tl -= 1
 
     def increment_base_muration_rate(self, i):
-        if self.gi == 1:
+        if self.genome.gi == 1:
             self.m *= i
 
     def mutations(self):
