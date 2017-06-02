@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-python TFMSTGCA/automata.py > /dev/null &
+python3 TFMSTGCA/automata.py > /dev/null &
 nosetests --with-coverage
