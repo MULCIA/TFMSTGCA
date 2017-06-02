@@ -6,8 +6,20 @@ class TestExperiments(TestCase):
     
     def setUp(self):
         TestCase.setUp(self)
-        self.simulationGlobals = SimulationGlobals(10**5,50,10,10**2,30,10**3,0.95,5,10)
+        self.simulationGlobals = SimulationGlobals(1,1,1,1,1,1,1,1,1)
         self.experiments = Experiments(self.simulationGlobals)
+
+    def test_random_death_test(self):
+        result = self.experiments.random_death_test()
+        self.assertEqual(result, True)
+
+    def test_genetic_damage_test_True(self):
+        result = self.experiments.genetic_damage_test(self.simulationGlobals.e, 0)
+        self.assertEqual(result, True)
+
+    def test_genetic_damage_test_False(self):
+        result = self.experiments.genetic_damage_test(1, 1)
+        self.assertEqual(result, False)
 
     def test_limitless_replicative_potencial_checking_limiteless(self):
         result = self.experiments.limitless_replicative_potencial_checking(0, 0)
