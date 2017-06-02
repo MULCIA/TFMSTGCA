@@ -1,5 +1,7 @@
 import numpy as np
+from .simulation_globals import SimulationGlobals
 from .experiments import Tests
+from .genome import Genome
 from .cell import Cell
 from .grid import Grid
 
@@ -19,7 +21,7 @@ class Automata(object):
         position = (int(self.dimension/2),int(self.dimension/2),int(self.dimension/2))
         first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)
         self.cells[position] = first_cell
-        grid = Grid(self.dimension,self.dimension,self.dimension, first_cell)
+        grid = Grid(self.dimension, self.dimension, self.dimension, first_cell)
         self.mitotic_agenda[self.future_mitotic_event()] = [position]
         return grid
 
