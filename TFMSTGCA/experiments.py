@@ -27,7 +27,7 @@ class Experiments(object):
         Test 3: factor de crecimiento dentro de umbral 
     """
     def growth_factor_cheking(self, sg, spatial_boundary):
-        if spatial_boundary > self.predefined_spatial_boundary and sg == 0:
+        if spatial_boundary > self.simulationGlobals.predefined_spatial_boundary and sg == 0:
             return False
         return True
 

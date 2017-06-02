@@ -21,6 +21,14 @@ class TestExperiments(TestCase):
         result = self.experiments.genetic_damage_test(1, 1)
         self.assertEqual(result, False)
 
+    def test_genetic_damage_test_True(self):
+        result = self.experiments.growth_factor_cheking(1, 2)
+        self.assertEqual(result, True)
+
+    def test_genetic_damage_test_False(self):
+        result = self.experiments.growth_factor_cheking(0, 2)
+        self.assertEqual(result, False)
+
     def test_limitless_replicative_potencial_checking_limiteless(self):
         result = self.experiments.limitless_replicative_potencial_checking(0, 0)
         self.assertEqual(result, True)
