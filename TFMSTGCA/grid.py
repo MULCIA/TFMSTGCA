@@ -35,7 +35,7 @@ class Grid(object):
 
     def neighborhood(self, origin):
         x0,y0,z0 = origin
-        cube_positions = [(i+1,j+1,k+1) for i in interval(1, x0, cube_dimension) for j in interval(1, y0, cube_dimension) for k in interval(1, z0, cube_dimension) if (i,j,k) != (0,0,0)]
+        cube_positions = [(i+1,j+1,k+1) for i in self.interval(1, x0, cube_dimension) for j in self.interval(1, y0, cube_dimension) for k in self.interval(1, z0, cube_dimension) if (i,j,k) != (0,0,0)]
         cube = self.extract_cube_from_grid(self.filter_side_positions(origin, cube_positions))
         neighbor = classify_neighborhood(cube)
         return neighbor
