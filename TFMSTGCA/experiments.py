@@ -1,9 +1,9 @@
 import numpy as np
 from .simulation_globals import SimulationGlobals
 
-class Tests(object):
+class Experiments(object):
 
-    def __init__(self, simulationGlobals = SimulationGlobals(10**5,50,10,10**2,30,10**3,0.95,5,10)):
+    def __init__(self, simulationGlobals):
         self.simulationGlobals = simulationGlobals
 
     """ 

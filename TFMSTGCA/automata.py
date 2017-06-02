@@ -1,18 +1,18 @@
 import numpy as np
 from .simulation_globals import SimulationGlobals
-from .experiments import Tests
+from .experiments import Experiments
 from .genome import Genome
 from .cell import Cell
 from .grid import Grid
 
 class Automata(object):
     
-    def __init__(self, dimension, iterations, simulationGlobals = SimulationGlobals(10**5,50,10,10**2,30,10**3,0.95,5,10)):
+    def __init__(self, dimension, iterations, simulationGlobals):
         self.dimension = dimension
         self.size = self.dimension**3
         self.iterations = iterations
         self.simulationGlobals = simulationGlobals
-        self.tests = Tests(simulationGlobals)
+        self.experiments = Experiments(simulationGlobals)
         self.cells = {}
         self.mitotic_agenda = {}
         self.grid = self.build()
@@ -52,6 +52,6 @@ class Automata(object):
                 events = self.pop_events(it)
                 for pos in events:
                     current_cell = self.cells[pos]
-                    apply_random_cell_death(pos) if self.tests.random_death_test() else None
-                    apply_genetic_damage_death(pos) if self.tests.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea) else None
-                    #TODO: Rest of tests.
+                    apply_random_cell_death(pos) if self.experiments.random_death_test() else None
+                    apply_genetic_damage_death(pos) if self.experiments.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea) else None
+                    #TODO: Rest of experiments.
