@@ -45,5 +45,10 @@ class TestExperiments(TestCase):
         result = self.experiments.mitosis_test((False, False, False))
         self.assertEqual(result, False)
 
+    def test_probability_random_death(self):
+        self.experiments.simulationGlobals.a = 10**3
+        result = [self.experiments.random_death_test() for i in range(10**4)]
+        self.assertTrue(1 <= result.count(True) <= 30)
+
 if __name__ == '__main__':
     unittest.main()
