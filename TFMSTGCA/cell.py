@@ -1,3 +1,4 @@
+import random
 import numpy as np
 from .genome import Genome
 
@@ -28,7 +29,7 @@ class Cell(object):
 
     def kill_neighbor(self, neighbors):
         if len(neighbors) > 0:
-            return np.random.choice(neighbors)
+            return random.choice(neighbors)
         return None
 
     def perform_mitosis(self, position, i): #TODO: Check if add_mutations() performs only on new cell.
