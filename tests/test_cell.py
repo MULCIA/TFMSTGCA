@@ -30,7 +30,15 @@ class TestCell(TestCase):
         result = self.cell.kill_neighbor([])
         self.assertEqual(result, None)
 
-    #TODO: test perform_mitosis
+    def test_perform_mitosis(self):
+        new_cell = self.cell.perform_mitosis((1,1,1), 10**2)
+        self.assertEqual(new_cell.genome.sg, self.cell.genome.sg)
+        self.assertEqual(new_cell.genome.igi, self.cell.genome.igi)
+        self.assertEqual(new_cell.genome.ea, self.cell.genome.ea)
+        self.assertEqual(new_cell.genome.ei, self.cell.genome.ei)
+        self.assertEqual(new_cell.genome.gi, self.cell.genome.gi)
+        self.assertEqual(new_cell.tl, self.cell.tl)
+        self.assertEqual(new_cell.m, self.cell.m)
 
 if __name__ == '__main__':
     unittest.main()

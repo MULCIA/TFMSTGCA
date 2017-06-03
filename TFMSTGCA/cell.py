@@ -20,9 +20,9 @@ class Cell(object):
         return self.genome.mutations()
 
     def add_mutations(self):
-        vars = [var for var in vars(self) if var == 0]
-        if len(vars) > 0:
-            for var in vars:
+        variables = [var for var in vars(self) if var == 0]
+        if len(variables) > 0:
+            for var in variables:
                 if np.random.random() < self.m:
                     setattr(self, var, 1)
 
@@ -34,7 +34,7 @@ class Cell(object):
     def perform_mitosis(self, position, i): #TODO: Check if add_mutations() performs only on new cell.
         self.decrease_telomer()
         self.increment_base_muration_rate(i)
-        new_cell = Cell(position, self.sg, self.igi, self.ea, self.ei, self.gi, self.tl, self.m)
+        new_cell = Cell(position, self.genome.sg, self.genome.igi, self.genome.ea, self.genome.ei, self.genome.gi, self.tl, self.m)
         new_cell.add_mutations()
         return new_cell
 
