@@ -55,5 +55,10 @@ class TestExperiments(TestCase):
         result = [self.experiments.genetic_damage_test(5, 0) for i in range(100)]
         self.assertTrue(35 <= result.count(True) <= 65)
 
+    def test_probability_ignore_growth_inhibit_checking(self):
+        self.experiments.simulationGlobals.g = 30
+        result = [self.experiments.ignore_growth_inhibit_checking(True, 1) for i in range(100)]
+        self.assertTrue(0 <= result.count(True) <= 10)
+
 if __name__ == '__main__':
     unittest.main()
