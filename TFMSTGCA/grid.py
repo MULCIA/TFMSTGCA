@@ -30,15 +30,9 @@ class Grid(object):
         neighbor['empties'] = [cell.position for cell in cube if str(cell) == '']
         return neighbor
 
-    def interval(x, delta, cube_dimension):
-        return [i for i in [-1, 0, 1] if x + 1 >= 1 + delta and x + i <= cube_dimension - 1 + delta]
-
-    def neighborhood(self, origin, cube_dimension):
+    def neighborhood(self, origin, radio):
         x0,y0,z0 = origin
-        cube_positions = [(i+1,j+1,k+1) for i in self.interval(1, x0, cube_dimension) for j in self.interval(1, y0, cube_dimension) for k in self.interval(1, z0, cube_dimension) if (i,j,k) != (0,0,0)]
-        cube = self.extract_cube_from_grid(self.filter_side_positions(origin, cube_positions))
-        neighbor = self.classify_neighborhood(cube)
-        return neighbor
+        return [(i+x0,j+y0,k+z0) for i in range(-radio, radio+1) for j in range(-radio, radio+1) for k in range(-radio, radio+1) if (i+x0,j+y0,k+z0) != origin]
 
     def __middle__(self, value):
         return int(value/2)
