@@ -1,8 +1,6 @@
 from unittest import TestCase
 from TFMSTGCA.automata import Automata
 from TFMSTGCA.simulation_globals import SimulationGlobals
-from TFMSTGCA.cell import Cell
-from TFMSTGCA.grid import Grid
 
 class TestAutomata(TestCase):
 
