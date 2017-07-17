@@ -21,3 +21,12 @@ class TestAutomata(TestCase):
         self.automata.mitotic_agenda[iteration] = "Event!"
         self.automata.pop_events(iteration)
         self.assertTrue(iteration not in self.automata.mitotic_agenda)
+
+    def test_push_event(self):
+        self.assertTrue(self.automata.push_event())
+
+    def test_apply_random_cell_death(self):
+        self.assertTrue(self.automata.apply_random_cell_death(None))
+
+    def test_apply_genetic_damage_death(self):
+        self.assertTrue(self.automata.apply_genetic_damage_death(None))
