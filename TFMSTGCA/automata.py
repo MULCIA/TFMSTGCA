@@ -23,8 +23,13 @@ class Automata(object):
         self.mitotic_agenda[self.future_mitotic_event()] = [position]
         return grid
 
-    def push_event(self):
-        return True
+    def push_event(self, iteration, event):
+        if iteration in self.mitotic_agenda:
+            events = self.mitotic_agenda[iteration]
+            events.append(event)
+            self.mitotic_agenda[iteration] = events
+        else:
+            self.mitotic_agenda[iteration] = [event]
 
     def future_mitotic_event(self):
         return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
