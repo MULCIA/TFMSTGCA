@@ -24,11 +24,11 @@ class Grid(object):
     def extract_cube_from_grid(self, positions):
         return [self.grid[x][y][x] for x,y,z in positions]
 
-    def classify_neighborhood(self, cube):
+    """def classify_neighborhood(self, cube):
         neighbor = dict()
         neighbor['occupied'] = [cell.position for cell in cube if str(cell) != '']
         neighbor['empties'] = [cell.position for cell in cube if str(cell) == '']
-        return neighbor
+        return neighbor"""
 
     def neighborhood(self, origin, radio):
         x0,y0,z0 = origin
