@@ -5,3 +5,5 @@ max-line-length: 300
 autodetect: true
 python-targets:
   - 3
+pep8:
+  none: true
