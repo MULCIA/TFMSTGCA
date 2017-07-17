@@ -11,7 +11,6 @@ class Experiments(object):
         return False
 
     def genetic_damage_test(self, n, ea):
-        #TODO: np.random.randint(0,n)
         if ea == 0 and np.random.random() < n/self.simulationGlobals.e:
             return True
         return False
