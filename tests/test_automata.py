@@ -34,8 +34,8 @@ class TestAutomata(TestCase):
         self.automata.push_event(iteration, (1,1,1))
         self.automata.push_event(iteration, (2,2,2))
         events = self.automata.mitotic_agenda[iteration]
-        self.assertEqual(events[0], (1,1,1))
-        self.assertEqual(events[1], (2,2,2))
+        self.assertTrue((1,1,1) in events)
+        self.assertTrue((2,2,2) in events)
 
     def test_apply_random_cell_death(self):
         self.assertTrue(self.automata.apply_random_cell_death(None))
