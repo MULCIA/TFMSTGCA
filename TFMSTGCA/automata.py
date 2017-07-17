@@ -48,6 +48,8 @@ class Automata(object):
                 events = self.pop_events(it)
                 for pos in events:
                     current_cell = self.cells[pos]
-                    self.apply_random_cell_death(pos) if self.experiments.random_death_test() else None
-                    self.apply_genetic_damage_death(pos) if self.experiments.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea) else None
+                    if self.experiments.random_death_test():
+                        self.apply_random_cell_death(pos)
+                    if self.experiments.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea):
+                        self.apply_genetic_damage_death(pos)
                     #TODO: Rest of experiments.
