@@ -15,3 +15,9 @@ class TestAutomata(TestCase):
         result = [self.automata.future_mitotic_event() for i in range(100)]
         for res in result:
             self.assertTrue(5 <= res <= 10)
+
+    def test_pop_events(self):
+        iteration = 5
+        self.automata.mitotic_agenda[iteration] = "Event!"
+        self.automata.pop_events(iteration)
+        self.assertTrue(iteration not in self.automata.mitotic_agenda)
