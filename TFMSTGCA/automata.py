@@ -48,13 +48,12 @@ class Automata(object):
         return True
 
     def run(self):
-        for it in range(self.iterations):
-            if it in self.mitotic_agenda:
-                events = self.pop_events(it)
-                for pos in events:
-                    current_cell = self.cells[pos]
-                    if self.experiments.random_death_test():
-                        self.apply_random_cell_death(pos)
-                    if self.experiments.genetic_damage_test(current_cell.mutations(), current_cell.genome.ea):
-                        self.apply_genetic_damage_death(pos)
-                    #TODO: Rest of experiments.
+        for iteration in range(self.iterations):
+            events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
+            for event in events: # event is a tuple with three elements == position
+                cell = self.cells[event]
+                if self.experiments.random_death_test():
+                    self.apply_random_cell_death(event)
+                if self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
+                    self.apply_genetic_damage_death(event)
+                #TODO: Rest of experiments.
