@@ -54,6 +54,8 @@ class Automata(object):
                 cell = self.cells[event]
                 if self.experiments.random_death_test():
                     self.apply_random_cell_death(event)
-                if self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
+                elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
                     self.apply_genetic_damage_death(event)
-                #TODO: Rest of experiments.
+                else:
+                    print("Continuamos")
+                    #TODO: Rest of experiments.
