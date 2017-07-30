@@ -47,6 +47,21 @@ class Automata(object):
         #TODO: Remove cell from cell and from grid.
         return True
 
+    def apply_mitosis(self, test_1, test_2, test_3):
+        if self.experiments.mitosis_test((test_1, test_2, test_3)):
+            return True
+        return False
+
+    def apply_mutation(self, cell):
+        pass
+
+    def apply_modify_gi(self, cell):
+        pass
+
+    def copy_and_choose_new_position(self, cell):
+        #TODO: make copy, choose new position and put in grid and cell list.
+        pass
+
     def run(self):
         for iteration in range(self.iterations):
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
@@ -57,5 +72,13 @@ class Automata(object):
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
                     self.apply_genetic_damage_death(event)
                 else:
-                    print("Continuamos")
-                    #TODO: Rest of experiments.
+                    spatial_boundary = 0 #TODO: check spatial boundary
+                    is_neighborhood_full = True #TODO: check neighborhood
+                    test_1 = self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
+                    test_2 = self.experiments.ignore_growth_inhibit_checking(is_neighborhood_full, cell.genome.igi)
+                    test_3 = self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
+                    if self.apply_mitosis(test_1, test_2, test_3):
+                        cell = self.apply_mutation(cell)
+                        cell = self.apply_modify_gi(cell)
+                        self.copy_and_choose_new_position(cell)
+                    self.push_event(self.future_mitotic_event(), cell)
