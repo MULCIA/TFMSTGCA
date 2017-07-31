@@ -8,7 +8,7 @@ class Automata(object):
     def __init__(self, dimension, iterations, simulationGlobals):
         self.dimension = dimension
         self.size = self.dimension**3
-        self.iterations = iterations
+        self.iterations = iterations+1
         self.simulationGlobals = simulationGlobals
         self.experiments = Experiments(simulationGlobals)
         self.cells = {}
@@ -47,15 +47,16 @@ class Automata(object):
         #TODO: Remove cell from cell and from grid.
         return True
 
-    def apply_mitosis(self, test_1, test_2, test_3):
-        if self.experiments.mitosis_test((test_1, test_2, test_3)):
-            return True
-        return False
+    def kill_cell(self, position):
+        del self.cells[position]
+        self.grid.grid[position[0]][position[1]][position[2]] = ''
 
-    def apply_mutation(self, cell):
+    def mutate(self, cell):
+        #TODO: make mutation
         pass
 
-    def apply_modify_gi(self, cell):
+    def modify_gi(self, cell):
+        #TODO: modify gi
         pass
 
     def copy_and_choose_new_position(self, cell):
@@ -64,21 +65,29 @@ class Automata(object):
 
     def run(self):
         for iteration in range(self.iterations):
+            print("Iteration %d" % (iteration))
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
+            #print("Events: %s" % (str(events)))
             for event in events: # event is a tuple with three elements == position
+                print("Event/position %s" % (str(event)))
                 cell = self.cells[event]
+                print("Cell: %s" % (cell))
                 if self.experiments.random_death_test():
-                    self.apply_random_cell_death(event)
+                    print("Random death!")
+                    self.kill_cell(event)
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
-                    self.apply_genetic_damage_death(event)
+                    print("Genetic damage death!")
+                    self.kill_cell(event)
                 else:
+                    print("Testing mutation!")
                     spatial_boundary = 0 #TODO: check spatial boundary
                     is_neighborhood_full = True #TODO: check neighborhood
                     test_1 = self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
                     test_2 = self.experiments.ignore_growth_inhibit_checking(is_neighborhood_full, cell.genome.igi)
                     test_3 = self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
-                    if self.apply_mitosis(test_1, test_2, test_3):
-                        cell = self.apply_mutation(cell)
-                        cell = self.apply_modify_gi(cell)
+                    if self.experiments.mitosis_test((test_1, test_2, test_3)):
+                        print("Mutation!")
+                        cell = self.mutate(cell)
+                        cell = self.modify_gi(cell)
                         self.copy_and_choose_new_position(cell)
-                    self.push_event(self.future_mitotic_event(), cell)
+                    self.push_event(self.future_mitotic_event(), event)

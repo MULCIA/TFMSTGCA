@@ -37,8 +37,7 @@ class TestAutomata(TestCase):
         self.assertTrue((1,1,1) in events)
         self.assertTrue((2,2,2) in events)
 
-    def test_apply_random_cell_death(self):
-        self.assertTrue(self.automata.apply_random_cell_death(None))
-
-    def test_apply_genetic_damage_death(self):
-        self.assertTrue(self.automata.apply_genetic_damage_death(None))
+    def test_kill_cell(self):
+        self.automata.kill_cell((1,1,1))
+        self.assertTrue((1,1,1) not in self.automata.cells.keys())
+        self.assertEqual(self.automata.grid.grid[1][1][1],'')
