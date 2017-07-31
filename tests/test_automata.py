@@ -41,3 +41,15 @@ class TestAutomata(TestCase):
         self.automata.kill_cell((1,1,1))
         self.assertTrue((1,1,1) not in self.automata.cells.keys())
         self.assertEqual(self.automata.grid.grid[1][1][1],'')
+
+    def test_mutate(self):
+        self.automata.mutate(None)
+        self.assertTrue(True)
+
+    def test_modify_gi(self):
+        self.automata.modify_gi(None)
+        self.assertTrue(True)
+
+    def copy_and_choose_new_position(self):
+        self.automata.copy_and_choose_new_position(None)
+        self.assertTrue(True)
