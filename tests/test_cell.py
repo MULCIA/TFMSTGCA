@@ -3,7 +3,7 @@ from TFMSTGCA.cell import Cell
 from TFMSTGCA.genome import Genome
 
 class TestCell(TestCase):
-    
+
     def setUp(self):
         TestCase.setUp(self)
         position = (1,1,1)
@@ -45,6 +45,11 @@ class TestCell(TestCase):
         self.assertEqual(new_cell.genome.gi, self.cell.genome.gi)
         self.assertEqual(new_cell.tl, self.cell.tl)
         self.assertEqual(new_cell.m, self.cell.m)
+
+    def test_add_mutations(self):
+        self.cell.genome = Genome(0,0,0,0,0)
+        self.cell.add_mutations()
+        self.assertTrue( 0<= self.cell.mutations() <= 2)
 
 if __name__ == '__main__':
     unittest.main()
