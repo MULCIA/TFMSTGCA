@@ -37,14 +37,6 @@ class TestExperiments(TestCase):
         result = self.experiments.limitless_replicative_potencial_checking(1, 0)
         self.assertEqual(result, True)
 
-    def test_mitosis_test_mitosis(self):
-        result = self.experiments.mitosis_test((True, False, False))
-        self.assertEqual(result, True)
-
-    def test_mitosis_test_not_mitosis(self):
-        result = self.experiments.mitosis_test((False, False, False))
-        self.assertEqual(result, False)
-
     def test_probability_random_death(self):
         self.experiments.simulationGlobals.a = 10**3
         result = [self.experiments.random_death_test() for i in range(10**4)]

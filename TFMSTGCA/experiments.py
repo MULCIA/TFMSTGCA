@@ -29,8 +29,3 @@ class Experiments(object):
         if tl == 0 and ei == 0:
             return False
         return True
-
-    def mitosis_test(self, checking_results):
-        if checking_results == (True, False, False):
-            return True
-        return False
