@@ -79,7 +79,7 @@ class Automata(object):
                     print("Genetic damage death!")
                     self.kill_cell(event)
                 else:
-                    print("Testing mutation!")
+                    """print("Testing mutation!")
                     spatial_boundary = 0 #TODO: check spatial boundary
                     is_neighborhood_full = True #TODO: check neighborhood
                     test_1 = self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
@@ -89,5 +89,5 @@ class Automata(object):
                         print("Mutation!")
                         cell = self.mutate(cell)
                         cell = self.modify_gi(cell)
-                        self.copy_and_choose_new_position(cell)
-                    self.push_event(self.future_mitotic_event(), event)
+                        self.copy_and_choose_new_position(cell)"""
+                    self.push_event(iteration + self.future_mitotic_event(), event)
