@@ -63,39 +63,43 @@ class Automata(object):
         #TODO: make copy, choose new position and put in grid and cell list.
         pass
 
+    def first_test(self, cell):
+        spatial_boundary = 0 #TODO: check spatial boundary
+        return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
+
+    def second_test(self, cell):
+        is_neighborhood_full = True #TODO: check neighborhood
+        if is_neighborhood_full:
+            return self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
+        else:
+            return True
+
+    def third_test(self, cell):
+        return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
+
+    def telomer_death_test(self, test_result):
+        if not test_result:
+            return True
+        return False
+
     def run(self):
         for iteration in range(self.iterations):
-            #print("Iteration %d" % (iteration))
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
-            #print("Events: %s" % (str(events)))
             for event in events: # event is a tuple with three elements == position
-                print("Event/position %s" % (str(event)))
                 cell = self.cells[event]
-                print("Cell: %s" % (cell))
                 if self.experiments.random_death_test():
-                    print("Random death!")
                     self.kill_cell(event)
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
-                    print("Genetic damage death!")
                     self.kill_cell(event)
                 else:
-                    print("Testing mutation!")
-                    spatial_boundary = 0 #TODO: check spatial boundary
-                    test_1 = self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
-                    is_neighborhood_full = True #TODO: check neighborhood
-                    test_2 = True
-                    if is_neighborhood_full:
-                        test_2 = self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
-                    test_3 = True
-                    if cell.tl == 0:
-                        test_3 = self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
+                    test_1 = self.first_test(cell)
+                    test_2 = self.second_test(cell)
+                    test_3 = self.third_test(cell)
                     if test_1 and test_2 and test_3:
                         #TODO: make mutation.
-                        pass
-                    if not test_3:
-                        print("Iteration %d" % (iteration))
-                        print("Kill cell by telomer")
-                        kill_cell(event)
+                        print("Mutation!")
                     else:
-                        print("Iteration %d" % (iteration))
-                        self.push_event(iteration + self.future_mitotic_event(), event)
+                        if self.telomer_death_test(test_3): #Telomer death
+                            kill_cell(event)
+                        else:
+                            self.push_event(iteration + self.future_mitotic_event(), event)

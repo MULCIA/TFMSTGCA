@@ -35,7 +35,7 @@ class TestExperiments(TestCase):
 
     def test_limitless_replicative_potencial_checking_limited(self):
         result = self.experiments.limitless_replicative_potencial_checking(1, 0)
-        self.assertEqual(result, False)
+        self.assertEqual(result, True)
 
     def test_mitosis_test_mitosis(self):
         result = self.experiments.mitosis_test((True, False, False))
