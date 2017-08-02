@@ -1,6 +1,7 @@
 from unittest import TestCase
 from TFMSTGCA.automata import Automata
 from TFMSTGCA.simulation_globals import SimulationGlobals
+from TFMSTGCA.cell import Cell
 
 class TestAutomata(TestCase):
 
@@ -45,3 +46,36 @@ class TestAutomata(TestCase):
     def copy_and_choose_new_position(self):
         self.automata.copy_and_choose_new_position(None)
         self.assertTrue(True)
+
+    def test_first_test_True(self):
+        result = self.automata.first_test(Cell((0,0,0),1,0,0,0,0,0,0))
+        self.assertEqual(result, True)
+
+    """def test_first_test_False(self):
+        result = self.automata.first_test(Cell((0,0,0),0,0,0,0,0,0,0))
+        self.assertEqual(result, False)"""
+
+    def test_second_test_True(self):
+        result = [self.automata.second_test(Cell((0,0,0),0,1,0,0,0,0,0)) for i in range(10**4)]
+        self.assertTrue(result)
+        #self.assertTrue(1 <= result.count(True) <= 30)
+
+    """def test_second_test_False(self):
+        result = self.automata.second_test(Cell((0,0,0),0,0,0,0,0,0,0))
+        self.assertEqual(result, False)"""
+
+    def test_third_test_True(self):
+        result = self.automata.third_test(Cell((0,0,0),0,0,0,1,0,50,0))
+        self.assertEqual(result, True)
+
+    def test_third_test_False(self):
+        result = self.automata.third_test(Cell((0,0,0),0,0,0,0,0,0,0))
+        self.assertEqual(result, False)
+
+    def test_telomer_death_test_True(self):
+        result = self.automata.telomer_death_test(False)
+        self.assertEqual(result, True)
+
+    def test_telomer_death_test_False(self):
+        result = self.automata.telomer_death_test(True)
+        self.assertEqual(result, False)

@@ -40,14 +40,6 @@ class Automata(object):
         del self.mitotic_agenda[iteration]
         return events
 
-    def apply_random_cell_death(self, position):
-        #TODO: Remove cell from cell and from grid.
-        return True
-
-    def apply_genetic_damage_death(self, position):
-        #TODO: Remove cell from cell and from grid.
-        return True
-
     def kill_cell(self, position):
         del self.cells[position]
         self.grid.grid[position[0]][position[1]][position[2]] = ''
