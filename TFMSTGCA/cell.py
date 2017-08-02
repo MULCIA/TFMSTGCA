@@ -11,7 +11,8 @@ class Cell(object):
         self.genome = Genome(sg, igi, ea, ei, gi)
 
     def decrease_telomer(self):
-        self.tl -= 1
+        if self.tl > 0:
+            self.tl -= 1
 
     def increment_base_muration_rate(self, i):
         if self.genome.gi == 1:
@@ -24,7 +25,7 @@ class Cell(object):
         variables = [var for var in vars(self) if var == 0]
         if len(variables) > 0:
             for var in variables:
-                if np.random.random() < self.m:
+                if np.random.random() < 1/self.m:
                     setattr(self, var, 1)
 
     def kill_neighbor(self, neighbors):

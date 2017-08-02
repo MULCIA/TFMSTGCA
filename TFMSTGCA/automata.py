@@ -51,17 +51,13 @@ class Automata(object):
         del self.cells[position]
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
-    def mutate(self, cell):
-        #TODO: make mutation
-        pass
-
-    def modify_gi(self, cell):
-        #TODO: modify gi
-        pass
-
-    def copy_and_choose_new_position(self, cell):
-        #TODO: make copy, choose new position and put in grid and cell list.
-        pass
+    def copy_and_choose_new_position(self, position, cell):
+        cell_copy = cell
+        new_position = (0,0,0) #TODO: Choose new position
+        self.push_event(iteration + self.future_mitotic_event(), event)
+        self.push_event(iteration + self.future_mitotic_event(), new_position)
+        self.cells[event] = cell
+        self.cells[new_position] = cell_copy
 
     def first_test(self, cell):
         spatial_boundary = 0 #TODO: check spatial boundary
@@ -95,8 +91,11 @@ class Automata(object):
                     test_1 = self.first_test(cell)
                     test_2 = self.second_test(cell)
                     test_3 = self.third_test(cell)
-                    if test_1 and test_2 and test_3:
-                        #TODO: make mutation.
+                    if test_1 and test_2 and test_3: #Perform mutation
+                        cell.increment_base_muration_rate(self.simulationGlobals.i)
+                        cell.add_mutations()
+                        cell.decrease_telomer()
+                        self.copy_and_choose_new_position(event, cell)
                         print("Mutation!")
                     else:
                         if self.telomer_death_test(test_3): #Telomer death
