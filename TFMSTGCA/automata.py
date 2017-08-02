@@ -53,11 +53,10 @@ class Automata(object):
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
     def copy_and_choose_new_position(self, position, cell, iteration):
-        cell_copy = cell
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.dimension))
         new_position = random.choice(neighborhood['empties'])
-        print(new_position)
-        self.push_event(iteration + self.future_mitotic_event(), new_position)
+        cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
+        self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
         self.cells[position] = cell
         self.cells[new_position] = cell_copy
 
@@ -82,6 +81,7 @@ class Automata(object):
 
     def run(self):
         for iteration in range(self.iterations):
+            print(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
@@ -94,14 +94,9 @@ class Automata(object):
                     test_2 = self.second_test(cell)
                     test_3 = self.third_test(cell)
                     if test_1 and test_2 and test_3: #Perform mutation
-                        cell.increment_base_muration_rate(self.simulationGlobals.i)
-                        cell.add_mutations()
-                        cell.decrease_telomer()
                         self.copy_and_choose_new_position(event, cell, iteration)
-                        print("Mutation!")
                     else:
                         if self.telomer_death_test(test_3): #Telomer death
                             self.kill_cell(event)
-                            print("Kill cell!")
                         else:
                             self.push_event(iteration + self.future_mitotic_event(), event)
