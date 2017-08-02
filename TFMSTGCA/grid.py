@@ -18,17 +18,35 @@ class Grid(object):
     def initialization(self, first_cell):
         self.grid[self.__middle__(self.height)][self.__middle__(self.width)][self.__middle__(self.depth)] = first_cell
 
-    def filter_side_positions(self, origin, positions):
-        pass
+    def filter(self, value, limit):
+        if value >= 0 and value < limit:
+            return True
+        return False
+
+    def check_limits(self, cube, limit):
+        new_cube = list()
+        for position in cube:
+            x, y, z = position[0], position[1], position[2]
+            if self.filter(x,limit) and self.filter(y,limit) and self.filter(z,limit):
+                new_cube.append(position)
+        return new_cube
+
 
     def extract_cube_from_grid(self, positions):
         return [self.grid[x][y][x] for x,y,z in positions]
 
-    """def classify_neighborhood(self, cube):
+    def classify_neighborhood(self, cube):
+        empties = list()
+        occupied = list()
         neighbor = dict()
-        neighbor['occupied'] = [cell.position for cell in cube if str(cell) != '']
-        neighbor['empties'] = [cell.position for cell in cube if str(cell) == '']
-        return neighbor"""
+        for position in cube:
+            if str(self.grid[position[0]][position[1]][position[2]]) == '':
+                empties.append(position)
+            else:
+                occupied.append(position)
+        neighbor['occupied'] = occupied
+        neighbor['empties'] = empties
+        return neighbor
 
     def neighborhood(self, origin, radio):
         x0,y0,z0 = origin

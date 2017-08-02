@@ -1,3 +1,4 @@
+import random
 import numpy as np
 from .experiments import Experiments
 from .cell import Cell
@@ -53,7 +54,9 @@ class Automata(object):
 
     def copy_and_choose_new_position(self, position, cell, iteration):
         cell_copy = cell
-        new_position = (0,0,0) #TODO: Choose new position
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.dimension))
+        new_position = random.choice(neighborhood['empties'])
+        print(new_position)
         self.push_event(iteration + self.future_mitotic_event(), new_position)
         self.cells[position] = cell
         self.cells[new_position] = cell_copy
@@ -95,7 +98,6 @@ class Automata(object):
                         cell.add_mutations()
                         cell.decrease_telomer()
                         self.copy_and_choose_new_position(event, cell, iteration)
-                        print(cell.tl)
                         print("Mutation!")
                     else:
                         if self.telomer_death_test(test_3): #Telomer death
