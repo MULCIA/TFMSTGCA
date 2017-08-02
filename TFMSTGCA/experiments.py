@@ -20,13 +20,13 @@ class Experiments(object):
             return False
         return True
 
-    def ignore_growth_inhibit_checking(self, is_neighborhood_full, igi):
-        if is_neighborhood_full and igi == 1 and np.random.random() < 1/self.simulationGlobals.g:
+    def ignore_growth_inhibit_checking(self, igi):
+        if igi == 1 and np.random.random() < 1/self.simulationGlobals.g:
             return True
         return False
 
     def limitless_replicative_potencial_checking(self, tl, ei):
-        if tl == 0 and ei == 0:
+        if tl == 0 and ei == 1:
             return True
         return False
 

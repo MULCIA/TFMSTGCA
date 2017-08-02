@@ -3,7 +3,7 @@ from TFMSTGCA.experiments import Experiments
 from TFMSTGCA.simulation_globals import SimulationGlobals
 
 class TestExperiments(TestCase):
-    
+
     def setUp(self):
         TestCase.setUp(self)
         self.simulationGlobals = SimulationGlobals(1,1,1,1,1,1,1,1,1)
@@ -31,7 +31,7 @@ class TestExperiments(TestCase):
 
     def test_limitless_replicative_potencial_checking_limiteless(self):
         result = self.experiments.limitless_replicative_potencial_checking(0, 0)
-        self.assertEqual(result, True)
+        self.assertEqual(result, False)
 
     def test_limitless_replicative_potencial_checking_limited(self):
         result = self.experiments.limitless_replicative_potencial_checking(1, 0)
@@ -57,7 +57,7 @@ class TestExperiments(TestCase):
 
     def test_probability_ignore_growth_inhibit_checking(self):
         self.experiments.simulationGlobals.g = 30
-        result = [self.experiments.ignore_growth_inhibit_checking(True, 1) for i in range(100)]
+        result = [self.experiments.ignore_growth_inhibit_checking(1) for i in range(100)]
         self.assertTrue(0 <= result.count(True) <= 10)
 
 if __name__ == '__main__':

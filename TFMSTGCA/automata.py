@@ -65,7 +65,7 @@ class Automata(object):
 
     def run(self):
         for iteration in range(self.iterations):
-            print("Iteration %d" % (iteration))
+            #print("Iteration %d" % (iteration))
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             #print("Events: %s" % (str(events)))
             for event in events: # event is a tuple with three elements == position
@@ -79,15 +79,23 @@ class Automata(object):
                     print("Genetic damage death!")
                     self.kill_cell(event)
                 else:
-                    """print("Testing mutation!")
+                    print("Testing mutation!")
                     spatial_boundary = 0 #TODO: check spatial boundary
-                    is_neighborhood_full = True #TODO: check neighborhood
                     test_1 = self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
-                    test_2 = self.experiments.ignore_growth_inhibit_checking(is_neighborhood_full, cell.genome.igi)
-                    test_3 = self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
-                    if self.experiments.mitosis_test((test_1, test_2, test_3)):
-                        print("Mutation!")
-                        cell = self.mutate(cell)
-                        cell = self.modify_gi(cell)
-                        self.copy_and_choose_new_position(cell)"""
-                    self.push_event(iteration + self.future_mitotic_event(), event)
+                    is_neighborhood_full = True #TODO: check neighborhood
+                    test_2 = True
+                    if is_neighborhood_full:
+                        test_2 = self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
+                    test_3 = True
+                    if cell.tl == 0:
+                        test_3 = self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
+                    if test_1 and test_2 and test_3:
+                        #TODO: make mutation.
+                        pass
+                    if not test_3:
+                        print("Iteration %d" % (iteration))
+                        print("Kill cell by telomer")
+                        kill_cell(event)
+                    else:
+                        print("Iteration %d" % (iteration))
+                        self.push_event(iteration + self.future_mitotic_event(), event)
