@@ -90,9 +90,7 @@ class Automata(object):
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
                     self.kill_cell(event)
                 else:
-                    test_1 = self.first_test(cell)
-                    test_2 = self.second_test(cell)
-                    test_3 = self.third_test(cell)
+                    test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell), self.third_test(cell)
                     if test_1 and test_2 and test_3: #Perform mutation
                         self.copy_and_choose_new_position(event, cell, iteration)
                     else:
