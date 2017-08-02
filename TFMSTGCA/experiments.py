@@ -26,13 +26,9 @@ class Experiments(object):
         return False
 
     def limitless_replicative_potencial_checking(self, tl, ei):
-        if tl == 0:
-            if ei == 1:
-                return True
-            else:
-                return False
-        else:
-            return True
+        if tl == 0 and ei == 0:
+            return False
+        return True
 
     def mitosis_test(self, checking_results):
         if checking_results == (True, False, False):

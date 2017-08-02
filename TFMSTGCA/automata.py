@@ -51,11 +51,11 @@ class Automata(object):
         del self.cells[position]
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
-    def copy_and_choose_new_position(self, position, cell):
+    def copy_and_choose_new_position(self, position, cell, iteration):
         cell_copy = cell
         new_position = (0,0,0) #TODO: Choose new position
         self.push_event(iteration + self.future_mitotic_event(), new_position)
-        self.cells[event] = cell
+        self.cells[position] = cell
         self.cells[new_position] = cell_copy
 
     def first_test(self, cell):
@@ -63,7 +63,7 @@ class Automata(object):
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
     def second_test(self, cell):
-        is_neighborhood_full = True #TODO: check neighborhood
+        is_neighborhood_full = False #TODO: check neighborhood
         if is_neighborhood_full:
             return self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
         else:
@@ -94,10 +94,12 @@ class Automata(object):
                         cell.increment_base_muration_rate(self.simulationGlobals.i)
                         cell.add_mutations()
                         cell.decrease_telomer()
-                        self.copy_and_choose_new_position(event, cell)
+                        self.copy_and_choose_new_position(event, cell, iteration)
+                        print(cell.tl)
                         print("Mutation!")
                     else:
                         if self.telomer_death_test(test_3): #Telomer death
-                            kill_cell(event)
+                            self.kill_cell(event)
+                            print("Kill cell!")
                         else:
                             self.push_event(iteration + self.future_mitotic_event(), event)
