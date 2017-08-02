@@ -16,3 +16,11 @@ class TestExperiments(TestCase):
     def test_neighborhood(self):
         result = self.grid.neighborhood((0,0,0), 1)
         self.assertEqual(26,len(result))
+
+    def test_filter_True(self):
+        result = self.grid.filter(0, 10)
+        self.assertEqual(result, True)
+
+    def test_filter_True(self):
+        result = self.grid.filter(-1, 10)
+        self.assertEqual(result, False)
