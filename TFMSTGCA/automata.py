@@ -54,7 +54,6 @@ class Automata(object):
     def copy_and_choose_new_position(self, position, cell):
         cell_copy = cell
         new_position = (0,0,0) #TODO: Choose new position
-        self.push_event(iteration + self.future_mitotic_event(), event)
         self.push_event(iteration + self.future_mitotic_event(), new_position)
         self.cells[event] = cell
         self.cells[new_position] = cell_copy
