@@ -1,7 +1,9 @@
 from unittest import TestCase
+import numpy as np
 from TFMSTGCA.automata import Automata
 from TFMSTGCA.simulation_globals import SimulationGlobals
 from TFMSTGCA.cell import Cell
+from TFMSTGCA.grid import Grid
 
 class TestAutomata(TestCase):
 
@@ -60,9 +62,16 @@ class TestAutomata(TestCase):
         self.assertTrue(result)
         #self.assertTrue(1 <= result.count(True) <= 30)
 
-    """def test_second_test_False(self):
-        result = self.automata.second_test(Cell((0,0,0),0,0,0,0,0,0,0))
-        self.assertEqual(result, False)"""
+    def test_second_test_False(self):
+        grid2 = np.empty((3,3,3))
+        grid2 = grid2.astype(np.str_)
+        grid2.fill('0 0 0 0 0')
+        cell = Cell((1,1,1),0,0,0,0,0,50,0)
+        grid = Grid(3, 3, 3, cell)
+        grid.grid = grid2
+        self.automata.grid = grid
+        result = self.automata.second_test(cell)
+        self.assertEqual(result, False)
 
     def test_third_test_True(self):
         result = self.automata.third_test(Cell((0,0,0),0,0,0,1,0,50,0))
