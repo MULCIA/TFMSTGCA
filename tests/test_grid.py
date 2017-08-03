@@ -24,3 +24,10 @@ class TestExperiments(TestCase):
     def test_filter_True(self):
         result = self.grid.filter(-1, 10)
         self.assertEqual(result, False)
+
+    def test_extract_cube_from_grid(self):
+        positions = [(0,0,0),(0,0,1)]
+        result = self.grid.extract_cube_from_grid(positions)
+        self.assertEqual(len(result), 2)
+        self.assertTrue(result[0] == '')
+        self.assertTrue(result[0] == '')
