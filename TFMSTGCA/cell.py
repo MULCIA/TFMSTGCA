@@ -22,11 +22,9 @@ class Cell(object):
         return self.genome.mutations()
 
     def add_mutations(self):
-        variables = [var for var in vars(self) if var == 0]
-        if len(variables) > 0:
-            for var in variables:
-                if np.random.random() < 1/self.m:
-                    setattr(self, var, 1)
+        for var,val in vars(self.genome).items():
+            if val== 0 and np.random.random() < 1/self.m:
+                setattr(self.genome, var, 1)
 
     def kill_neighbor(self, neighbors):
         if len(neighbors) > 0:

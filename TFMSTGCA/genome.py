@@ -1,5 +1,5 @@
 class Genome(object):
-    
+
     def __init__(self, sg, igi, ea, ei, gi):
         self.sg = sg
         self.igi = igi

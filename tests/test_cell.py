@@ -48,8 +48,9 @@ class TestCell(TestCase):
 
     def test_add_mutations(self):
         self.cell.genome = Genome(0,0,0,0,0)
+        self.cell.m = 1
         self.cell.add_mutations()
-        self.assertTrue( 0<= self.cell.mutations() <= 2)
+        self.assertTrue( self.cell.mutations() == 5)
 
 if __name__ == '__main__':
     unittest.main()
