@@ -57,7 +57,8 @@ class Automata(object):
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
     def second_test(self, cell):
-        is_neighborhood_full = False #TODO: check neighborhood
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.dimension))
+        is_neighborhood_full = False if len(neighborhood['empties']) > 0 else True
         if is_neighborhood_full:
             return self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
         else:
