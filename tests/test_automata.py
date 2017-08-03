@@ -79,3 +79,8 @@ class TestAutomata(TestCase):
     def test_telomer_death_test_False(self):
         result = self.automata.telomer_death_test(True)
         self.assertEqual(result, False)
+
+    def test_run(self):
+        self.automata.iterations = 1
+        self.automata.run()
+        self.assertTrue(0 <= len(self.automata.cells) <= 2)
