@@ -80,6 +80,14 @@ class TestAutomata(TestCase):
         result = self.automata.telomer_death_test(True)
         self.assertEqual(result, False)
 
+    def test_copy_and_choose_new_position(self):
+        position = (int(self.dimension/2),int(self.dimension/2),int(self.dimension/2))
+        cell = self.automata.cells[position]
+        iteration = 1
+        new_position = (0,0,0)
+        self.automata.copy_and_choose_new_position(new_position, cell, iteration)
+        self.assertTrue(new_position in self.automata.cells)
+
     def test_run(self):
         self.automata.iterations = 1
         self.automata.run()
