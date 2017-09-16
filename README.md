@@ -64,4 +64,5 @@ You can use `./script_docker/clean.sh` or:
 ```
 docker rm $(docker ps -a | grep tfm)
 docker rmi $(docker images | grep tfm)
+docker rmi $(docker images | grep ubuntu)
 ```
