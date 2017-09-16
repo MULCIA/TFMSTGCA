@@ -14,7 +14,7 @@ In this paper, the authors used computational biology as an approach for analysi
 
 ## Dependencies
 
-* [NumPy](http://www.numpy.org/). 
+* [NumPy](http://www.numpy.org/).
 * [Matplotlib](https://matplotlib.org/).
 
 ## Installation
@@ -28,3 +28,40 @@ To develop this project, and for running it, Python3 is required. But, first of 
 For running it, type:
 
 `$ python3 automata.py`
+
+## Running on Docker
+
+If you prefer not to install anything in your environment, you can use Docker.
+
+This project has a folder which it has some scripts to help you with docker in case you do not know docker.
+
+Previously, you have to give execution permission to `.sh` files in `script_docker` folder: `$ chmod r+x script_docker/*`
+
+### Build image
+
+You can use `./script_docker/build.sh` or type `docker build -t serrodcal/tfm .`.
+
+### Run container
+
+You can use `./script_docker/run.sh` or type `docker run --name tfm -d serrodcal/tfm:latest tail -f /dev/null`.
+
+### Get terminal
+
+You can use `./script_docker/terminal.sh` or type `docker exec -it tfm bash`.
+
+### Start container
+
+You can use `./script_docker/start.sh` or type `docker start tfm`.
+
+### Stop container
+
+You can use `./script_docker/stop.sh` or type `docker stop tfm`.
+
+### Clean everything
+
+You can use `./script_docker/clean.sh` or:
+
+```
+docker rm $(docker ps -a | grep tfm)
+docker rmi $(docker images | grep tfm)
+```
