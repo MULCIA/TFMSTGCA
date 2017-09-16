@@ -39,19 +39,19 @@ Previously, you have to give execution permission to `.sh` files in `script_dock
 
 ### Build image
 
-You can use `./script_docker/build.sh` or type `docker build -t serrodcal/tfm .`.
+You can use `$ ./script_docker/build.sh` or type `docker build -t serrodcal/tfm .`.
 
 ### Run container
 
-You can use `./script_docker/run.sh` or type `docker run --name tfm -d serrodcal/tfm:latest tail -f /dev/null`.
+You can use `$ ./script_docker/run.sh` or type `docker run --name tfm -d serrodcal/tfm:latest tail -f /dev/null`.
 
 ### Get terminal
 
-You can use `./script_docker/terminal.sh` or type `docker exec -it tfm bash`.
+You can use `$ ./script_docker/terminal.sh` or type `docker exec -it tfm bash`.
 
 ### Start container
 
-You can use `./script_docker/start.sh` or type `docker start tfm`.
+You can use `$ ./script_docker/start.sh` or type `docker start tfm`.
 
 ### Stop container
 
@@ -59,10 +59,19 @@ You can use `./script_docker/stop.sh` or type `docker stop tfm`.
 
 ### Clean everything
 
-You can use `./script_docker/clean.sh` or:
+You can use `$ ./script_docker/clean.sh` or:
 
 ```
-docker rm $(docker ps -a | grep tfm)
-docker rmi $(docker images | grep tfm)
-docker rmi $(docker images | grep ubuntu)
+$ docker rm $(docker ps -a | grep tfm)
+$ docker rmi $(docker images | grep tfm)
+$ docker rmi $(docker images | grep ubuntu)
 ```
+
+## Travis in local environment
+
+Run `$ docker run --name tfm -v ~/Repositories/TFMSTGCA:/home/TFMSTGCA -ti quay.io/travisci/travis-python /bin/bash`, then
+to run inside docker container following commands:
+
+* `$ cd /home/TFMSTGCA`
+* `$ pip3 install -r requirements.txt`
+* `$ ./run_travis.sh`
