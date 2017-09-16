@@ -1,1 +1,1 @@
-docker run -d --name tfm serrodcal/tfm
+docker run --name tfm -d serrodcal/tfm:latest tail -f /dev/null
