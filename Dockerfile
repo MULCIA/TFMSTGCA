@@ -6,10 +6,10 @@ RUN apt-get update && \
     apt-get install -y git && \
     apt-get clean && \
     mkdir TFMSTGCA && \
-    git clone https://github.com/MULCIA/TFMSTGCA.git /home/TFMSTGCA
+    git clone https://github.com/MULCIA/TFMSTGCA.git /home/TFMSTGCA && \
+    cd /home/TFMSTGCA && \
+    pip3 install -r requirements.txt
 
 WORKDIR /home/TFMSTGCA
 
-RUN pip3 install -r requirements.txt
-
-CMD ["python3", "-m", "unittest"]
+RUN python3 -m unittest
