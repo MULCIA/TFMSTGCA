@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+% pre\'ambulo
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\graphicspath{ {images/} }
+\usetikzlibrary{arrows,positioning}
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=5em,
+           minimum height=4em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+\setlength{\parskip}{\baselineskip}
+\usepackage[style=numeric-comp,backend=bibtex]{biblatex}
+\bibliography{refs.bib}
+
+\title{An'alisis de las transiciones de comportamiento en crecimiento celular usando simulaci'on con automata celular}
+\author{Sergio Rodr\'iguez Calvo}
+\date{Diciembre de 2017}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \begin{center}
+      Departamento de Ciencias de la Computaci\'on e
+      Inteligencia Artificial \\
+      Universidad de Sevilla
+      \end{center}
+  % cuerpo del documento
+  % abstract
+  \bf{Abstract. }\rm
+    \emph{}
+
+% bibliography
+\printbibliography
+
+\end{document}
