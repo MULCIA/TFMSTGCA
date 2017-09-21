@@ -49,6 +49,14 @@ class TestAutomata(TestCase):
         self.automata.copy_and_choose_new_position(None)
         self.assertTrue(True)
 
+    def test_boundary_cheking_True(self):
+        result = self.automata.boundary_cheking((1,1,1))
+        self.assertEqual(result, True)
+
+    def test_boundary_cheking_False(self):
+        result = self.automata.boundary_cheking((0,1,1))
+        self.assertEqual(result, False)
+
     def test_first_test_True(self):
         result = self.automata.first_test(Cell((0,0,0),1,0,0,0,0,0,0))
         self.assertEqual(result, True)
