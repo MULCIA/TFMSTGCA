@@ -22,11 +22,11 @@ class TestExperiments(TestCase):
         self.assertEqual(result, False)
 
     def test_genetic_damage_test_True(self):
-        result = self.experiments.growth_factor_cheking(1, 2)
+        result = self.experiments.growth_factor_cheking(1, 0)
         self.assertEqual(result, True)
 
-    def test_genetic_damage_test_False(self):
-        result = self.experiments.growth_factor_cheking(0, 2)
+    def test_growth_factor_cheking_test_False(self):
+        result = self.experiments.growth_factor_cheking(0, 0)
         self.assertEqual(result, False)
 
     def test_limitless_replicative_potencial_checking_limiteless(self):

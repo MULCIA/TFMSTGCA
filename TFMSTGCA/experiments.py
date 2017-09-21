@@ -16,9 +16,9 @@ class Experiments(object):
         return False
 
     def growth_factor_cheking(self, sg, spatial_boundary):
-        if spatial_boundary > self.simulationGlobals.predefined_spatial_boundary and sg == 0:
-            return False
-        return True
+        if spatial_boundary or sg:
+            return True
+        return False
 
     def ignore_growth_inhibit_checking(self, igi):
         if igi == 1 and np.random.random() < 1/self.simulationGlobals.g:

@@ -1,5 +1,6 @@
 import random
 import numpy as np
+from .simulation_globals import PREDEFINED_SPATIAL_BOUNDARY
 from .experiments import Experiments
 from .cell import Cell
 from .grid import Grid
@@ -53,7 +54,8 @@ class Automata(object):
         self.cells[new_position] = cell_copy
 
     def first_test(self, cell):
-        spatial_boundary = 0 #TODO: check spatial boundary
+        delta = ((1-PREDEFINED_SPATIAL_BOUNDARY)*self.length)/2
+        spatial_boundary = (delta,delta,delta) <= cell.position <= (self.length-1-delta,self.length-1-delta,self.length-1-delta)
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
     def second_test(self, cell):

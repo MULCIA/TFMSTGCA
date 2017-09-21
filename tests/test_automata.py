@@ -53,9 +53,9 @@ class TestAutomata(TestCase):
         result = self.automata.first_test(Cell((0,0,0),1,0,0,0,0,0,0))
         self.assertEqual(result, True)
 
-    """def test_first_test_False(self):
+    def test_first_test_False(self):
         result = self.automata.first_test(Cell((0,0,0),0,0,0,0,0,0,0))
-        self.assertEqual(result, False)"""
+        self.assertEqual(result, False)
 
     def test_second_test_True(self):
         result = [self.automata.second_test(Cell((0,0,0),0,1,0,0,0,0,0)) for i in range(10**4)]
