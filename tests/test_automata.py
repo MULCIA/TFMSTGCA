@@ -9,10 +9,10 @@ class TestAutomata(TestCase):
 
     def setUp(self):
         TestCase.setUp(self)
-        self.dimension = 3
+        self.length = 3
         self.iterations = 5000
         self.simulationGlobals = SimulationGlobals(1,1,1,1,1,1,1,5,10)
-        self.automata = Automata(self.dimension, self.iterations, self.simulationGlobals)
+        self.automata = Automata(self.length, self.iterations, self.simulationGlobals)
 
     def test_future_mitotic_event(self):
         result = [self.automata.future_mitotic_event() for i in range(100)]
@@ -90,7 +90,7 @@ class TestAutomata(TestCase):
         self.assertEqual(result, False)
 
     def test_copy_and_choose_new_position(self):
-        position = (int(self.dimension/2),int(self.dimension/2),int(self.dimension/2))
+        position = (int(self.length/2),int(self.length/2),int(self.length/2))
         cell = self.automata.cells[position]
         iteration = 1
         new_position = (0,0,0)

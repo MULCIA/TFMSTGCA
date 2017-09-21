@@ -6,9 +6,9 @@ from .grid import Grid
 
 class Automata(object):
 
-    def __init__(self, dimension, iterations, simulationGlobals):
-        self.dimension = dimension
-        self.size = self.dimension**3
+    def __init__(self, length, iterations, simulationGlobals):
+        self.length = length
+        self.size = self.length**3
         self.iterations = iterations+1
         self.simulationGlobals = simulationGlobals
         self.experiments = Experiments(simulationGlobals)
@@ -17,10 +17,10 @@ class Automata(object):
         self.grid = self.build()
 
     def build(self):
-        position = (int(self.dimension/2),int(self.dimension/2),int(self.dimension/2))
+        position = (int(self.length/2),int(self.length/2),int(self.length/2))
         first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)
         self.cells[position] = first_cell
-        grid = Grid(self.dimension, self.dimension, self.dimension, first_cell)
+        grid = Grid(self.length, self.length, self.length, first_cell)
         self.mitotic_agenda[self.future_mitotic_event()] = [position]
         return grid
 
@@ -45,7 +45,7 @@ class Automata(object):
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
     def copy_and_choose_new_position(self, position, cell, iteration):
-        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.dimension))
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.length))
         new_position = random.choice(neighborhood['empties'])
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
@@ -57,7 +57,7 @@ class Automata(object):
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
     def second_test(self, cell):
-        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.dimension))
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.length))
         is_neighborhood_full = False if len(neighborhood['empties']) > 0 else True
         if is_neighborhood_full:
             return self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
