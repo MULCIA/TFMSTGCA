@@ -46,11 +46,11 @@ class Automata(object):
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
     def copy_and_choose_new_position(self, position, cell, iteration):
+        # TODO: Corregir la seleccion de vecindario que no funciona.
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.length))
         new_position = random.choice(neighborhood['empties'])
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
-        self.cells[position] = cell
         self.cells[new_position] = cell_copy
 
     def boundary_cheking(self, position):
@@ -73,11 +73,6 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
-    def telomer_death_test(self, test_result):
-        if not test_result:
-            return True
-        return False
-
     def run(self):
         for iteration in range(self.iterations):
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
@@ -89,10 +84,17 @@ class Automata(object):
                     self.kill_cell(event)
                 else:
                     test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell), self.third_test(cell)
-                    if test_1 and test_2 and test_3: #Perform mutation
+                    if test_1 and test_2 and test_3: #Perform mitosis
+                        """
+                            # TODO: Comprobar estos 5 pasos, ya que, los 4 primeros se hacen en 'copy_and_choose_new_position'.
+
+                            1. Incrementar la tasa base de mutacion si el marcador GI esta presente.
+                            2. ¿Hacer la division y mantener el genoma de la celula madre?
+                            3. Añadir mutaciones a la nueva celula de acuerdo a la base de mutaciones base.
+                            4. Decrementar en una unidad el telomero en ambas celulas.
+                            5. Programar nuevo evento mitotico en el futuro para ambas celulas.
+                        """
                         self.copy_and_choose_new_position(event, cell, iteration)
+                        self.push_event(iteration + self.future_mitotic_event(), event)
                     else:
-                        if self.telomer_death_test(test_3): #Telomer death
-                            self.kill_cell(event)
-                        else:
-                            self.push_event(iteration + self.future_mitotic_event(), event)
+                        self.push_event(iteration + self.future_mitotic_event(), event)

@@ -1,4 +1,4 @@
-Análisis de las transiciones de comportamiento en crecimiento celular usando simulación con automata celular
+Análisis de las transiciones de comportamiento en crecimiento de tumores usando una simulación con autómata celular
 ===
 
 ###### Sergio Rodríguez Calvo, Diciembre 2017.
@@ -33,7 +33,7 @@ Análisis de las transiciones de comportamiento en crecimiento celular usando si
 # Breve introducción a la enfermedad del cáncer
 
 * Nombre genérico para agrupar más de 200 enfermedades que causan proliferación descontrolada de células.
-* Se conoce como lesión neoplasica a toda masa anormal, y puede ser invasiva (carcinoma) o benigna (adenoma). El diferenciador el la invasividad.
+* Se conoce como neoplasia a toda masa anormal, y puede ser invasiva (carcinoma) o benigna (adenoma). Los diferenciadores son la invasividad y el factor de crecimiento.
 * Presenta diferentes fases: crecimiento, angiogénesis y metástasis.
 
 ---
@@ -63,7 +63,7 @@ Análisis de las transiciones de comportamiento en crecimiento celular usando si
     * Factor de muerte aleatoria de la célula.
     * Factor de reemplazo de un vecino.
     * Factor de incremento de la tasa base de mutación.
-    * Factor de evasión de apóptosis.
+    * Factor de evasión de apoptosis.
 * Cada célula recibe programación de evento mitótico en el futuro de forma aleatoria.
 * Cada iteración suponen aproximadamente entre 15 y 24 horas.
 

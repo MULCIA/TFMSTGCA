@@ -42,7 +42,9 @@ class Grid(object):
         for position in cube:
             if str(self.grid[position[0]][position[1]][position[2]]) == '':
                 empties.append(position)
+                print("empties")
             else:
+                print("occupied")
                 occupied.append(position)
         neighbor['occupied'] = occupied
         neighbor['empties'] = empties

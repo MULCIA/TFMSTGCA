@@ -1,0 +1,35 @@
+\section{Introducción}
+	Podemos pensar en nuevas formas de evaluar a los alumnos de una clase de manera más interactiva a la que estamos acostumbrados a ver en nuestras aulas. Una de las opciones que se podría elegir consiste en crear una comunidad donde los alumnos se ayuden entre sí, bien utilizando foros, sistemas de preguntas y respuestas (stackoverflow, yahoo! answers, etc) o wikis.
+
+	Pero esto no es nada nuevo. Ya tenemos asignaturas que usan foros o wikis para ayudar a sus alumnos con el temario, que se impliquen en la asignatura ampliando contenidos explicados en clase, etcétera.
+
+	Este tipo de comunidades tienen algunos problemas que hacen que muchos profesores terminen desestimándolas como parte de la evaluación, ya que a la hora de evaluar es necesario cerciorar el contenido y su calidad, si es que no se ha hecho antes; intentar purgar contenido repetido; recopilar todo lo ofrecido por cada alumno y evaluar de un modo objetivo todo este material.
+
+	Éste es un trabajo bastante arduo y más cuando no es la única asignatura a la que se dedica un profesor. Además, también resulta complicado por parte de los alumnos el seguimiento de estos métodos.
+
+	En los primeros cursos, sobre todo, los alumnos no se conocen entre ellos y es difícil crear un clima de cooperación. Otras veces se topan con plataformas complejas y terminan usando otros métodos de cooperación, como por ejemplo compartir la información en persona. Y en algunas ocasiones, la recompensa por los esfuerzos realizados por los alumnos que se interesan en buscar o desarrollar material cae en la incertidumbre. Éstas serían algunas de las causas por las que los estudiantes terminan frustrados y desechando estas comunidades.
+
+	Para obtener una solución a este problema es interesante buscar sistemas de motivación para que los grupos funcionen de forma dinámica y fluida. Una de las opciones, y en la que se centra este proyecto, podría ser lo que en inglés se conoce por \emph{gamification}. El recompensar a los usuarios el trabajo desempeñado através de sistemas de puntos e insignias en un ambiente lúdico puede incidir positivamente en la colaboración y el aprendizaje.
+
+	Es por ello que este proyecto tiene como meta la creación de un sistema de insignias para una plataforma de enseñanza y colaboración, de manera que los profesores puedan evaluar según unas métricas determinadas el esfuerzo de los alumnos. Además, éstos pueden mostrar sus logros, usarlos o integrarlos en otros sistemas.
+
+	Por supuesto, uno de los fines de otorgar insignias a los usuarios por conseguir sus metas es poder mostrar estos distintivos a los demás. Uno de los sistemas creados para abordar esta problemática es \textbf{Mozilla Open Badges}, que permite a cualquier entidad emitir insignias a una serie de ganadores y también permite a éstos tener un lugar donde almacenarlas y mostrarlas de forma selectiva.
+
+	Ya que \textbf{Mozilla Open Badges} sólo es una infraestructura para el control de las insignias, se necesita una plataforma donde los usuarios puedan ganarlas. Como plataforma se ha elegido \textbf{Askbot}, un proyecto de código abierto escrito en Python con el framework web \textbf{Django}. Este sistema permite a los usuarios cooperar para encontrar la mejor respuesta a sus preguntas. Mediante un sistema de votos, positivos o negativos, karma e insignias la comunidad de usuarios valoran las preguntas y respuestas creadas en la aplicación. Los administradores, moderadores o usuarios de peso en la comunidad, pueden completar o modificar las preguntas y respuestas. Creando así un ecosistema favorable para el aprendizaje.
+
+	\textbf{Nota:} Hay que tener en cuenta que \textbf{Django} hace una implementación particular del patrón Modelo-Vista-Controlador. Lo define como Modelo-Plantilla-Vista (MTV: model-template-view), donde la vista equivale al controlador y la plantilla a la vista. Dado que este proyecto está creado en \textbf{Django} se usará esta termininología en la documentantación.
+
+\section{Alcance}
+	Este sistema tendrá como usuarios a los alumnos y profesores de la asignatura DAD, impartida por el profesor Pablo Trinidad del departamento de Lenguajes y Sistemas informático de la Universidad de Sevilla.
+
+	El Objetivo es facilitar la evaluación a los profesores de la asignatura mediante el desarrollo de una aplicación.
+
+	Aunque la aplicación nace para la evaluación de alumnos en una asignatura concreta, puede ser apliada a cualquier otro campo.
+
+\section{Objetivos}
+	Con el desarrollo de \textbf{OBadges} se esperan alcanzar estos objetivos:
+	\begin{itemize}
+		\item Dotar de un sistema evaluación complementario mediante un sistema lúdico de logros, frente a los habituales sistemas de evaluación que la mayoría de veces pueden ser inviables para profesores y alumnos.
+		\item Crear una herramienta con la que dar insignias a los alumnos que hayan asistido a actividades de la comunidad universitaria\footnote{Talleres, cursos o actividades extraescolares.}.
+		\item Ofrecer a los alumnos una forma de compartir sus logros en la universidad, conseguidos en una asignatura o actividad, mediante la integración con \textbf{Mozilla Open Badges}.
+	\end{itemize}

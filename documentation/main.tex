@@ -1,59 +1,63 @@
-\documentclass[12pt]{article}
-% pre\'ambulo
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
-\usepackage[spanish,activeacute]{babel}
-\usepackage{mathtools}
-\usepackage{amsmath}
+% A sample model to write a thesis project
+
+% Search for the string "TBC: " and follow the instructions
+
+\documentclass[titlepage,openright,twoside,a4paper,final,12pt]{book}
+
+%%% TBC: Select your language here: english or spanish
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex,final]{graphicx}
+
+% Style package
+\usepackage{trinidad-PhD}
+% Font Package (Palatino)
+\usepackage{mathpazo}
+% Packages for specific capabilities
+\usepackage{rotating} % for text rotation in tables
+\usepackage{multirow} % for multirow in tables
+\usepackage{subfigure} % Place subfigures in figure environment
+% Packages for specific symbols
 \usepackage{amssymb}
-\usepackage{url}
-\usepackage{tikz}
-\usepackage{graphicx}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-\graphicspath{ {images/} }
-\usetikzlibrary{arrows,positioning}
-\tikzset{
-    %Define standard arrow tip
-    >=stealth',
-    %Define style for boxes
-    punkt/.style={
-           rectangle,
-           rounded corners,
-           draw=black, very thick,
-           text width=5em,
-           minimum height=4em,
-           text centered},
-    % Define arrow style
-    pil/.style={
-           ->,
-           thick,
-           shorten <=2pt,
-           shorten >=2pt,}
-}
-\setlength{\parskip}{\baselineskip}
-\usepackage[style=numeric-comp,backend=bibtex]{biblatex}
-\bibliography{refs.bib}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{eurosym} % Euro symbol
+\usepackage{bbding} % for \XSolidBrush
+\usepackage{pifont} % for \ding{55} (a check mark)
+\usepackage{fancyvrb,fancybox,calc}
+\usepackage{soul}
+\usepackage{multirow}
+%\usepackage[xindy]{imakeidx}
+%\makeindex
 
-\title{An'alisis de las transiciones de comportamiento en crecimiento celular usando simulaci'on con automata celular}
-\author{Sergio Rodr\'iguez Calvo}
-\date{Diciembre de 2017}
-
+\author{Sergio Rodríguez Calvo}{D.~}{XXXXXXXXL}
+\authorURL{}
+\authorEMail{sergiorodriguezcalvo@gmail.com}
+\setTitle{Análisis de las transiciones de comportamiento en crecimiento de tumores usando una simulación con autómata celular}
+\setSubtitle{}
+\setUniversity{Universidad de Sevilla}
+\supportText{Memoria para el trabajo fin de máster}
+\copyrightText{}
+\committeeMember{}
+\committeeMember{}
+\committeeMember{}
+\committeeMember{}
+\supervisor{Miguel Ángel Gutiérrez Naranjo}{Dr.~}{Profesor Titular del Departamento de Ciencias de la Computación e Inteligencia Artificial de la Universidad de Sevilla}
 
 \begin{document}
-    \maketitle
-    \thispagestyle{empty}
-    \begin{center}
-      Departamento de Ciencias de la Computaci\'on e
-      Inteligencia Artificial \\
-      Universidad de Sevilla
-      \end{center}
-  % cuerpo del documento
-  % abstract
-  \bf{Abstract. }\rm
-    \emph{}
+	\makeTitlePage
 
-% bibliography
-\printbibliography
+	\pagestyle{empty}
+	\pagenumbering{arabic}
+	\pagestyle{trinidadPhD}
+
+	\tableofcontents
+	\listoffigures
+
+    \chapter{Resumen}
+		\input{abstract}
+
+	\chapter{Introducción}
+		\input{introduction}
 
 \end{document}

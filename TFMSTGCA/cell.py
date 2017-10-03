@@ -31,8 +31,8 @@ class Cell(object):
             return random.choice(neighbors)
         return None
 
-    def perform_mitosis(self, position, i): #TODO: Check if add_mutations() performs only on new cell.
-        self.decrease_telomer()
+    def perform_mitosis(self, position, i):
+        self.decrease_telomer() # TODO: decrementar en ambas, pero ¿Una célula siempre nace con el telómero a 50?
         self.increment_base_muration_rate(i)
         new_cell = Cell(position, self.genome.sg, self.genome.igi, self.genome.ea, self.genome.ei, self.genome.gi, self.tl, self.m)
         new_cell.add_mutations()
