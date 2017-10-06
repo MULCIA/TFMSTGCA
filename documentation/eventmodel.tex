@@ -17,10 +17,40 @@ El genoma de cada célula presente en la rejilla cuenta con un genoma y unas pro
 En cuanto a su genoma, cuenta con 5 variables binarias que representan la presencia o no de una mutación, la cual, define
 un determinado comportamiento canceroso. Estas mutaciones son las siguientes:
 
+\begin{itemize}
+    \item \textbf{SG}: Autogeneración de los mensajes de crecimeinto. Esto es, la mutación que permite que la
+    célula genere sus propios mensajes para ejecutar la división con idependencia externa.
+    \item \textbf{IGI}: Inibhición de las señales de anticrecimiento. Esto es, ante la recepción de una orden
+    de detener su crecimiento, la célula tiene una mutación que le permite un mecanismo de ignorancia de los mismos.
+    \item \textbf{EA}: Evasión de apoptosis. Esto es, la célula puede, mediante mutación, no hacer caso ante
+    una orden de apoptosis, o muerte celular controlada.
+    \item \textbf{EI}: Inmortalidad efectiva. Esto es, la célula adquiere una mutación que permite evitar un límite
+    replicativo existente, entre otros factores, por el tamaño del telómero.
+    \item \textbf{GI}: Inestabilidad genética. Esto es, una mutación que permite a la célula acumular más daño genético, es decir,
+    la tasa de mutación base se va incrementando con el paso del tiempo.
+\end{itemize}
 
-Además, cada célula tiene una tasa de mutación base y un tamaño de telómero...
+Además, cada célula tiene una tasa de mutación base y un tamaño de telómero. El primero, es utilizado a la hora
+de añadir nuevas mutaciones a la célula. Y la segunda, es un límite replicativo debido a que el ADN queda
+desprotegido para futuras mutaciones y podrían ocurrir errores.
 
 \section{Parámetros globales}
+
+De cara a la simulación, existen una serie de parámetros globales que inciden en determinados mecanismos de la misma y
+, por tanto, afectan en la evolución de la misma. Esto son:
+
+\begin{itemize}
+    \item \textbf{t}: Tamaño de la rejilla.
+    \item \textbf{m}: Valor por defecto que indica la tasa de mutación base de cada célula al inicio.
+    \item \textbf{tl}: Valor por defecto que indica el tamaño del telómero de cada célula al inicio.
+    \item \textbf{e}: Valor por defecto utilizado para definir la probabilidad de una célula de morir por daño genético.
+    \item \textbf{i}: Valor por defecto utilizado como factor de aumento de la tasa de mutación base de las células.
+    \item \textbf{t}: Valor por defecto para ver qué probabilidad hay de que una célula cancerosa mate a un vecino para
+    poder reproducirse.
+    \item \textbf{t}: Valor por defecto para ver con qué probabilidad una célula muere de forma aleatoria. Este parámetro
+    se introduce como forma de simular las muy diversas causas que pueden originar en la muerte de la célula, por ejemplo,
+    recibir una alta dosis de radiación entre otras.
+\end{itemize}
 
 \section{Pruebas previas a la mitosis}
 

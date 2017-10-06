@@ -7,10 +7,10 @@
 \contentsline {section}{\numberline {2.4}Los aut\IeC {\'o}matas celulares}{10}{section.2.4}
 \contentsline {chapter}{\numberline {3}Modelo de eventos}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}Las c\IeC {\'e}lulas, genoma y propiedades}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}Par\IeC {\'a}metros globales}{11}{section.3.2}
-\contentsline {section}{\numberline {3.3}Pruebas previas a la mitosis}{11}{section.3.3}
-\contentsline {section}{\numberline {3.4}Equivalencia temporal}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}Bucle principal del modelo de eventos}{12}{section.3.5}
-\contentsline {chapter}{\numberline {4}Implementaci\IeC {\'o}n}{13}{chapter.4}
-\contentsline {chapter}{\numberline {5}Experimentos de los autores}{15}{chapter.5}
-\contentsline {chapter}{\numberline {6}Resultados propios}{17}{chapter.6}
+\contentsline {section}{\numberline {3.2}Par\IeC {\'a}metros globales}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Pruebas previas a la mitosis}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}Equivalencia temporal}{13}{section.3.4}
+\contentsline {section}{\numberline {3.5}Bucle principal del modelo de eventos}{13}{section.3.5}
+\contentsline {chapter}{\numberline {4}Implementaci\IeC {\'o}n}{15}{chapter.4}
+\contentsline {chapter}{\numberline {5}Experimentos de los autores}{17}{chapter.5}
+\contentsline {chapter}{\numberline {6}Resultados propios}{19}{chapter.6}
