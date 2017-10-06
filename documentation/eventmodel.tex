@@ -1,1 +1,29 @@
-\section{Modelo de eventos}
+Los autores, José Santos y Ángel Monteagudo, decidieron utilizar un autómata celular
+siguiendo un modelo de eventos. Es decir, por un lado, la simulación se realiza
+sobre una rejilla en tres dimensiones, comenzando con una única célula en el centro de la misma.
+Por otro lado, se programan una serie de eventos para cada una de las células de la rejilla, aleatoriamente
+entre 5 y 10 (ambos inclusive) iteraciones en el futuro.
+
+Las características y propiedades del sistema se describen en las secciones de este capítulo que
+se muestran a continuación.
+
+\section{Las células, genoma y propiedades}
+
+Cada célula estará alojada en una única posición del autómata. En esta simulación, no se modeliza
+el tamaño de las células, es decir, aunque en las células cancerosas se observa, además de un comportamiento
+replicativo sin control, un crecimiento en su tamaño sin control, los autores no han tenido en cuenta esto.
+
+El genoma de cada célula presente en la rejilla cuenta con un genoma y unas propiedades únicas para cada una de ellas.
+En cuanto a su genoma, cuenta con 5 variables binarias que representan la presencia o no de una mutación, la cual, define
+un determinado comportamiento canceroso. Estas mutaciones son las siguientes:
+
+
+Además, cada célula tiene una tasa de mutación base y un tamaño de telómero...
+
+\section{Parámetros globales}
+
+\section{Pruebas previas a la mitosis}
+
+\section{Equivalencia temporal}
+
+\section{Bucle principal del modelo de eventos}

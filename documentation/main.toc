@@ -1,19 +1,16 @@
 \select@language {spanish}
 \contentsline {chapter}{\numberline {1}Resumen}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}Resumen}{5}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivos}{6}{section.1.2}
-\contentsline {section}{\numberline {1.3}Alcance}{6}{section.1.3}
 \contentsline {chapter}{\numberline {2}Introducci\IeC {\'o}n}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introducci\IeC {\'o}n}{7}{section.2.1}
-\contentsline {chapter}{\numberline {3}El c\IeC {\'a}ncer}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}El c\IeC {\'a}ncer}{9}{section.3.1}
-\contentsline {chapter}{\numberline {4}Los aut\IeC {\'o}matas celulares}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}Los aut\IeC {\'o}matas celulares}{11}{section.4.1}
-\contentsline {chapter}{\numberline {5}Modelo de eventos}{13}{chapter.5}
-\contentsline {section}{\numberline {5.1}Modelo de eventos}{13}{section.5.1}
-\contentsline {chapter}{\numberline {6}Implementaci\IeC {\'o}n}{15}{chapter.6}
-\contentsline {section}{\numberline {6.1}Implementaci\IeC {\'o}n}{15}{section.6.1}
-\contentsline {chapter}{\numberline {7}Experimentos de los autores}{17}{chapter.7}
-\contentsline {section}{\numberline {7.1}Experimentos de los Autores}{17}{section.7.1}
-\contentsline {chapter}{\numberline {8}Resultados propios}{19}{chapter.8}
-\contentsline {section}{\numberline {8.1}Resultados propios}{19}{section.8.1}
+\contentsline {section}{\numberline {2.1}Objetivos}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}Alcance}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}El c\IeC {\'a}ncer}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}Los aut\IeC {\'o}matas celulares}{10}{section.2.4}
+\contentsline {chapter}{\numberline {3}Modelo de eventos}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Las c\IeC {\'e}lulas, genoma y propiedades}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Par\IeC {\'a}metros globales}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}Pruebas previas a la mitosis}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}Equivalencia temporal}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Bucle principal del modelo de eventos}{12}{section.3.5}
+\contentsline {chapter}{\numberline {4}Implementaci\IeC {\'o}n}{13}{chapter.4}
+\contentsline {chapter}{\numberline {5}Experimentos de los autores}{15}{chapter.5}
+\contentsline {chapter}{\numberline {6}Resultados propios}{17}{chapter.6}
