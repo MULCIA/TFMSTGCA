@@ -45,14 +45,39 @@ De cara a la simulación, existen una serie de parámetros globales que inciden 
     \item \textbf{tl}: Valor por defecto que indica el tamaño del telómero de cada célula al inicio.
     \item \textbf{e}: Valor por defecto utilizado para definir la probabilidad de una célula de morir por daño genético.
     \item \textbf{i}: Valor por defecto utilizado como factor de aumento de la tasa de mutación base de las células.
-    \item \textbf{t}: Valor por defecto para ver qué probabilidad hay de que una célula cancerosa mate a un vecino para
+    \item \textbf{g}: Valor por defecto para ver qué probabilidad hay de que una célula cancerosa mate a un vecino para
     poder reproducirse.
-    \item \textbf{t}: Valor por defecto para ver con qué probabilidad una célula muere de forma aleatoria. Este parámetro
+    \item \textbf{a}: Valor por defecto para ver con qué probabilidad una célula muere de forma aleatoria. Este parámetro
     se introduce como forma de simular las muy diversas causas que pueden originar en la muerte de la célula, por ejemplo,
     recibir una alta dosis de radiación entre otras.
 \end{itemize}
 
 \section{Pruebas previas a la mitosis}
+
+El modelo de eventos, a la hora de realizar la mitosis (división celular), realiza tres pruebas:
+
+\begin{itemize}
+    \item \textbf{Prueba de muerte aleatoria}: La célula muere con una probabilidad dada ($1/a$).
+    \item \textbf{Prueba de daño genético}: A mayor cantidad de mutaciones, mayor probabilidad de
+    que la célula muera ($n/e$, donde n es el número de mutaciones de la célula). Excepto, que
+    la célula tenga la mutación $EA$ presente en su genoma.
+    \item \textbf{Prueba de mitosis}: En realidad, se trata de tres pruebas cuyo resultado debe
+    ser positivo para que la célula pueda ejecutar la mitosis:
+    \begin{itemize}
+        \item \textbf{Comprobación del factor de crecimiento}: La célula sólo puede realizar la
+        mitosis si se encuentra dentro de un límite espacial predefinido. Es decir, hay suficiente
+        factor de crecimiento. Fuera de este área no podrá realizar la mitosis, excepto si el
+        marcador $SG$ está activo.
+        \item \textbf{Comprobación de ignorancia de inhibición de crecimiento}: Si no hay
+        espacio en el vecindario, la célula no podrá realizar la división. Excepto, que
+        la mutación $IGI$ esté presente, en cuyo caso, reemplazará a un vecino con una
+        probabilidad dada ($1/g$).
+        \item \textbf{Comprobación de potencial replicativo sin límites}: .
+    \end{itemize}
+\end{itemize}
+
+En estas pruebas, se utilizan los parámetros globales, además, de las propiedades y el genóma de la célula.
+
 
 \section{Equivalencia temporal}
 
