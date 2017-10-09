@@ -93,9 +93,8 @@ class TestAutomata(TestCase):
         position = (int(self.length/2),int(self.length/2),int(self.length/2))
         cell = self.automata.cells[position]
         iteration = 1
-        new_position = (0,0,0)
-        self.automata.copy_and_choose_new_position(new_position, cell, iteration)
-        self.assertTrue(new_position in self.automata.cells)
+        self.automata.copy_and_choose_new_position((0,0,0), cell, iteration)
+        self.assertTrue(len(self.automata.cells) == 2)
 
     def test_run(self):
         self.automata.iterations = 1

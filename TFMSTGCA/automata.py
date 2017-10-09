@@ -46,7 +46,7 @@ class Automata(object):
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
     def copy_and_choose_new_position(self, position, cell, iteration):
-        # TODO: Corregir la seleccion de vecindario que no funciona.
+        # TODO: En self.grid.neighborhood(position, 1) poner 1 como constante en simulationGlobals
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.length))
         new_position = random.choice(neighborhood['empties'])
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
