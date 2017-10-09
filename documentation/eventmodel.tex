@@ -78,7 +78,22 @@ El modelo de eventos, a la hora de realizar la mitosis (división celular), real
 
 En estas pruebas, se utilizan los parámetros globales, además, de las propiedades y el genóma de la célula.
 
-
 \section{Equivalencia temporal}
+
+El ciclo de vida de las células biológicas es de entre 15 y 24 horas. Este ciclo se divide en 5 fases, que son:
+fase G0, fase G1, fase S, fase G2 y fase M.
+
+Una célula parte en fase de reposo (G0). Si hay espacio suficiente a su alrededor (vecindario) automáticamente pasa
+a fase G1. En la simulación, G1 se simula mediante el paso del tiempo (iteraciones) y la programación de
+eventos mitóticos en el futuro (entre 5 y 10 iteraciones, ambas inclusive). Además, en la simulación no se
+tiene en cuenta el crecimiento celular.
+
+La fase S es cuando tiene lugar la replicación del ADN. La cual, puede introduccir una mutación ocasionalmente.
+La célula entra en una última fase previa a la mitosos, llamada fase G2, en la cual se producen una serie
+de comprobaciones sobre el daño genético. Esto, puede provocar la apoptosis (muerte celular programada) en la célula.
+
+Finalmente, la célula entra en la fase M o de mitosis. Todo este ciclo, que en la simulación toma entre 5 y 10 iteraciones
+(15 y 24 horas en células biológicas) da una media de 2,6 horas por iteración. Por ejemplo, para 5000 iteraciones se tienen
+unas 77,4 semanas aproximadamente.
 
 \section{Bucle principal del modelo de eventos}
