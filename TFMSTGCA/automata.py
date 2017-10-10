@@ -73,8 +73,18 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
+    def refresh_grid(self, cells):
+        new_grid = Grid(self.length, self.length, self.length, '')
+        for cell in cells: # cell is a tuple with three positions
+            new_grid.grid[cell[0]][cell[1]][cell[2]] = cells[cell]
+        return new_grid
+
     def run(self):
         for iteration in range(self.iterations):
+            if iteration%5:
+                for elem in self.cells:
+                    print(str(elem) + " - " + str(self.cells[elem]))
+                print("=============================================")
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
@@ -100,3 +110,4 @@ class Automata(object):
                         self.push_event(iteration + self.future_mitotic_event(), event)
                     else: # Telomer is 0 and EI is OFF
                         self.kill_cell(event)
+                self.grid = self.refresh_grid(self.cells)

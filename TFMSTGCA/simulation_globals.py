@@ -1,5 +1,5 @@
 # In each cell
-BASE_MUTATION_RATE = 10**5 #TODO: Check if correct value is 10**5 or 10**(-5)
+BASE_MUTATION_RATE = 10000 #10**5
 TELOMER_LENGTH = 50
 
 # Global
