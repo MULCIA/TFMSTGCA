@@ -31,8 +31,6 @@ class Automata(object):
     def push_event(self, iteration, event):
         if iteration in self.mitotic_agenda:
             events = self.mitotic_agenda[iteration]
-            """if event in events:
-                print("Colisión!")"""
             events.append(event)
             self.mitotic_agenda[iteration] = events
         else:
@@ -54,6 +52,7 @@ class Automata(object):
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
         self.cells[new_position] = cell_copy
+        self.grid.grid[new_position[0]][new_position[1]][new_position[2]] = cell_copy
 
     def boundary_cheking(self, position):
         delta = ((1-PREDEFINED_SPATIAL_BOUNDARY)*self.length)/2
@@ -81,21 +80,9 @@ class Automata(object):
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
                 if self.experiments.random_death_test():
-                    """print(event)
-                    print(cell)
-                    print(str(events))
-                    print("Muerte aleatoria!")
-                    print(str(self.cells))"""
                     self.kill_cell(event)
-                    #print(str(self.cells))
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
-                    """print(event)
-                    print(cell)
-                    print(str(events))
-                    print("Muerte por daño genético!")
-                    print(str(self.cells))"""
                     self.kill_cell(event)
-                    #print(str(self.cells))
                 else:
                     test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell), self.third_test(cell)
                     if test_1 and test_2 and test_3: #Perform mitosis
