@@ -25,16 +25,18 @@ class Automata(object):
         self.mitotic_agenda[self.future_mitotic_event()] = [position]
         return grid
 
+    def future_mitotic_event(self):
+        return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
+
     def push_event(self, iteration, event):
         if iteration in self.mitotic_agenda:
             events = self.mitotic_agenda[iteration]
+            """if event in events:
+                print("Colisión!")"""
             events.append(event)
             self.mitotic_agenda[iteration] = events
         else:
             self.mitotic_agenda[iteration] = [event]
-
-    def future_mitotic_event(self):
-        return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
 
     def pop_events(self, iteration):
         events = self.mitotic_agenda[iteration]
@@ -79,9 +81,21 @@ class Automata(object):
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
                 if self.experiments.random_death_test():
+                    """print(event)
+                    print(cell)
+                    print(str(events))
+                    print("Muerte aleatoria!")
+                    print(str(self.cells))"""
                     self.kill_cell(event)
+                    #print(str(self.cells))
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
+                    """print(event)
+                    print(cell)
+                    print(str(events))
+                    print("Muerte por daño genético!")
+                    print(str(self.cells))"""
                     self.kill_cell(event)
+                    #print(str(self.cells))
                 else:
                     test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell), self.third_test(cell)
                     if test_1 and test_2 and test_3: #Perform mitosis
@@ -96,5 +110,7 @@ class Automata(object):
                         """
                         self.copy_and_choose_new_position(event, cell, iteration)
                         self.push_event(iteration + self.future_mitotic_event(), event)
-                    else:
+                    elif test_3:
                         self.push_event(iteration + self.future_mitotic_event(), event)
+                    else: # Telomer is 0 and EI is OFF
+                        self.kill_cell(event)
