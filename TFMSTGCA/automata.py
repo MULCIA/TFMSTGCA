@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from .simulation_globals import PREDEFINED_SPATIAL_BOUNDARY
+from .simulation_globals import PREDEFINED_SPATIAL_BOUNDARY, NEIGHBORHOOD_RADIUS
 from .experiments import Experiments
 from .cell import Cell
 from .grid import Grid
@@ -46,8 +46,7 @@ class Automata(object):
         self.grid.grid[position[0]][position[1]][position[2]] = ''
 
     def copy_and_choose_new_position(self, position, cell, iteration):
-        # TODO: En self.grid.neighborhood(position, 1) poner 1 como constante en simulationGlobals
-        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, 1), self.length))
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, NEIGHBORHOOD_RADIUS), self.length))
         new_position = random.choice(neighborhood['empties'])
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
