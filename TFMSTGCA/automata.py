@@ -81,10 +81,6 @@ class Automata(object):
 
     def run(self):
         for iteration in range(self.iterations):
-            if iteration%5:
-                for elem in self.cells:
-                    print(str(elem) + " - " + str(self.cells[elem]))
-                print("=============================================")
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
