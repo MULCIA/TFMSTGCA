@@ -70,7 +70,6 @@ class Automata(object):
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
-                print(self.cells)
                 if self.experiments.random_death_test():
                     self.kill_cell(event)
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
@@ -78,15 +77,6 @@ class Automata(object):
                 else:
                     test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell), self.third_test(cell)
                     if test_1 and test_2 and test_3: #Perform mitosis
-                        """
-                            # TODO: Comprobar estos 5 pasos, ya que, los 4 primeros se hacen en 'copy_and_choose_new_position'.
-
-                            1. Incrementar la tasa base de mutacion si el marcador GI esta presente.
-                            2. ¿Hacer la division y mantener el genoma de la celula madre?
-                            3. Añadir mutaciones a la nueva celula de acuerdo a la base de mutaciones base.
-                            4. Decrementar en una unidad el telomero en ambas celulas.
-                            5. Programar nuevo evento mitotico en el futuro para ambas celulas.
-                        """
                         self.copy_and_choose_new_position(event, cell, iteration)
                         self.push_event(iteration + self.future_mitotic_event(), event)
                     elif test_3:

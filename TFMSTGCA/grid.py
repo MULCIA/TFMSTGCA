@@ -25,7 +25,7 @@ class Grid(object):
         occupied = list()
         neighbor = dict()
         for position in cube:
-            if position in cells:
+            if position not in cells:
                 empties.append(position)
             else:
                 occupied.append(position)
