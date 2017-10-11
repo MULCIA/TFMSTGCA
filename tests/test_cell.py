@@ -52,5 +52,8 @@ class TestCell(TestCase):
         self.cell.add_mutations()
         self.assertTrue( self.cell.mutations() == 5)
 
+    def test_string(self):
+        self.assertEqual(str(self.cell),"11111")
+
 if __name__ == '__main__':
     unittest.main()
