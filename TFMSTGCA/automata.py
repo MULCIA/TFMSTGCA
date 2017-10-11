@@ -18,13 +18,11 @@ class Automata(object):
         self.mitotic_agenda = {self.future_mitotic_event(): [position]}
         self.grid = Grid(self.length, self.length, self.length)
 
-
     def future_mitotic_event(self):
         return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
 
     def push_event(self, iteration, event):
         if iteration in self.mitotic_agenda:
-            print(iteration)
             events = self.mitotic_agenda[iteration]
             events.append(event)
             self.mitotic_agenda[iteration] = events
@@ -36,14 +34,11 @@ class Automata(object):
         del self.mitotic_agenda[iteration]
         return events
 
-    def discard_event(self, position):
+    def discard_event(self, position, origin):
         for iteration, positions in self.mitotic_agenda.items():
-             if position in positions:
-                 print(iteration)
-                 print(type(positions))
-                 positions.remove(position)
-                 self.mitotic_agenda[iteration] = position
-                 print("Celula descartada:" + str(position))
+            if iteration > origin and position in positions:
+                positions.remove(position)
+                self.mitotic_agenda[iteration] = positions
 
     def kill_cell(self, position):
         del self.cells[position]
@@ -64,13 +59,13 @@ class Automata(object):
         spatial_boundary = self.boundary_cheking(cell.position)
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
-    def second_test(self, cell):
+    def second_test(self, cell, iteration):
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.length), self.cells)
         is_neighborhood_full = False if len(neighborhood['empties']) > 0 else True
         if is_neighborhood_full:
             if self.experiments.ignore_growth_inhibit_checking(cell.genome.igi):
                 candidate = random.choice(neighborhood['occupied'])
-                self.discard_event(candidate)
+                self.discard_event(candidate, iteration)
                 self.kill_cell(candidate) # Kill neighbor
                 return True
             else:
@@ -81,19 +76,28 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
-    def cancer_cells(self, cells):
+    """def cancer_cells(self, cells):
         cont = 0
         for position,cell in cells.items():
             if str(cell) != '00000':
                 cont += 1
         return cont
 
+    def cancer_full_cells(self, cells):
+        cont = 0
+        for position,cell in cells.items():
+            if str(cell) == '11111':
+                cont += 1
+        return cont"""
+
     def run(self):
         for iteration in range(self.iterations):
-            if(iteration == 1000):
+            """if iteration%10 == 0:
+                print('Iteracion: ' + str(iteration))
                 print('Numero total de celulas: ' + str(len(self.cells)))
                 print('Celulas cancerosas: ' + str(self.cancer_cells(self.cells)))
-                print('>>>>>>>')
+                print('Celulas con todas las mutaciones: ' + str(self.cancer_full_cells(self.cells)))
+                print('>>>>>>>')"""
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
@@ -102,7 +106,7 @@ class Automata(object):
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
                     self.kill_cell(event)
                 else:
-                    test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell), self.third_test(cell)
+                    test_1, test_2, test_3 = self.first_test(cell), self.second_test(cell, iteration), self.third_test(cell)
                     if test_1 and test_2 and test_3: #Perform mitosis
                         self.copy_and_choose_new_position(event, cell, iteration)
                         self.push_event(iteration + self.future_mitotic_event(), event)
