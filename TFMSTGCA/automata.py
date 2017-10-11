@@ -24,6 +24,7 @@ class Automata(object):
 
     def push_event(self, iteration, event):
         if iteration in self.mitotic_agenda:
+            print(iteration)
             events = self.mitotic_agenda[iteration]
             events.append(event)
             self.mitotic_agenda[iteration] = events
@@ -34,6 +35,15 @@ class Automata(object):
         events = self.mitotic_agenda[iteration]
         del self.mitotic_agenda[iteration]
         return events
+
+    def discard_event(self, position):
+        for iteration, positions in self.mitotic_agenda.items():
+             if position in positions:
+                 print(iteration)
+                 print(type(positions))
+                 positions.remove(position)
+                 self.mitotic_agenda[iteration] = position
+                 print("Celula descartada:" + str(position))
 
     def kill_cell(self, position):
         del self.cells[position]
@@ -58,15 +68,32 @@ class Automata(object):
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.length), self.cells)
         is_neighborhood_full = False if len(neighborhood['empties']) > 0 else True
         if is_neighborhood_full:
-            return self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
+            if self.experiments.ignore_growth_inhibit_checking(cell.genome.igi):
+                candidate = random.choice(neighborhood['occupied'])
+                self.discard_event(candidate)
+                self.kill_cell(candidate) # Kill neighbor
+                return True
+            else:
+                return False
         else:
             return True
 
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
+    def cancer_cells(self, cells):
+        cont = 0
+        for position,cell in cells.items():
+            if str(cell) != '00000':
+                cont += 1
+        return cont
+
     def run(self):
         for iteration in range(self.iterations):
+            if(iteration == 1000):
+                print('Numero total de celulas: ' + str(len(self.cells)))
+                print('Celulas cancerosas: ' + str(self.cancer_cells(self.cells)))
+                print('>>>>>>>')
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]

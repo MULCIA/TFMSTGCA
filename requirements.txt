@@ -2,3 +2,4 @@ coverage
 coveralls
 numpy
 nose
+codacy-coverage
