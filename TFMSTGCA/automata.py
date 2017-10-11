@@ -13,17 +13,11 @@ class Automata(object):
         self.iterations = iterations+1
         self.simulationGlobals = simulationGlobals
         self.experiments = Experiments(simulationGlobals)
-        self.cells = {}
-        self.mitotic_agenda = {}
-        self.grid = self.build()
+        position = (self.length//2,self.length//2,self.length//2)
+        self.cells = {position: Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)}
+        self.mitotic_agenda = {self.future_mitotic_event(): [position]}
+        self.grid = Grid(self.length, self.length, self.length)
 
-    def build(self):
-        position = (int(self.length/2),int(self.length/2),int(self.length/2))
-        first_cell = Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)
-        self.cells[position] = first_cell
-        grid = Grid(self.length, self.length, self.length, first_cell)
-        self.mitotic_agenda[self.future_mitotic_event()] = [position]
-        return grid
 
     def future_mitotic_event(self):
         return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
@@ -43,15 +37,13 @@ class Automata(object):
 
     def kill_cell(self, position):
         del self.cells[position]
-        self.grid.grid[position[0]][position[1]][position[2]] = ''
 
     def copy_and_choose_new_position(self, position, cell, iteration):
-        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, NEIGHBORHOOD_RADIUS), self.length))
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, NEIGHBORHOOD_RADIUS), self.length), self.cells)
         new_position = random.choice(neighborhood['empties'])
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
         self.cells[new_position] = cell_copy
-        self.grid.grid[new_position[0]][new_position[1]][new_position[2]] = cell_copy
 
     def boundary_cheking(self, position):
         delta = ((1-PREDEFINED_SPATIAL_BOUNDARY)*self.length)/2
@@ -63,7 +55,7 @@ class Automata(object):
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
     def second_test(self, cell):
-        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.length))
+        neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.length), self.cells)
         is_neighborhood_full = False if len(neighborhood['empties']) > 0 else True
         if is_neighborhood_full:
             return self.experiments.ignore_growth_inhibit_checking(cell.genome.igi)
@@ -73,17 +65,12 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
-    def refresh_grid(self, cells):
-        new_grid = Grid(self.length, self.length, self.length, '')
-        for cell in cells: # cell is a tuple with three positions
-            new_grid.grid[cell[0]][cell[1]][cell[2]] = cells[cell]
-        return new_grid
-
     def run(self):
         for iteration in range(self.iterations):
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
+                print(self.cells)
                 if self.experiments.random_death_test():
                     self.kill_cell(event)
                 elif self.experiments.genetic_damage_test(cell.mutations(), cell.genome.ea):
@@ -106,4 +93,3 @@ class Automata(object):
                         self.push_event(iteration + self.future_mitotic_event(), event)
                     else: # Telomer is 0 and EI is OFF
                         self.kill_cell(event)
-                self.grid = self.refresh_grid(self.cells)
