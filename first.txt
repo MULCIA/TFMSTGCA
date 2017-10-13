@@ -1,0 +1,120 @@
+Iteracion: 0
+Numero total de celulas: 1
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 10
+Numero total de celulas: 1
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 20
+Numero total de celulas: 4
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 30
+Numero total de celulas: 10
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 40
+Numero total de celulas: 24
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 50
+Numero total de celulas: 62
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 60
+Numero total de celulas: 172
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 70
+Numero total de celulas: 408
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 80
+Numero total de celulas: 838
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 90
+Numero total de celulas: 1543
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 100
+Numero total de celulas: 2597
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 110
+Numero total de celulas: 4082
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 120
+Numero total de celulas: 6108
+Celulas cancerosas: 0
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 130
+Numero total de celulas: 8752
+Celulas cancerosas: 1
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 140
+Numero total de celulas: 12099
+Celulas cancerosas: 6
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 150
+Numero total de celulas: 16206
+Celulas cancerosas: 13
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 160
+Numero total de celulas: 21186
+Celulas cancerosas: 26
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 170
+Numero total de celulas: 27148
+Celulas cancerosas: 47
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 180
+Numero total de celulas: 34141
+Celulas cancerosas: 70
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 190
+Numero total de celulas: 42326
+Celulas cancerosas: 93
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 200
+Numero total de celulas: 51724
+Celulas cancerosas: 129
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 210
+Numero total de celulas: 62481
+Celulas cancerosas: 170
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 220
+Numero total de celulas: 74588
+Celulas cancerosas: 210
+Celulas con todas las mutaciones: 0
+>>>>>>>
+Iteracion: 230
+Numero total de celulas: 86991
+Celulas cancerosas: 244
+Celulas con todas las mutaciones: 0
+>>>>>>>

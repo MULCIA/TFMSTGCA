@@ -35,10 +35,15 @@ class Automata(object):
         return events
 
     def discard_event(self, position, origin):
-        for iteration, positions in self.mitotic_agenda.items():
-            if iteration > origin and position in positions:
+        for iteration in range(origin, origin+6):
+            if iteration in self.mitotic_agenda and position in self.mitotic_agenda[iteration]:
+                positions = self.mitotic_agenda[iteration]
                 positions.remove(position)
                 self.mitotic_agenda[iteration] = positions
+        """for iteration, positions in self.mitotic_agenda.items():
+            if iteration > origin and position in positions:
+                positions.remove(position)
+                self.mitotic_agenda[iteration] = positions"""
 
     def kill_cell(self, position):
         del self.cells[position]
@@ -46,6 +51,7 @@ class Automata(object):
     def copy_and_choose_new_position(self, position, cell, iteration):
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, NEIGHBORHOOD_RADIUS), self.length), self.cells)
         new_position = random.choice(neighborhood['empties'])
+        #print("Nueva pos: " + str(new_position))
         cell_copy = cell.perform_mitosis(new_position, self.simulationGlobals.i)
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
         self.cells[new_position] = cell_copy
@@ -65,6 +71,7 @@ class Automata(object):
         if is_neighborhood_full:
             if self.experiments.ignore_growth_inhibit_checking(cell.genome.igi):
                 candidate = random.choice(neighborhood['occupied'])
+                #print("Candidato: " + str(candidate))
                 self.discard_event(candidate, iteration)
                 self.kill_cell(candidate) # Kill neighbor
                 return True
@@ -76,7 +83,7 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
-    """def cancer_cells(self, cells):
+    def cancer_cells(self, cells):
         cont = 0
         for position,cell in cells.items():
             if str(cell) != '00000':
@@ -88,16 +95,16 @@ class Automata(object):
         for position,cell in cells.items():
             if str(cell) == '11111':
                 cont += 1
-        return cont"""
+        return cont
 
     def run(self):
         for iteration in range(self.iterations):
-            """if iteration%10 == 0:
+            if iteration%10 == 0:
                 print('Iteracion: ' + str(iteration))
                 print('Numero total de celulas: ' + str(len(self.cells)))
                 print('Celulas cancerosas: ' + str(self.cancer_cells(self.cells)))
                 print('Celulas con todas las mutaciones: ' + str(self.cancer_full_cells(self.cells)))
-                print('>>>>>>>')"""
+                print('>>>>>>>')
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
