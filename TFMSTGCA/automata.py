@@ -5,8 +5,23 @@ from .experiments import Experiments
 from .cell import Cell
 from .grid import Grid
 
+import time
+
+def timeit(method):
+
+    def timed(*args, **kw):
+        ts = time.time()
+        result = method(*args, **kw)
+        te = time.time()
+
+        print(method.__name__ + ' ' + str(te-ts))
+        return result
+
+    return timed
+
 class Automata(object):
 
+    @timeit
     def __init__(self, length, iterations, simulationGlobals):
         self.length = length
         self.size = self.length**3
@@ -18,9 +33,11 @@ class Automata(object):
         self.mitotic_agenda = {self.future_mitotic_event(): [position]}
         self.grid = Grid(self.length, self.length, self.length)
 
+    @timeit
     def future_mitotic_event(self):
         return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
 
+    @timeit
     def push_event(self, iteration, event):
         if iteration in self.mitotic_agenda:
             events = self.mitotic_agenda[iteration]
@@ -29,11 +46,13 @@ class Automata(object):
         else:
             self.mitotic_agenda[iteration] = [event]
 
+    @timeit
     def pop_events(self, iteration):
         events = self.mitotic_agenda[iteration]
         del self.mitotic_agenda[iteration]
         return events
 
+    @timeit
     def discard_event(self, position, origin):
         for iteration in range(origin, origin+6):
             if iteration in self.mitotic_agenda and position in self.mitotic_agenda[iteration]:
@@ -45,9 +64,11 @@ class Automata(object):
                 positions.remove(position)
                 self.mitotic_agenda[iteration] = positions"""
 
+    @timeit
     def kill_cell(self, position):
         del self.cells[position]
 
+    @timeit
     def copy_and_choose_new_position(self, position, cell, iteration):
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(position, NEIGHBORHOOD_RADIUS), self.length), self.cells)
         new_position = random.choice(neighborhood['empties'])
@@ -56,15 +77,18 @@ class Automata(object):
         self.push_event(iteration + self.future_mitotic_event(), cell_copy.position)
         self.cells[new_position] = cell_copy
 
+    @timeit
     def boundary_cheking(self, position):
         delta = ((1-PREDEFINED_SPATIAL_BOUNDARY)*self.length)/2
         delta_origin, delta_boundary = (delta,delta,delta), (self.length-1-delta,self.length-1-delta,self.length-1-delta)
         return [True,True,True] == [delta_origin[pos] <= position[pos] <= delta_boundary[pos] for pos in range(3)]
 
+    @timeit
     def first_test(self, cell):
         spatial_boundary = self.boundary_cheking(cell.position)
         return self.experiments.growth_factor_cheking(cell.genome.sg, spatial_boundary)
 
+    @timeit
     def second_test(self, cell, iteration):
         neighborhood = self.grid.classify_neighborhood(self.grid.check_limits(self.grid.neighborhood(cell.position, 1), self.length), self.cells)
         is_neighborhood_full = False if len(neighborhood['empties']) > 0 else True
@@ -80,9 +104,11 @@ class Automata(object):
         else:
             return True
 
+    @timeit
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
+    @timeit
     def cancer_cells(self, cells):
         cont = 0
         for position,cell in cells.items():
@@ -90,6 +116,7 @@ class Automata(object):
                 cont += 1
         return cont
 
+    @timeit
     def cancer_full_cells(self, cells):
         cont = 0
         for position,cell in cells.items():
@@ -97,6 +124,7 @@ class Automata(object):
                 cont += 1
         return cont
 
+    @timeit
     def run(self):
         for iteration in range(self.iterations):
             if iteration%10 == 0:
