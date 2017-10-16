@@ -26,11 +26,6 @@ class Cell(object):
             if val== 0 and np.random.random() < 1/self.m:
                 setattr(self.genome, var, 1)
 
-    def kill_neighbor(self, neighbors):
-        if len(neighbors) > 0:
-            return random.choice(neighbors)
-        return None
-
     def perform_mitosis(self, position, i):
         self.decrease_telomer()
         self.increment_base_muration_rate(i)
