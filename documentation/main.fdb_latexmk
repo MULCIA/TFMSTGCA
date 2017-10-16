@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1508132290 "main.tex" "main.pdf" "main" 1508132292
+["pdflatex"] 1508132290 "main.tex" "main.pdf" "main" 1508133776
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm" 1136768653 1616 371d1ee60c04b008c8fd760060cd34f1 ""
@@ -278,9 +278,9 @@
   "trinidad-PhD.sty" 1507130309 27140 621006405a25055816ea776c8c48d4b1 ""
   (generated)
   "main.log"
+  "main.toc"
   "main.thm"
   "main.lof"
-  "main.toc"
+  "main.out"
   "main.aux"
   "main.pdf"
-  "main.out"

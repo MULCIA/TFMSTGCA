@@ -64,19 +64,6 @@ class TestAutomata(TestCase):
         result = self.automata.first_test(Cell((0,0,0),0,0,0,0,0,0,0))
         self.assertEqual(result, False)
 
-    def test_second_test_True(self):
-        result = [self.automata.second_test(Cell((0,0,0),0,1,0,0,0,0,0)) for i in range(10**4)]
-        self.assertTrue(result)
-        #self.assertTrue(1 <= result.count(True) <= 30)
-
-    def test_second_test_False(self):
-        """cell = Cell((0,0,0),0,0,0,0,0,50,0)
-        grid = Grid(1, 1, 1)
-        self.automata.grid = grid
-        result = self.automata.second_test(cell)
-        self.assertEqual(result, False)"""
-        self.assertTrue(True)
-
     def test_third_test_True(self):
         result = self.automata.third_test(Cell((0,0,0),0,0,0,1,0,50,0))
         self.assertEqual(result, True)
