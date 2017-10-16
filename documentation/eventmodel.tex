@@ -20,7 +20,7 @@ un determinado comportamiento canceroso. Estas mutaciones son las siguientes:
 \begin{itemize}
     \item \textbf{SG}: Autogeneración de los mensajes de crecimeinto. Esto es, la mutación que permite que la
     célula genere sus propios mensajes para ejecutar la división con idependencia externa.
-    \item \textbf{IGI}: Inibhición de las señales de anticrecimiento. Esto es, ante la recepción de una orden
+    \item \textbf{IGI}: Inhibición de las señales de anticrecimiento. Esto es, ante la recepción de una orden
     de detener su crecimiento, la célula tiene una mutación que le permite un mecanismo de ignorancia de los mismos.
     \item \textbf{EA}: Evasión de apoptosis. Esto es, la célula puede, mediante mutación, no hacer caso ante
     una orden de apoptosis, o muerte celular controlada.
@@ -36,8 +36,8 @@ desprotegido para futuras mutaciones y podrían ocurrir errores.
 
 \section{Parámetros globales}
 
-De cara a la simulación, existen una serie de parámetros globales que inciden en determinados mecanismos de la misma y
-, por tanto, afectan en la evolución de la misma. Esto son:
+De cara a la simulación, existen una serie de parámetros globales que inciden en determinados mecanismos y,
+por tanto, afectan en su evolución. Esto son:
 
 \begin{itemize}
     \item \textbf{t}: Tamaño de la rejilla.
@@ -72,11 +72,48 @@ El modelo de eventos, a la hora de realizar la mitosis (división celular), real
         espacio en el vecindario, la célula no podrá realizar la división. Excepto, que
         la mutación $IGI$ esté presente, en cuyo caso, reemplazará a un vecino con una
         probabilidad dada ($1/g$).
-        \item \textbf{Comprobación de potencial replicativo sin límites}: .
+        \item \textbf{Comprobación de potencial replicativo sin límites}: Si el tamaño del telómero
+        es 0, la célula muere. Excepto si el marcador $EI$ está presente.
     \end{itemize}
 \end{itemize}
 
 En estas pruebas, se utilizan los parámetros globales, además, de las propiedades y el genóma de la célula.
+
+Por tanto, si una célula pasa todas las pruebas podrá entrar en fase de mitosis.
+
+\section{Mitosis}
+
+La mitosis es la fase donde se realiza la división celular, lo cual origina una nueva célula, llamada
+célula hija, que es una copia exacta de la célula original.
+
+Durante este proceso, se pueden producir una serie de errores, bien de forma natural, o bien, debido
+mutaciones presentes en la célula original que hacen más probable un error.
+
+En este trabajo, el proceso de mitosis cuenta con los siguientes pasos:
+
+\begin{itemize}
+    \item Incremento de la tasa de mutación base $m$ (de acuerdo al parámetro golbal $i$) si el marcador
+    $GI$ está presente.
+    \item Añadir nuevas mutaciones a la célula de acuerdo a la tasa base de mutación ($1/m$).
+    \item Decrementar el telómero en ambas células en una unidad, siempre que su tamaño no sea 0.
+\end{itemize}
+
+A continuación, se programan nuevos eventos mitóticos para ambas hijas como se describe a continuación.
+
+\section{Eventos mitoticos}
+
+Un evento mitotico se puede ver como la posibilidad de que una célula ejecute o no la división (o mitosis),
+en el futuro.
+
+Todas las células en la rejilla contarán con un evento mitótico en el futuro. Cuando se selecciona una
+de las candidatas en cada iteración la célula candidata debe pasar las pruebas previas a la mitosis para ver
+si la misma puede o no ejecutar la mitosis. Si el resultado es positivo, se realiza la mitosis y se crean
+nuevos eventos mitóticos en el futuro para la célula original y, también, para la célula hija.
+Si el resultado es negativo, pero la célula no ha muerto, se programa un nuevo evento mitótico en el futuro.
+
+La programación de eventos mitóticos futuros consiste en la generación, de forma aleatoria, de un valor
+entre 5 y 10 iteraciones (ambas inclusive) del bucle principal. Estos valores tienen que ver con el ciclo de vida
+temporal de las células, sobre el cual, se detalla más información en la siguiente sección.
 
 \section{Equivalencia temporal}
 
