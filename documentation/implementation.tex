@@ -1,6 +1,6 @@
 Para realizar la implementación se ha optado por utilizar el lenguaje de programación $Python$, en
 su versión 3, concretamente, en el momento de la realización de este trabajo el desarrollo se ha realizado
-bajo la versión $3.6.2$ de dicho lenguaje.
+bajo la versión 3.6.2 de dicho lenguaje.
 
 $Python$ es un lenguaje multiparadigma que es ampliamente utilizado en ámbitos científicos y de investigación.
 Cuenta con multitud de herramientas para la realización de $tests$, gestión de dependencias, etc., entre las
@@ -9,4 +9,56 @@ que se encuentran $Unittest$ y $Pip$, que han sido empleadas en este trabajo.
 Como librerías se han empleado $Numpy$ y $Matplotlib$, las cuales, son casi un estándar dentro
 del mundo $Python$.
 
-...
+Para el desarrollo de este proyecto se ha optado por implementar la solución en orientado a objeto
+en su mayoría. El programa cuenta con un único punto de entrada, en este caso, siguendo el patrón
+\textit{Singleton}.
+
+En este punto de entrada, se establecen los valores de los parámetros por defecto que se desean
+para cada ejecución. Por defecto, el programa utiliza los valores por defectos establecidos en
+uno de los módulos en los que se divide el proyecto, y que se comentarán más adelante. Dichos valores,
+coinciden con los valores por defectos que se presentan en el artículo.
+
+En este caso, el programa cuenta con 6 módulos. El módulo principal, \textit{automata.py} presenta
+una clase que sigue el patrón \textit{Estrategia} y, el cual, engloba la función principal de ejecución,
+así como, el resto de funciones necesarias para su correcta ejecución. Además, importa y utiliza
+el resto de módulos, los caules, se describen a continuación.
+
+\section{Módulo \textit{genome.py}}
+
+En este módulo se presenta la clase que continen como propiedades las cinco variables
+binarias que representan la activación o no de determinadas mutaciones cancerosas, así como,
+algunas funciones de utilidad para la simulación referentes al genoma.
+
+Completar.
+
+\section{Módulo \textit{simulation\_globals.py}}
+
+Este módulo, contiene los valores, así como, la clase necesaria para su almacenaje, para
+los parámetros que intervienen en la simulación. Contiene la definición de constantes que
+representan dichos valores junto a sus valores por defecto.
+
+Además, contiene otra serie de valores como constantes que son necesarios y que no forman parte de la
+clase \textit{SimulationGlobals} y que no son suceptibles de variar.
+
+\section{Módulo \textit{cell.py}}
+
+El módulo \textit{cell.py} cuenta con una clase que modela la célula. Utiliza la composición
+para incluir el objeto \textit{Genome} frente al uso de la herencia, lo cual, presenta ventajas
+de cara a la refactorización.
+
+Cuenta, además de con el objeto \textit{Genome}, con algunas propiedades extra, como por ejemplo,
+el tamaño del telómero ($tl$) y la tasa de mutación base ($m$) para cada célula.
+
+Finalmente, presenta algunos métodos necesarios en la simulación para interactuar con la célula.
+
+\section{Módulo \textit{experiments.py}}
+
+Completar.
+
+\section{Módulo \textit{grid.py}}
+
+Completar.
+
+\section{Módulo \textit{automata.py}}
+
+Completar.
