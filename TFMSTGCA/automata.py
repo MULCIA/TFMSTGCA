@@ -77,27 +77,6 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
-    def cancer_cells(self, cells):
-        cont = 0
-        for position,cell in cells.items():
-            if str(cell) != '00000':
-                cont += 1
-        return cont
-
-    def cancer_full_cells(self, cells):
-        cont = 0
-        for position,cell in cells.items():
-            if str(cell) == '11111':
-                cont += 1
-        return cont
-
-    def pretty_show(self, iteration):
-        print('Iteracion: ' + str(iteration))
-        print('Numero total de celulas: ' + str(len(self.cells)))
-        print('Celulas cancerosas: ' + str(self.cancer_cells(self.cells)))
-        print('Celulas con todas las mutaciones: ' + str(self.cancer_full_cells(self.cells)))
-        print('>>>>>>>')
-
     def run(self):
         for iteration in range(self.iterations):
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []

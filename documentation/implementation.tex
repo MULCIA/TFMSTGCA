@@ -53,7 +53,25 @@ Finalmente, presenta algunos métodos necesarios en la simulación para interact
 
 \section{Módulo \textit{experiments.py}}
 
-Completar.
+En este módulo, se encuentran las funciones que se utilizan en el módulo
+\textit{automata.py} para realizar los experimentos o pruebas previas a la mitosis. Estos son:
+
+\begin{itemize}
+  \item \textit{random\_death\_test()}: Prueba que indica si hay o no muerte aleatoria de la célula.
+  \item \textit{random\_death\_test(n, ea)}: Prueba que indica si hay muerte por daño genético según
+  el número de mutaciones de la célula que está realizando el proceso de mitosis, excepto que esté
+  presente el marcador con la mutación que permite evadir la apoptosis.
+  \item \textit{random\_death\_test(sg, spatial\_boundary)}: Prueba que está dentro del
+  límite espacial o, lo que es lo mismo, si existe suficiente factor de crecimiento como
+  para ejecutar la mitosis. Excepto, si tiene presente el marcador $sg$, que permite
+  ejecutar la mitosis si la célula se encuentra fuera de dicho espacio.
+  \item \textit{random\_death\_test(igi)}: Prueba que comprueba si existe espacio para ubicar la célula
+  hija una vez realizada la mitosis. Si no hay espacio y la célula tiene la mutación asociada al
+  marcador $igi$, podrá matar a un vecino para ubicar a la célula hija.
+  \item \textit{random\_death\_test(tl, ei)}: Prueba que comprueba si el telómero tiene tamaño
+  mayor a $0$ para realizar la mitosis. Si el tamaño es $0$, la célula puede realizar mitosis
+  si tiene presente la mutación asociada al marcador $ei$.
+\end{itemize}
 
 \section{Módulo \textit{grid.py}}
 
@@ -62,3 +80,5 @@ Completar.
 \section{Módulo \textit{automata.py}}
 
 Completar.
+
+\section{Módulo \textit{analytics.py}}

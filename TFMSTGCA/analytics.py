@@ -99,3 +99,9 @@ class Analytics(object):
             if cell.genome.gi:
                 cont += 1
         return cont
+
+    def pretty_show(self, iteration, cells):
+        print('Iteracion: ' + str(iteration))
+        print('Numero total de celulas: ' + str(len(cells)))
+        print('Celulas cancerosas: ' + str(self.sum_carcinogenic_cells(cells)))
+        print('>>>>>>>')
