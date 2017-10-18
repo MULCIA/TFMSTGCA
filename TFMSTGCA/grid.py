@@ -36,3 +36,17 @@ class Grid(object):
     def neighborhood(self, origin, radio):
         x0,y0,z0 = origin
         return [(i+x0,j+y0,k+z0) for i in range(-radio, radio+1) for j in range(-radio, radio+1) for k in range(-radio, radio+1) if (i+x0,j+y0,k+z0) != origin]
+
+    def build(self):
+        grid = np.empty((self.height,self.width,self.depth))
+        grid = grid.astype(np.str_)
+        grid.fill('')
+        return grid
+
+    def create_numpy_grid(self, cells):
+        grid = np.empty((self.height,self.width,self.depth))
+        grid = grid.astype(np.str_)
+        grid.fill('')
+        for position, cell in cells.items():
+            grid[position[0]][position[1]][position[2]] = cell
+        return grid
