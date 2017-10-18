@@ -8,7 +8,7 @@ class Analytics(object):
         self.cells = cells
         self.np_grid = np_grid
 
-    def plot_cells(self):
+    def plot_cells(self, measure):
         pass
 
     def plot_grid(self):
