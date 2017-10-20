@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from .cell import Cell
 
-class Analytics(object):
+class Analytics:
 
     def plot_cells(self, measure):
         """
