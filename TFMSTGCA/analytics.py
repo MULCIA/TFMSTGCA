@@ -1,6 +1,4 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from .cell import Cell
 
 class Analytics:
 
@@ -53,49 +51,49 @@ class Analytics:
 
     def sum_healthy_cells(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if str(cell) == '00000':
                 cont += 1
         return cont
 
     def sum_carcinogenic_cells(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if str(cell) != '00000':
                 cont += 1
         return cont
 
     def sum_sg_mutations(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if cell.genome.sg:
                 cont += 1
         return cont
 
     def sum_igi_mutations(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if cell.genome.igi:
                 cont += 1
         return cont
 
     def sum_ea_mutations(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if cell.genome.ea:
                 cont += 1
         return cont
 
     def sum_ei_mutations(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if cell.genome.ei:
                 cont += 1
         return cont
 
     def sum_gi_mutations(self, cells):
         cont = 0
-        for position,cell in cells.items():
+        for _,cell in cells.items():
             if cell.genome.gi:
                 cont += 1
         return cont
