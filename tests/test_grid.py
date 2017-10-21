@@ -21,9 +21,11 @@ class TestExperiments(TestCase):
 
     def test_build(self):
         grid = self.grid.build()
-        self.assertEqual(grid[1][1][1], '')
+        self.assertEqual(grid[0][0][0], -1)
+        self.assertEqual(grid[1][1][1], -1)
 
     def test_create_numpy_grid(self):
         cells = {(1,1,1): Cell((1,1,1),0,0,0,0,0,50,10**5)}
         grid = self.grid.create_numpy_grid(cells)
-        self.assertEqual(grid[1][1][1], '00000')
+        self.assertEqual(grid[0][0][0], -1)
+        self.assertEqual(grid[1][1][1], 0)

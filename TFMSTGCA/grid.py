@@ -39,14 +39,12 @@ class Grid(object):
 
     def build(self):
         grid = np.empty((self.height,self.width,self.depth))
-        grid = grid.astype(np.str_)
-        grid.fill('')
+        grid = grid.astype(np.int)
+        grid.fill(-1)
         return grid
 
     def create_numpy_grid(self, cells):
-        grid = np.empty((self.height,self.width,self.depth))
-        grid = grid.astype(np.str_)
-        grid.fill('')
+        grid = self.build()
         for position, cell in cells.items():
-            grid[position[0]][position[1]][position[2]] = cell
+            grid[position[0]][position[1]][position[2]] = int('0b' + str(cell), 2)
         return grid
