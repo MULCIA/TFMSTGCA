@@ -2,7 +2,7 @@ from unittest import TestCase
 from TFMSTGCA.cell import Cell
 from TFMSTGCA.grid import Grid
 
-class TestExperiments(TestCase):
+class TestGrid(TestCase):
 
     def setUp(self):
         self.grid = Grid(3, 3, 3)
