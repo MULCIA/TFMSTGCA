@@ -136,15 +136,3 @@ unas 77,4 semanas aproximadamente.
 \section{Bucle principal del modelo de eventos}
 
 Prueba:
-
-\begin{algorithmic}
-    \Require $T_{0}$
-    \For {$j\leftarrow1$ in $n - 1$}
-        \State copiar($T^{j-1}_{0}, \{T^{j}_{1},...,T^{j}_{n}\}$)
-        \For {$i\leftarrow1$ in $n$}
-            \State $\bar{T}^{j}_{i}$ \leftarrow quitar($T^{j}_{i}, \{p_{j}r : r \neq i\} \cup \{p_{k}i : j + 1 \leq k \leq n\} $)
-        \EndFor
-        \State uni'on($\{\bar{T}_{1},...,\bar{T}_{n}\},T^{j}$)
-    \EndFor
-    \Return $T_{n - 1}$
-\end{algorithmic}
