@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 class Analytics:
 
@@ -47,7 +48,16 @@ class Analytics:
         plt.show()
 
     def plot_grid(self, np_grid):
-        pass
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        #ax.scatter(x, y, -z, zdir='z', c= 'red')
+        #ax.plot(np_grid[:,0],np_grid[:,1],np_grid[:,2])
+        xs = np_grid[:,0]
+        ys = np_grid[:,1]
+        zs = np_grid[:,2]
+        ax.scatter(xs, ys, zs, c='red', zdir='z')
+        #plt.savefig("demo.png")
+        plt.show()
 
     def sum_healthy_cells(self, cells):
         cont = 0
