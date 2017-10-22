@@ -1,13 +1,17 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+import plotly
+import plotly.graph_objs as go
+import numpy as np
+
 class Analytics:
 
     def plot_cells(self, measure):
         """
         measure = {
             'iterations': [1,2,3,4],
-            'cells': [10,350,352,435]
+            'cells': [10,350,352,435],
             'healthy': [10,350,351,400],
             'carcinogenic': [0,0,1,35]
         }
@@ -19,7 +23,7 @@ class Analytics:
         """
         measure = {
             'iterations': [1,2,3,4],
-            'cells': [10,350,352,435]
+            'cells': [10,350,352,435],
             'healthy': [10,350,351,400],
             'carcinogenic': [0,0,1,35]
         }
@@ -55,6 +59,38 @@ class Analytics:
         z = [position[2] for position in cells_positions]
         ax.scatter(x, y, z, zdir='z', c='red')
         plt.show()
+
+    def plot_grid_plotly(self, cells_positions):
+        x = [position[0] for position in cells_positions]
+        y = [position[1] for position in cells_positions]
+        z = [position[2] for position in cells_positions]
+
+        c = [value for value in range(32)]
+
+        trace1 = go.Scatter3d(
+            x=x,
+            y=y,
+            z=z,
+            mode='markers',
+            marker=dict(
+                size=24,
+                color=c[::-1],        # set color to an array/list of desired values
+                colorscale='Viridis',   # choose a colorscale
+                opacity=0.8
+            )
+        )
+
+        data = [trace1]
+        layout = go.Layout(
+            margin=dict(
+                l=0,
+                r=0,
+                b=0,
+                t=0
+            )
+        )
+        fig = go.Figure(data=data, layout=layout)
+        plotly.offline.plot(fig, filename='3d-scatter-colorscale')
 
     def sum_healthy_cells(self, cells):
         cont = 0

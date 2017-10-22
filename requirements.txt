@@ -4,3 +4,4 @@ numpy
 matplotlib
 nose
 codacy-coverage
+plotly

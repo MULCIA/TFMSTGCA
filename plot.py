@@ -23,3 +23,26 @@ cells = {
 analytics = Analytics()
 
 analytics.plot_grid(cells.keys())
+analytics.plot_grid_plotly(cells.keys())
+
+measure = {
+                'iterations': [1,2,3,4],
+                'cells': [10,350,352,435],
+                'healthy': [10,350,351,400],
+                'carcinogenic': [0,0,1,35]
+            }
+
+analytics.plot_cells(measure)
+
+analytics.plot_health_vs_carcino(measure)
+
+mutations = {
+                'iterations': [1,2,3,4],
+                'sg': [0,0,1,25],
+                'igi': [0,0,0,5],
+                'ea': [0,0,0,5],
+                'ei': [0,0,0,0],
+                'gi': [0,0,0,0]
+            }
+
+analytics.plot_mutations(mutations)
