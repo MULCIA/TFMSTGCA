@@ -21,10 +21,5 @@ cells = {
         }
 
 analytics = Analytics()
-grid = Grid(10,10,10)
 
-np_grid = grid.create_numpy_grid(cells)
-
-print(np_grid[5][5][5])
-
-analytics.plot_grid(np_grid)
+analytics.plot_grid(cells.keys())

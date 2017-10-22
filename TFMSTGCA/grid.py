@@ -37,14 +37,14 @@ class Grid(object):
         x0,y0,z0 = origin
         return [(i+x0,j+y0,k+z0) for i in range(-radio, radio+1) for j in range(-radio, radio+1) for k in range(-radio, radio+1) if (i+x0,j+y0,k+z0) != origin]
 
-    def build(self):
+"""    def build(self):
         grid = np.empty((self.height,self.width,self.depth))
         grid = grid.astype(np.int)
         grid.fill(-1)
-        return grid
+        return grid"""
 
-    def create_numpy_grid(self, cells):
+"""    def create_numpy_grid(self, cells):
         grid = self.build()
         for position, cell in cells.items():
             grid[position[0]][position[1]][position[2]] = int('0b' + str(cell), 2)
-        return grid
+        return grid"""

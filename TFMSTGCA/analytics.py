@@ -47,24 +47,13 @@ class Analytics:
                 )
         plt.show()
 
-    def plot_grid(self, np_grid):
+    def plot_grid(self, cells_positions):
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
-        #ax.scatter(x, y, -z, zdir='z', c= 'red')
-        #ax.plot(np_grid[:,0],np_grid[:,1],np_grid[:,2])
-        """xs = np_grid[:][][]
-        ys = np_grid[][:][]
-        zs = np_grid[][][:]
-        print(xs)
-        print(ys)
-        print(zs)
-        ax.scatter(xs, ys, zs, c='green', zdir='x')"""
-        #z,x,y = np_grid.nonzero()
-        x = np_grid.sum(0)
-        y = np_grid.sum(1)
-        z = np_grid.sum(2)
-        ax.scatter(x, y, -z, zdir='z', c='red')
-        #plt.savefig("demo.png")
+        x = [position[0] for position in cells_positions]
+        y = [position[1] for position in cells_positions]
+        z = [position[2] for position in cells_positions]
+        ax.scatter(x, y, z, zdir='z', c='red')
         plt.show()
 
     def sum_healthy_cells(self, cells):
