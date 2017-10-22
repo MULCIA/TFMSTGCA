@@ -30,6 +30,8 @@ For running it, type:
 
 `$ python3 automata.py`
 
+![Grid example. Yellow is healty and green is cancer.](./readme_images/grid_example.png)
+
 ## Running on Docker
 
 If you prefer not to install anything in your environment, you can use Docker.
