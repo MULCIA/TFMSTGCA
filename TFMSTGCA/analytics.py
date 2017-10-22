@@ -52,10 +52,18 @@ class Analytics:
         ax = fig.add_subplot(111, projection='3d')
         #ax.scatter(x, y, -z, zdir='z', c= 'red')
         #ax.plot(np_grid[:,0],np_grid[:,1],np_grid[:,2])
-        xs = np_grid[:,0]
-        ys = np_grid[:,1]
-        zs = np_grid[:,2]
-        ax.scatter(xs, ys, zs, c='red', zdir='z')
+        """xs = np_grid[:][][]
+        ys = np_grid[][:][]
+        zs = np_grid[][][:]
+        print(xs)
+        print(ys)
+        print(zs)
+        ax.scatter(xs, ys, zs, c='green', zdir='x')"""
+        #z,x,y = np_grid.nonzero()
+        x = np_grid.sum(0)
+        y = np_grid.sum(1)
+        z = np_grid.sum(2)
+        ax.scatter(x, y, -z, zdir='z', c='red')
         #plt.savefig("demo.png")
         plt.show()
 
