@@ -7,4 +7,4 @@ if __name__ == "__main__":
 
     automata = Automata(50, 10, simulationGlobals)
 
-    automata.run()
+    automata.run(False)

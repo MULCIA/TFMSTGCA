@@ -1,9 +1,11 @@
 import random
+import copy
 import numpy as np
 from .simulation_globals import PREDEFINED_SPATIAL_BOUNDARY, NEIGHBORHOOD_RADIUS
 from .experiments import Experiments
 from .cell import Cell
 from .grid import Grid
+from .analytics import Analytics
 
 class Automata(object):
 
@@ -17,6 +19,7 @@ class Automata(object):
         self.cells = {position: Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)}
         self.mitotic_agenda = {self.future_mitotic_event(): [position]}
         self.grid = Grid(self.length, self.length, self.length)
+        self.analytics = Analytics()
 
     def future_mitotic_event(self):
         return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
@@ -77,8 +80,12 @@ class Automata(object):
     def third_test(self, cell):
         return self.experiments.limitless_replicative_potencial_checking(cell.tl, cell.genome.ei)
 
-    def run(self):
+    def run(self, statics_enable):
+        if statics_enable:
+            statics = dict()
         for iteration in range(self.iterations):
+            if statics_enable:
+                statics[iteration] = copy.deepcopy(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
                 cell = self.cells[event]
@@ -95,3 +102,10 @@ class Automata(object):
                         self.push_event(iteration + self.future_mitotic_event(), event)
                     else: # Telomer is 0 and EI is OFF
                         self.kill_cell(event)
+        if statics_enable:
+            result = self.analytics.get_measurements(statics)
+            self.analytics.plot_cells(result[0])
+            self.analytics.plot_health_vs_carcino(result[0])
+            self.analytics.plot_mutations(result[1])
+            self.analytics.plot_grid(self.cells)
+            self.analytics.plot_grid_plotly(self.cells)

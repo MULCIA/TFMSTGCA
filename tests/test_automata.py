@@ -79,5 +79,5 @@ class TestAutomata(TestCase):
 
     def test_run(self):
         self.automata.iterations = 1
-        self.automata.run()
+        self.automata.run(False)
         self.assertTrue(0 <= len(self.automata.cells) <= 2)
