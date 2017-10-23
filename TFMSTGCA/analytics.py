@@ -7,6 +7,51 @@ import numpy as np
 
 class Analytics:
 
+    """
+        iterations_cells = {
+            1:  {(0,0,0): Cell(...)},
+            10: {(0,0,1): Cell(...)}
+        }
+    """
+    def get_measurements(self, iteration_cells):
+        measure = {
+            'iterations': [],
+            'cells': [],
+            'healthy': [],
+            'carcinogenic': []
+        }
+        mutation_measure = {
+            'iterations': [],
+            'sg': [],
+            'igi': [],
+            'ea': [],
+            'ei': [],
+            'gi': []
+        }
+        for iteration,cells in iteration_cells.items():
+            iterations_measure = measure['iterations']
+            iterations_measure.append(iteration)
+            iterations_mutation = mutation_measure['iterations']
+            iterations_mutation.append(iteration)
+            analytics = self.sum_analytics_cells(cells)
+            cells_length = measure['cells']
+            cells_length.append(len(cells))
+            healthy_length = measure['healthy']
+            healthy_length.append(analytics[0])
+            carcinogenic_length = measure['carcinogenic']
+            carcinogenic_length.append(analytics[1])
+            sg_length = mutation_measure['sg']
+            sg_length.append(analytics[2])
+            igi_length = mutation_measure['igi']
+            igi_length.append(analytics[3])
+            ea_length = mutation_measure['ea']
+            ea_length.append(analytics[4])
+            ei_length = mutation_measure['ei']
+            ei_length.append(analytics[5])
+            gi_length = mutation_measure['gi']
+            gi_length.append(analytics[6])
+        return (measure, mutation_measure)
+
     def plot_cells(self, measure):
         """
         measure = {
@@ -33,7 +78,7 @@ class Analytics:
 
     def plot_mutations(self, measure):
         """
-        measure = {
+        mutation_measure = {
             'iterations': [1,2,3,4],
             'sg': [0,0,1,25],
             'igi': [0,0,0,5],
@@ -92,54 +137,24 @@ class Analytics:
         fig = go.Figure(data=data, layout=layout)
         plotly.offline.plot(fig, filename='3d-scatter-colorscale')
 
-    def sum_healthy_cells(self, cells):
-        cont = 0
+    def sum_analytics_cells(self, cells):
+        cont_healty, cont_carcinogenic, cont_sg, cont_igi, cont_ea, cont_ei, cont_gi = 0,0,0,0,0,0,0
         for _,cell in cells.items():
             if str(cell) == '00000':
-                cont += 1
-        return cont
-
-    def sum_carcinogenic_cells(self, cells):
-        cont = 0
-        for _,cell in cells.items():
-            if str(cell) != '00000':
-                cont += 1
-        return cont
-
-    def sum_sg_mutations(self, cells):
-        cont = 0
-        for _,cell in cells.items():
+                cont_healty += 1
+            else:
+                cont_carcinogenic += 1
             if cell.genome.sg:
-                cont += 1
-        return cont
-
-    def sum_igi_mutations(self, cells):
-        cont = 0
-        for _,cell in cells.items():
+                cont_sg += 1
             if cell.genome.igi:
-                cont += 1
-        return cont
-
-    def sum_ea_mutations(self, cells):
-        cont = 0
-        for _,cell in cells.items():
+                cont_igi += 1
             if cell.genome.ea:
-                cont += 1
-        return cont
-
-    def sum_ei_mutations(self, cells):
-        cont = 0
-        for _,cell in cells.items():
+                cont_ea += 1
             if cell.genome.ei:
-                cont += 1
-        return cont
-
-    def sum_gi_mutations(self, cells):
-        cont = 0
-        for _,cell in cells.items():
+                cont_ei += 1
             if cell.genome.gi:
-                cont += 1
-        return cont
+                cont_gi += 1
+        return (cont_healty, cont_carcinogenic, cont_sg, cont_igi, cont_ea, cont_ei, cont_gi)
 
     def pretty_show(self, iteration, cells):
         print('Iteracion: ' + str(iteration))
