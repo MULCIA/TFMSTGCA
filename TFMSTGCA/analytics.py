@@ -118,7 +118,7 @@ class Analytics:
             z=z,
             mode='markers',
             marker=dict(
-                size=24,
+                size=8,
                 color=c[::-1],        # set color to an array/list of desired values
                 colorscale='Viridis',   # choose a colorscale
                 opacity=0.8
@@ -159,5 +159,6 @@ class Analytics:
     def pretty_show(self, iteration, cells):
         print('Iteracion: ' + str(iteration))
         print('Numero total de celulas: ' + str(len(cells)))
-        print('Celulas cancerosas: ' + str(self.sum_carcinogenic_cells(cells)))
+        result = self.sum_analytics_cells(cells)
+        print('Celulas cancerosas: ' + str(result[1]))
         print('>>>>>>>')
