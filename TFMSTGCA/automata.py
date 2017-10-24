@@ -84,7 +84,8 @@ class Automata(object):
         if statics_enable:
             statics = dict()
         for iteration in range(self.iterations):
-            if statics_enable:
+            print(iteration)
+            if statics_enable and iteration%50 == 0:
                 statics[iteration] = copy.deepcopy(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
@@ -104,9 +105,9 @@ class Automata(object):
                         self.kill_cell(event)
         if statics_enable:
             result = self.analytics.get_measurements(statics)
-            self.analytics.plot_cells(result[0])
-            self.analytics.plot_health_vs_carcino(result[0])
-            self.analytics.plot_mutations(result[1])
-            self.analytics.plot_grid(self.cells)
+            #self.analytics.plot_cells(result[0])
+            #self.analytics.plot_health_vs_carcino(result[0])
+            #self.analytics.plot_mutations(result[1])
+            #self.analytics.plot_grid(self.cells)
             self.analytics.plot_grid_plotly(self.cells)
-            self.analytics.pretty_show(100, self.cells)
+            self.analytics.pretty_show(150, self.cells)

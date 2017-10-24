@@ -110,7 +110,7 @@ class Analytics:
         y = [position[1] for position in cells_positions]
         z = [position[2] for position in cells_positions]
 
-        c = [value for value in range(32)]
+        c = [value for value in range(1000)]
 
         trace1 = go.Scatter3d(
             x=x,
@@ -119,7 +119,7 @@ class Analytics:
             mode='markers',
             marker=dict(
                 size=8,
-                color=c[::-1],        # set color to an array/list of desired values
+                color=c,        # set color to an array/list of desired values
                 colorscale='Viridis',   # choose a colorscale
                 opacity=0.8
             )
