@@ -106,26 +106,62 @@ class Analytics:
         plt.show()
 
     def plot_grid_plotly(self, cells_positions):
-        x = [position[0] for position in cells_positions]
-        y = [position[1] for position in cells_positions]
-        z = [position[2] for position in cells_positions]
+        h_x, h_y, h_z, c_x, c_y, c_z = [], [], [], [], [], []
+        for position, cell in cells_positions.items():
+            if str(cell) == '00000':
+                h_x.append(position[0])
+                h_y.append(position[1])
+                h_z.append(position[2])
+            else:
+                c_x.append(position[0])
+                c_y.append(position[1])
+                c_z.append(position[2])
 
-        c = [value for value in range(1000)]
+        """h_x = [position[0] for position in cells_positions if str(cells_positions[position]) == '00000']
+        h_y = [position[1] for position in cells_positions if str(cells_positions[position]) == '00000']
+        h_z = [position[2] for position in cells_positions if str(cells_positions[position]) == '00000']
+        c_x = [position[0] for position in cells_positions if str(cells_positions[position]) != '00000']
+        c_y = [position[1] for position in cells_positions if str(cells_positions[position]) != '00000']
+        c_z = [position[2] for position in cells_positions if str(cells_positions[position]) != '00000']"""
 
-        trace1 = go.Scatter3d(
-            x=x,
-            y=y,
-            z=z,
+        #c = [value for value in range(32)]
+
+        #c = [str(cell) for cell in cells_positions.values()]
+
+        trace_healthy = go.Scatter3d(
+            x=h_x,
+            y=h_y,
+            z=h_z,
             mode='markers',
             marker=dict(
                 size=8,
-                color=c,        # set color to an array/list of desired values
-                colorscale='Viridis',   # choose a colorscale
+                #color=c,        # set color to an array/list of desired values
+                color='rgb(217, 217, 217)',
+                #colorscale='YlOrRd',
+                #colorscale='Viridis',   # choose a colorscale
                 opacity=0.8
             )
         )
 
-        data = [trace1]
+        #rgb(127, 127, 127)
+        #rgb(217, 217, 217)
+
+        trace_cancer = go.Scatter3d(
+            x=c_x,
+            y=c_y,
+            z=c_z,
+            mode='markers',
+            marker=dict(
+                size=8,
+                #color=c,        # set color to an array/list of desired values
+                color='rgb(1, 83, 0)',
+                #colorscale='YlOrRd',
+                #colorscale='Viridis',   # choose a colorscale
+                opacity=0.8
+            )
+        )
+
+        data = [trace_healthy, trace_cancer]
         layout = go.Layout(
             margin=dict(
                 l=0,

@@ -28,14 +28,14 @@ iterations_cells = {
 
 analytics = Analytics()
 
-analytics.plot_grid(cells.keys())
-analytics.plot_grid_plotly(cells.keys())
+#analytics.plot_grid(cells.keys())
+analytics.plot_grid_plotly(cells)
 
-result = analytics.get_measurements(iterations_cells)
+"""result = analytics.get_measurements(iterations_cells)
 measure, mutations = result[0], result[1]
 
 analytics.plot_cells(measure)
 
 analytics.plot_health_vs_carcino(measure)
 
-analytics.plot_mutations(mutations)
+analytics.plot_mutations(mutations)"""
