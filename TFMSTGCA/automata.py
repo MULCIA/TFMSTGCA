@@ -28,21 +28,21 @@ class Automata(object):
         if iteration in self.mitotic_agenda:
             events = self.mitotic_agenda[iteration]
             events.append(event)
-            self.mitotic_agenda[iteration] = events
+            #self.mitotic_agenda[iteration] = events # TODO: Borrar si no se observan problemas.
         else:
             self.mitotic_agenda[iteration] = [event]
 
     def pop_events(self, iteration):
         events = self.mitotic_agenda[iteration]
-        del self.mitotic_agenda[iteration]
+        #del self.mitotic_agenda[iteration] # TODO: Borrar si no se observan problemas.
         return events
 
     def discard_event(self, position, origin):
-        for iteration in range(origin, origin+11):
+        for iteration in range(origin, origin+12):
             if iteration in self.mitotic_agenda and position in self.mitotic_agenda[iteration]:
                 events = self.mitotic_agenda[iteration]
                 events.remove(position)
-                self.mitotic_agenda[iteration] = events
+                #self.mitotic_agenda[iteration] = events # TODO: Borrar si no se observan problemas.
 
     def kill_cell(self, position):
         del self.cells[position]
@@ -89,6 +89,7 @@ class Automata(object):
                 statics[iteration] = copy.deepcopy(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
+                #if event in self.cells: # TODO; Probar sin esta instruccion tras los ultimos cambios
                 cell = self.cells[event]
                 if self.experiments.random_death_test():
                     self.kill_cell(event)
@@ -103,6 +104,8 @@ class Automata(object):
                         self.push_event(iteration + self.future_mitotic_event(), event)
                     else: # Telomer is 0 and EI is OFF
                         self.kill_cell(event)
+            if iteration in self.mitotic_agenda:
+                del self.mitotic_agenda[iteration] # TODO: Probar esto para ver si se evita que la agenda ocupe mucha memoria
         if statics_enable:
             result = self.analytics.get_measurements(statics)
             #self.analytics.plot_cells(result[0])

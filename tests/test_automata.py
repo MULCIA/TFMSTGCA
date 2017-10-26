@@ -21,7 +21,7 @@ class TestAutomata(TestCase):
         iteration = 5
         self.automata.mitotic_agenda[iteration] = "Event!"
         self.automata.pop_events(iteration)
-        self.assertTrue(iteration not in self.automata.mitotic_agenda)
+        self.assertTrue(iteration in self.automata.mitotic_agenda)
 
     def test_push_event_create(self):
         event = (1,1,1)
