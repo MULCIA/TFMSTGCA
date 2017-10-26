@@ -30,9 +30,7 @@ For running it, type:
 
 `$ python3 automata.py`
 
-![Grid example. Yellow is healty and green is cancer.](./readme_images/grid_example.png)
-
-![Grid example. Healthy spheroid.](./readme_images/grid_example2.png)
+![Grid example. Grey is healty and green is cancer.](./readme_images/grid_example.png)
 
 ## Running on Docker
 
