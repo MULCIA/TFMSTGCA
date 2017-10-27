@@ -4,29 +4,30 @@
 \BOOKMARK [1][-]{section.2.2}{Alcance}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{El c\341ncer}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.4}{Los aut\363matas celulares}{chapter.2}% 6
-\BOOKMARK [0][-]{chapter.3}{Modelo de eventos}{}% 7
-\BOOKMARK [1][-]{section.3.1}{Las c\351lulas, genoma y propiedades}{chapter.3}% 8
-\BOOKMARK [1][-]{section.3.2}{Par\341metros globales}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.3}{Pruebas previas a la mitosis}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.4}{Mitosis}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.5}{Eventos mitoticos}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.6}{Equivalencia temporal}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.7}{Bucle principal del modelo de eventos}{chapter.3}% 14
-\BOOKMARK [0][-]{chapter.4}{Implementaci\363n}{}% 15
-\BOOKMARK [1][-]{section.4.1}{M\363dulo genome.py}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.2}{M\363dulo simulation\137globals.py}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.3}{M\363dulo cell.py}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.4}{M\363dulo experiments.py}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.5}{M\363dulo grid.py}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.6}{M\363dulo automata.py}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.7}{M\363dulo analytics.py}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Experimentos de los autores}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Influencia del par\341metro Tasa de mutaci\363n base \(m\)}{chapter.5}% 24
-\BOOKMARK [2][-]{subsection.5.1.1}{Experimento 1: Tasa de mutaci\363n base igual a 10.000}{section.5.1}% 25
-\BOOKMARK [2][-]{subsection.5.1.2}{Experimento 2: Tasa de mutaci\363n base igual a 1.000}{section.5.1}% 26
-\BOOKMARK [2][-]{subsection.5.1.3}{Experimento 3: Tasa de mutaci\363n base igual a 100}{section.5.1}% 27
-\BOOKMARK [1][-]{section.5.2}{Influencia del resto de par\341metros}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.3}{Influencia de par\341metros con rejilla completa de c\351lulas sanas}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.4}{Relevancia de los marcadores}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.5}{Comportamiento de las transiciones}{chapter.5}% 31
-\BOOKMARK [0][-]{chapter.6}{Resultados propios}{}% 32
+\BOOKMARK [0][-]{chapter.3}{Estado del arte}{}% 7
+\BOOKMARK [0][-]{chapter.4}{Modelo de eventos}{}% 8
+\BOOKMARK [1][-]{section.4.1}{Las c\351lulas, genoma y propiedades}{chapter.4}% 9
+\BOOKMARK [1][-]{section.4.2}{Par\341metros globales}{chapter.4}% 10
+\BOOKMARK [1][-]{section.4.3}{Pruebas previas a la mitosis}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.4}{Mitosis}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.5}{Eventos mit\363ticos}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.6}{Equivalencia temporal}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.7}{Bucle principal del modelo de eventos}{chapter.4}% 15
+\BOOKMARK [0][-]{chapter.5}{Implementaci\363n}{}% 16
+\BOOKMARK [1][-]{section.5.1}{M\363dulo genome.py}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.2}{M\363dulo simulation\137globals.py}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.3}{M\363dulo cell.py}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.4}{M\363dulo experiments.py}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.5}{M\363dulo grid.py}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.6}{M\363dulo automata.py}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.7}{M\363dulo analytics.py}{chapter.5}% 23
+\BOOKMARK [0][-]{chapter.6}{Experimentos de los autores}{}% 24
+\BOOKMARK [1][-]{section.6.1}{Influencia del par\341metro Tasa de mutaci\363n base \(m\)}{chapter.6}% 25
+\BOOKMARK [2][-]{subsection.6.1.1}{Experimento 1: Tasa de mutaci\363n base igual a 10.000}{section.6.1}% 26
+\BOOKMARK [2][-]{subsection.6.1.2}{Experimento 2: Tasa de mutaci\363n base igual a 1.000}{section.6.1}% 27
+\BOOKMARK [2][-]{subsection.6.1.3}{Experimento 3: Tasa de mutaci\363n base igual a 100}{section.6.1}% 28
+\BOOKMARK [1][-]{section.6.2}{Influencia del resto de par\341metros}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.3}{Influencia de par\341metros con rejilla completa de c\351lulas sanas}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.4}{Relevancia de los marcadores}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.5}{Comportamiento de las transiciones}{chapter.6}% 32
+\BOOKMARK [0][-]{chapter.7}{Resultados propios}{}% 33

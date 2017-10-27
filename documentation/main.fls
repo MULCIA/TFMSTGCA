@@ -547,6 +547,8 @@ INPUT abstract.tex
 INPUT abstract.tex
 INPUT introduction.tex
 INPUT introduction.tex
+INPUT stateoftheart.tex
+INPUT stateoftheart.tex
 INPUT eventmodel.tex
 INPUT eventmodel.tex
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd

@@ -18,24 +18,28 @@
 
 \sortlist[entry]{nty/global/}
   \entry{jsantos-amonteagudo-1-2014}{article}{}
-    \name{author}{1}{}{%
-      {{hash=y√MJS}{%
-         prefix={y\bibnamedelima √Ångel},
-         prefix_i={y\bibinitperiod\bibinitdelim √\bibinitperiod},
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Santos},
+         family_i={S\bibinitperiod},
+         given={Jos√©},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=√M}{%
+         prefix={√Ångel},
+         prefix_i={√\bibinitperiod},
          family={Monteagudo},
          family_i={M\bibinitperiod},
-         given={Jos√©\bibnamedelima Santos},
-         given_i={J\bibinitperiod\bibinitdelim S\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MJSy√1}
-    \strng{fullhash}{MJSy√1}
+    \strng{namehash}{SJM√1}
+    \strng{fullhash}{SJM√1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{M}
-    \field{sortinithash}{M}
-    \field{title}{An√°lisis de las transiciones de comportamiento en
-  crecimiento de tumores usando una simulaci√≥n con aut√≥mata celular}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Analysis of behaviour transitions in tumor growth using a
+  cellular automaton simulation}
     \field{journaltitle}{IET Systems Biology}
     \field{year}{2014}
   \endentry
