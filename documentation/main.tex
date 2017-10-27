@@ -30,6 +30,9 @@
 %\usepackage[xindy]{imakeidx}
 %\makeindex
 
+\usepackage[style=numeric-comp,backend=bibtex]{biblatex}
+\bibliography{refs.bib}
+
 \author{Sergio Rodríguez Calvo}{D.~}{XXXXXXXXL}
 \authorURL{}
 \authorEMail{sergiorodriguezcalvo@gmail.com}
@@ -71,5 +74,7 @@
 
 		\chapter{Resultados propios}
 		\input{ownresults}
+
+        \printbibliography
 
 \end{document}
