@@ -361,8 +361,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/fancybox/fancybox.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT main.aux
 INPUT main.aux
 OUTPUT main.aux
@@ -465,8 +463,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/kpfonts/jkpttmn7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmne.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmn8r.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplb7t.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbc7t.tfm
@@ -475,6 +471,8 @@ INPUT main.toc
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplri7t.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplbc7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplb7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplri7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
