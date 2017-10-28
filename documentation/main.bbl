@@ -17,6 +17,138 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
+  \entry{game-of-life}{book}{}
+    \name{author}{1}{}{%
+      {{hash=AA}{%
+         family={Adamatzky},
+         family_i={A\bibinitperiod},
+         given={Andrew},
+         given_i={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag London Limited}%
+    }
+    \strng{namehash}{AA1}
+    \strng{fullhash}{AA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Game of Life Cellular Automata}
+    \field{year}{2010}
+  \endentry
+
+  \entry{kansal-torquato}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AKGHIECST}{%
+         family={A.R.\bibnamedelima Kansal},
+         family_i={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+         suffix={S.\bibnamedelima Torquato},
+         suffix_i={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+         given={G.R. Harsh IV E.A.\bibnamedelima Chiocca},
+         given_i={G\bibinitperiod\bibinitdelim H\bibinitperiod I\bibinitperiod
+  E\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Deisboeck},
+         family_i={D\bibinitperiod},
+         given={T.S.},
+         given_i={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AKSTGHIECDT1}
+    \strng{fullhash}{AKSTGHIECDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Cellular automaton of idealized brain tumor growth dynamics}
+    \field{journaltitle}{BioSystem, Elsevier}
+    \field{year}{2000}
+  \endentry
+
+  \entry{hanahan-weinberg-2000}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HD}{%
+         family={Hanahan},
+         family_i={H\bibinitperiod},
+         given={Douglas},
+         given_i={D\bibinitperiod},
+      }}%
+      {{hash=WRA}{%
+         family={Weinberg},
+         family_i={W\bibinitperiod},
+         given={Robert\bibnamedelima A.},
+         given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HDWRA1}
+    \strng{fullhash}{HDWRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{The hallmarks of cancer}
+    \field{journaltitle}{Cell, Cell Press}
+    \field{year}{2000}
+  \endentry
+
+  \entry{hanahan-weinberg-2011}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HD}{%
+         family={Hanahan},
+         family_i={H\bibinitperiod},
+         given={Douglas},
+         given_i={D\bibinitperiod},
+      }}%
+      {{hash=WRA}{%
+         family={Weinberg},
+         family_i={W\bibinitperiod},
+         given={Robert\bibnamedelima A.},
+         given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HDWRA1}
+    \strng{fullhash}{HDWRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{The hallmarks of cancer: The next generation}
+    \field{journaltitle}{Cell, Cell Press}
+    \field{year}{2011}
+  \endentry
+
+  \entry{cellular-automata}{book}{}
+    \name{author}{2}{}{%
+      {{hash=JKPMS}{%
+         family={Jiri\bibnamedelima Kroc},
+         family_i={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+         given={Peter M.A.\bibnamedelima Sloot},
+         given_i={P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
+      }}%
+      {{hash=HAG}{%
+         family={Hoekstra},
+         family_i={H\bibinitperiod},
+         given={Alfons\bibnamedelima G.},
+         given_i={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag Berlin Heidelberg}%
+    }
+    \strng{namehash}{JKPMSHAG1}
+    \strng{fullhash}{JKPMSHAG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Simulating Complex Systems by Cellular Automata}
+    \field{year}{2010}
+  \endentry
+
   \entry{jsantos-amonteagudo-1-2014}{article}{}
     \name{author}{2}{}{%
       {{hash=SJ}{%
@@ -42,6 +174,88 @@
   cellular automaton simulation}
     \field{journaltitle}{IET Systems Biology}
     \field{year}{2014}
+  \endentry
+
+  \entry{jsantos-amonteagudo-2012}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Santos},
+         family_i={S\bibinitperiod},
+         given={Jos√©},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=√M}{%
+         prefix={√Ångel},
+         prefix_i={√\bibinitperiod},
+         family={Monteagudo},
+         family_i={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJM√1}
+    \strng{fullhash}{SJM√1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Study of cancer hallmarks relevance using a cellular
+  automaton tumor growth model}
+    \field{journaltitle}{Springer}
+    \field{year}{2012}
+  \endentry
+
+  \entry{jsantos-amonteagudo-2013}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Santos},
+         family_i={S\bibinitperiod},
+         given={Jos√©},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=√M}{%
+         prefix={√Ångel},
+         prefix_i={√\bibinitperiod},
+         family={Monteagudo},
+         family_i={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJM√1}
+    \strng{fullhash}{SJM√1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Studying the capability of different cancer hallmarks to
+  initiate tumor growth using a cellular automaton simulation. Application in a
+  cancer stem cell context}
+    \field{journaltitle}{BioSystem, Elsevier}
+    \field{year}{2013}
+  \endentry
+
+  \entry{jsantos-amonteagudo-2015}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJ}{%
+         family={Santos},
+         family_i={S\bibinitperiod},
+         given={Jos√©},
+         given_i={J\bibinitperiod},
+      }}%
+      {{hash=√M}{%
+         prefix={√Ångel},
+         prefix_i={√\bibinitperiod},
+         family={Monteagudo},
+         family_i={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJM√1}
+    \strng{fullhash}{SJM√1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Treatment analysis in a cancer stem cell context using a
+  tumor growth model based on cellular automata}
+    \field{journaltitle}{PLoS ONE}
+    \field{year}{2015}
   \endentry
 \endsortlist
 \endinput

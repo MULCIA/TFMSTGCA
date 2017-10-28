@@ -98,17 +98,54 @@ así como, su tratamiento.
 
 \section{Los autómatas celulares}
 
-Un autómata celular es una de las formas más adecuadas de simular comportamientos emergentes,
+El patrón mostrado en ciertas conchas marinas es generado mediante autómatas celulares naturales.
+Estas conchas muestran un aspecto exterior en el cual se observan patrones, los cuales les han
+permitido en muchas ocasiones ocultarse mejor en su entorno y, por ello, aumentar su supervivencia.
+Dichos patrones son de muy diversos tipos, por ejemplo, forman formas reconocibles, o formas fractales
+entre otras.
+
+En ellos, cada célula toma un color o forma diferente según sus células vecinas, obedeciendo
+a una versión natural de unas reglas matemáticas. Basándose en esto, se conoce como autómata celular
+al modelo matemático abstracto que modela sistemas dinámicos que evolucionan en pasos discretos.
+
+Son muy adecuados para ser implementados por ordenadores, útiles para simular comportamientos de sistemas
+complejos, como por ejemplo: colonias, epidemias, dinámica de fluidos, etc. En muy diversas áreas, como por ejemplo,
+en física, biología, química, socioeconomía, etc.
+
+En el libro \textit{Simulating Complex Systems by Cellular Automata} de Jiri Kroc, Peter M.A. Sloot y Alfons G. Hoekstra
+\cite{cellular-automata} se presentan los fundamentos matemáticos que presentan los autómatas celulares.
+
+Fueron descubiertos por John von Neumann en la década de 1950, aunque basado en trabajos teóricos previos de la
+década de 1940. A modo de resumen, los autómatas celulares cuentan con los siguientes componentes:
+
+\begin{itemize}
+    \item Red regular de nodos, de cantidad finita o infinita, que representa la estructura espacial.
+    \item En cada nodo, se coloca un autómata finito, es decir, representa un número finito de estados posibles.
+    Aquellos que se encuentran ocupados, reciben el nombre de células o celdas.
+    \item Cada célula se comunica con su entorno, pero sólo con una parte de él. Esto se conoce como vecindario,
+    y existen varios tipos, por ejemplo, el vecindario de Moore, o el vecindario de vonNeumann entre otros.
+    \item Función que determina la evolución de los estados de las distintas células.
+\end{itemize}
+
+Dada una configuración se puede estudiar las transformaciones aplicando las reglas,
+y a su iteración se le conoce como órbita. Dichas órbitas pueden ser muy complicadas, a pesar de
+la sencillez del autómata celular.
+
+Por tanto, estamos ante un modelo de computación universal. Uno de los autómatas celulares más
+famosos es el \textit{Juego de la vida de Conway}. Diseñado por el matemático John Horton Conway en
+la década de 1970. Es tan famoso debido a que es equivalente a una máquina universal de Turing. Esto es,
+todo lo que se puede computar algorítmicamente se puede computar en el juego de la vida.
+
+Existen, además, muy diversas implementaciones y aplicaciones, como por ejemplo, para hacer música.
+En el libro \textit{Game of Life Cellular Automata} de Andrew Adamatzky \cite{game-of-life} se presenta
+el juego de la vida, y en el último capítulo se expone una forma de hacer música con él.
+
+Se puede concluir, por tanto, que un autómata celular es una de las formas más adecuadas de simular comportamientos emergentes,
 al igual que los sistemas de Lindenmayer y, por tanto, adecuado para este tipo de problemas.
-José Santos y Ángel Monteagudo optaron por utilizar autómatas celulares para sus trabajos.
+José Santos y Ángel Monteagudo \cite{jsantos-amonteagudo-1-2014} optaron por utilizar autómatas celulares para sus trabajos.
 
-Consiste en modelo matemático que modela sistemas dinámicos. Está inspirado en cómo ciertas especias
-han resuelto el problema de qué color o forma tomar en su aspecto exterior, como por ejemplo, es
-el caso de ciertas conchas marinas. Este mecanismo, al ser favorable desde el punto de vista evolutivo,
-les ha hecho sobrevivir gracias a una mejor mimetización con su entorno.
-
-Este modelo necesita de unas propiedades, tales como, dimensión, estados posibles de sus celdas,
-qué se considera vecindario de una célula y, por último, cuales son las reglas de evolución. Además,
-hay que definir cómo es su frontera.
-
-Es, por tanto, muy adecuado para ser implementado en ordenadores.
+En este caso, los autores pretenden simular el comportamiento emergente que presentan los
+tumores mediante un autómata celular. Ellos parten de los trabajos previos de Douglas Hanahan y Robert A. Weinberg
+llamados \textit{The hallmarks of cancer} \cite{hanahan-weinberg-2000} y \textit{The hallmarks of cancer: The next generation} \cite{hanahan-weinberg-2011}
+respectivamente. En ellos, se identifican una serie de marcadores asociados a ciertas mutaciones presentes
+en el genoma de las células que permiten la aparición y evolución de tumores.

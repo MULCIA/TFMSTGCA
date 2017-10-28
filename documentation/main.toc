@@ -14,56 +14,62 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Los aut\IeC {\'o}matas celulares}{10}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Estado del arte}{11}{chapter.3}
+\contentsline {chapter}{\numberline {3}Estado del arte}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Modelo de eventos}{13}{chapter.4}
+\contentsline {section}{\numberline {3.1}\textit {Cellular automaton of idealized brain tumor growth dynamics}}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Las c\IeC {\'e}lulas, genoma y propiedades}{13}{section.4.1}
+\contentsline {section}{\numberline {3.2}\textit {Analysis of behaviour transitions in tumour growth using a cellular automaton simulation}}{14}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Par\IeC {\'a}metros globales}{14}{section.4.2}
+\contentsline {chapter}{\numberline {4}Modelo de eventos}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Pruebas previas a la mitosis}{15}{section.4.3}
+\contentsline {section}{\numberline {4.1}Objetivos}{15}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Mitosis}{15}{section.4.4}
+\contentsline {section}{\numberline {4.2}Las c\IeC {\'e}lulas, genoma y propiedades}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Eventos mit\IeC {\'o}ticos}{16}{section.4.5}
+\contentsline {section}{\numberline {4.3}Par\IeC {\'a}metros globales}{16}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Equivalencia temporal}{16}{section.4.6}
+\contentsline {section}{\numberline {4.4}Pruebas previas a la mitosis}{17}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Bucle principal del modelo de eventos}{17}{section.4.7}
+\contentsline {section}{\numberline {4.5}Mitosis}{18}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n}{19}{chapter.5}
+\contentsline {section}{\numberline {4.6}Eventos mit\IeC {\'o}ticos}{18}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}M\IeC {\'o}dulo \textit {genome.py}}{19}{section.5.1}
+\contentsline {section}{\numberline {4.7}Equivalencia temporal}{19}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}M\IeC {\'o}dulo \textit {simulation\_globals.py}}{20}{section.5.2}
+\contentsline {section}{\numberline {4.8}Bucle principal del modelo de eventos}{19}{section.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}M\IeC {\'o}dulo \textit {cell.py}}{20}{section.5.3}
+\contentsline {chapter}{\numberline {5}Implementaci\IeC {\'o}n}{21}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}M\IeC {\'o}dulo \textit {experiments.py}}{20}{section.5.4}
+\contentsline {section}{\numberline {5.1}M\IeC {\'o}dulo \textit {genome.py}}{21}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}M\IeC {\'o}dulo \textit {grid.py}}{21}{section.5.5}
+\contentsline {section}{\numberline {5.2}M\IeC {\'o}dulo \textit {simulation\_globals.py}}{22}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}M\IeC {\'o}dulo \textit {automata.py}}{21}{section.5.6}
+\contentsline {section}{\numberline {5.3}M\IeC {\'o}dulo \textit {cell.py}}{22}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}M\IeC {\'o}dulo \textit {analytics.py}}{21}{section.5.7}
+\contentsline {section}{\numberline {5.4}M\IeC {\'o}dulo \textit {experiments.py}}{22}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Experimentos de los autores}{23}{chapter.6}
+\contentsline {section}{\numberline {5.5}M\IeC {\'o}dulo \textit {grid.py}}{23}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Influencia del par\IeC {\'a}metro \textit {Tasa de mutaci\IeC {\'o}n base (m)}}{23}{section.6.1}
+\contentsline {section}{\numberline {5.6}M\IeC {\'o}dulo \textit {automata.py}}{23}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}Experimento 1: Tasa de mutaci\IeC {\'o}n base igual a 10.000}{24}{subsection.6.1.1}
+\contentsline {section}{\numberline {5.7}M\IeC {\'o}dulo \textit {analytics.py}}{23}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}Experimento 2: Tasa de mutaci\IeC {\'o}n base igual a 1.000}{24}{subsection.6.1.2}
+\contentsline {chapter}{\numberline {6}Experimentos de los autores}{25}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.3}Experimento 3: Tasa de mutaci\IeC {\'o}n base igual a 100}{24}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.1}Influencia del par\IeC {\'a}metro \textit {Tasa de mutaci\IeC {\'o}n base (m)}}{25}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Influencia del resto de par\IeC {\'a}metros}{24}{section.6.2}
+\contentsline {subsection}{\numberline {6.1.1}Experimento 1: Tasa de mutaci\IeC {\'o}n base igual a 10.000}{26}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Influencia de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas}{25}{section.6.3}
+\contentsline {subsection}{\numberline {6.1.2}Experimento 2: Tasa de mutaci\IeC {\'o}n base igual a 1.000}{26}{subsection.6.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Relevancia de los marcadores}{25}{section.6.4}
+\contentsline {subsection}{\numberline {6.1.3}Experimento 3: Tasa de mutaci\IeC {\'o}n base igual a 100}{26}{subsection.6.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Comportamiento de las transiciones}{26}{section.6.5}
+\contentsline {section}{\numberline {6.2}Influencia del resto de par\IeC {\'a}metros}{26}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Resultados propios}{27}{chapter.7}
+\contentsline {section}{\numberline {6.3}Influencia de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas}{27}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Relevancia de los marcadores}{27}{section.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}Comportamiento de las transiciones}{28}{section.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Resultados propios}{29}{chapter.7}
