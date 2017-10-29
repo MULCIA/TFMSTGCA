@@ -87,7 +87,17 @@ para renderizar dicho cubo.
 
 \section{Módulo \textit{automata.py}}
 
-Completar.
+Módulo principal del sistema que contiene la lógica de ejecución del mismo. El sistema
+está diseñado siguiendo el patrón \textit{Singleton}, es decir, sólo hay un objeto
+autómata que, implementando el patrón \textit{estrategia}, tiene un, método con
+la lógica de ejecución.
+
+La lógica de ejecución se encuentra descrita en la sección 4.8 de este documento.
+
+Además, tiene como atributos la agenda de eventos mitóticos, así como, el objeto que
+encapsula los experimentos necesarios para saber si se aplica o no mitosis a cada célula, los
+parámetros de simulación, el objeto con la lógica necesaria para gestionar la rejilla y, por último,
+la responsabilidad de generar las medidas utilizando el módulo de analítica que se describe a continuación.
 
 \section{Módulo \textit{analytics.py}}
 
@@ -95,5 +105,5 @@ Este último módulo, reune las funciones necesarias para hacer medidas sobre la
 de la rejilla, como por ejemplo, células sanas o cancerígenas, cuántas células tienen un
 determinado marcador del cáncer activo, etc.
 
-Además, contiene funcione para construir y mostrar gráficas con vista a presentar la evolución
+Además, contiene funciones para construir y mostrar gráficas con vista a presentar la evolución
 del sistema a lo largo de la simulación.
