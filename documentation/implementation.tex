@@ -1,60 +1,135 @@
-Para realizar la implementación se ha optado por utilizar el lenguaje de programación $Python$, en
-su versión 3, concretamente, en el momento de la realización de este trabajo el desarrollo se ha realizado
+En este capítulo, se detalla el diseño e implementación del sistema. Tecnologías utilizadas, arquitectura
+y diseño, así como, detalles de implementación y patrones que se han seguido.
+
+\section{Tecnologías}
+
+Este proyecto ha sido desarrollado empleando diversas tecnología y soluciones de $Python$.
+
+$Python$\footnote{\url{https://www.python.org/}} es un lenguaje multiparadigma que es ampliamente utilizado en ámbitos científicos y de investigación.
+Cuenta con multitud de herramientas para la realización de $tests$, gestión de dependencias, etc., entre las
+que se encuentran $Unittest$\footnote{\url{https://docs.python.org/3/library/unittest.html}} (tests unitarios) y $Pip$\footnote{\url{https://pypi.python.org/pypi/pip}} (gestor de dependencias), que han sido empleadas en este trabajo.
+
+Se ha optado por utilizar el lenguaje de programación $Python$, en su versión 3, concretamente, en el momento de la realización de este trabajo el desarrollo se ha realizado
 bajo la versión 3.6.2 de dicho lenguaje.
 
-$Python$ es un lenguaje multiparadigma que es ampliamente utilizado en ámbitos científicos y de investigación.
-Cuenta con multitud de herramientas para la realización de $tests$, gestión de dependencias, etc., entre las
-que se encuentran $Unittest$ y $Pip$, que han sido empleadas en este trabajo.
+La implementación de $Python$ utilizada es $CPython$\footnote{\url{https://www.toptal.com/python/por-que-hay-tantos-pythons/es}}.
 
-Como librerías se han empleado $Numpy$ y $Matplotlib$, las cuales, son casi un estándar dentro
-del mundo $Python$.
+Además, se han empleado los siguientes paquetes:
 
-Para el desarrollo de este proyecto se ha optado por implementar la solución en orientado a objeto
-en su mayoría. El programa cuenta con un único punto de entrada, en este caso, siguendo el patrón
-\textit{Singleton}.
+\begin{itemize}
+  \item \textit{NumPy} como librería fundamental para computación cientifica del ecosistema \textit{SciPy}.
+  \item \textit{Matplotlib} como librería para creación de gráficas del ecosistema \textit{SciPy}.
+  \item \textit{Plotly} como librería gráfica, utilizada en este caso sólo para representar figuras en tres dimensiones.
+\end{itemize}
 
-En este punto de entrada, se establecen los valores de los parámetros por defecto que se desean
-para cada ejecución. Por defecto, el programa utiliza los valores por defectos establecidos en
-uno de los módulos en los que se divide el proyecto, y que se comentarán más adelante. Dichos valores,
-coinciden con los valores por defectos que se presentan en el artículo.
+Por último, para su desarrollo, se han utilizado otras herramientas como: \textit{Git} y \textit{Git-flow}, \textit{Github},
+\textit{Travis}, \textit{Landscape}, \textit{Coveralls} y \textit{Docker}.
 
-En este caso, el programa cuenta con 6 módulos. El módulo principal, \textit{automata.py} presenta
+\section{Arquitectura y diseño}
+
+Para el desarrollo de este proyecto se ha optado por seguir dos paradigmas simultáneamente. Por un lado,
+se ha seguido el paradigma orientado a objeto, esto es, modelizar las partes del sistema con objetos que encapsulan
+las propiedades y métodos necesarios según las necesidades u objetivos de cada una de ellas y, las cuales,
+se describen en la siguiente sección de este capítulo. Por otro lado, se ha seguido el paradigma funcional, esto es,
+diseñar el sistema, o partes de él, en forma de funciones, las cuales para ejecutar su lógica utilizan únicamente
+los parámetros que recibe.
+
+Ambos paradigmas, comentado brevemente en el párrafo anterior, tienen muchos más aspectos, enfoques y soluciones
+de las que se comentan. El programa cuenta con un único punto de entrada, en este caso, siguendo el patrón
+\textit{Singleton}. En cuanto a los patrones utilizados, se van a describir en la siguiente sección de este
+capítulo donde se presentan los diferentes módulos del mismo.
+
+
+%En este punto de entrada, se establecen los valores de los parámetros por defecto que se desean
+%para cada ejecución. Por defecto, el programa utiliza los valores por defectos establecidos en
+%uno de los módulos en los que se divide el proyecto, y que se comentarán más adelante. Dichos valores,
+%coinciden con los valores por defectos que se presentan en el artículo.
+
+\section{Módulos del sistema}
+
+En este caso, el programa cuenta con 6 módulos. El módulo principal, \textit{automata.py}, presenta
 una clase que sigue el patrón \textit{Estrategia} y, el cual, engloba la función principal de ejecución,
 así como, el resto de funciones necesarias para su correcta ejecución. Además, importa y utiliza
 el resto de módulos, los caules, se describen a continuación.
 
-\section{Módulo \textit{genome.py}}
+\subsection{Módulo \textit{genome.py}}
 
-En este módulo se presenta la clase que continen como propiedades las cinco variables
-binarias que representan la activación o no de determinadas mutaciones cancerosas, así como,
-algunas funciones de utilidad para la simulación referentes al genoma.
+Este es el primero de los módulos que se ha desarrollado, y es el más simple de todos. Consta de
+una clase que contiene únicamente cinco variables binarias, una por cada mutación que se
+modeliza en este sistema.
 
-Completar.
+Como se ha descrito previamente, las mutaciones que contiene esta clase son las siguientes:
 
-\section{Módulo \textit{simulation\_globals.py}}
+\begin{itemize}
+    \item \textbf{SG}: Autogeneración de los mensajes de crecimeinto. Esto es, la mutación que permite que la
+    célula genere sus propios mensajes para ejecutar la división con idependencia externa.
+    \item \textbf{IGI}: Inhibición de las señales de anticrecimiento. Esto es, ante la recepción de una orden
+    de detener su crecimiento, la célula tiene una mutación que le permite un mecanismo de ignorancia de los mismos.
+    \item \textbf{EA}: Evasión de apoptosis. Esto es, la célula puede, mediante mutación, no hacer caso ante
+    una orden de apoptosis, o muerte celular controlada.
+    \item \textbf{EI}: Inmortalidad efectiva. Esto es, la célula adquiere una mutación que permite evitar un límite
+    replicativo existente, entre otros factores, por el tamaño del telómero.
+    \item \textbf{GI}: Inestabilidad genética. Esto es, una mutación que permite a la célula acumular más daño genético, es decir,
+    la tasa de mutación base se va incrementando con el paso del tiempo.
+\end{itemize}
 
-Este módulo, contiene los valores, así como, la clase necesaria para su almacenaje, para
-los parámetros que intervienen en la simulación. Contiene la definición de constantes que
-representan dichos valores junto a sus valores por defecto.
+Además, expone un método que permite obtener el número de mutaciones que tiene cada instancia
+de este tipo.
 
-Además, contiene otra serie de valores como constantes que son necesarios y que no forman parte de la
-clase \textit{SimulationGlobals} y que no son suceptibles de variar.
+En definitiva, se trata de una clase que, por composición, estará contenida dentro de otra clase
+que modeliza a la célula, representando su genoma, y que se explica a continuación.
 
-\section{Módulo \textit{cell.py}}
+\subsection{Módulo \textit{cell.py}}
 
-El módulo \textit{cell.py} cuenta con una clase que modela la célula. Utiliza la composición
-para incluir el objeto \textit{Genome} frente al uso de la herencia, lo cual, presenta ventajas
-de cara a la refactorización.
+El siguiente módulo, partiendo de la clase genoma, es el que contiene la clase que modeliza
+a cada una de las células de la simulación.
 
-Cuenta, además de con el objeto \textit{Genome}, con algunas propiedades extra, como por ejemplo,
-el tamaño del telómero ($tl$) y la tasa de mutación base ($m$) para cada célula.
+Como se ha comentado previamente contiene, por composición, un atributo que representa
+al genoma de la célula y que se trata de un objeto tal y como se ha descrito en la sección anterior de este capítulo.
+Además, presenta algunos atributos más necesarios para la simulación, y son:
 
-Finalmente, presenta algunos métodos necesarios en la simulación para interactuar con la célula.
+\begin{itemize}
+    \item Atributo que representa el tamaño del telómero.
+    \item Atributo que representa la tasa de mutación de la célula.
+    \item Atributo que representa su posición en la rejilla, es decir, un conjunto de tres elementos
+    que representan su posición en cada una de las dimensiones ($(x,y,z)$).
+\end{itemize}
 
-\section{Módulo \textit{experiments.py}}
+Por último, cuenta con varios métodos necesarios para la simulación, y son los siguientes:
 
-En este módulo, se encuentran las funciones que se utilizan en el módulo
-\textit{automata.py} para realizar los experimentos o pruebas previas a la mitosis. Estos son:
+\begin{itemize}
+    \item \textit{decrease\_telomer()}: .
+    \item \textit{increment\_base\_muration\_rate(i)}: .
+    \item \textit{mutations()}: .
+    \item \textit{add\_mutations()}: .
+    \item \textit{perform\_mitosis()}: .
+\end{itemize}
+
+\subsection{Módulo \textit{simulation\_globals.py}}
+
+De cara a realizar la simulación son necesarios una serie de parámetros que se necesitarán manipular
+para realizar los experimentos que se describirán en capítulos posteriores. Esto lleva al siguiente módulo,
+en el cual se tiene una clase que contiene, sólamente, atributos que almacenan todos estos parámetros.
+
+Dichos parámetros son los siguientes:
+
+\begin{itemize}
+    \item .
+    \item .
+    \item .
+    \item .
+    \item .
+\end{itemize}
+
+En este fichero, además, se encuentran los valores por defecto de la simulación según los autores
+del artículo \cite{jsantos-amonteagudo-1-2014} en el que se basa este trabajo. En este caso,
+se declaran como constantes, ya que estos, en caso de ser utilizados en la simulación, no varían.
+
+\subsection{Módulo \textit{experiments.py}}
+
+Para realizar la mitosis, se necesitan realizar varias pruebas o experimentos. Estos
+están contenidos dentro de una clase como métodos. Los parámetros necesarios para ejecutar dichas
+pruebas se reciben por parámetros. Los métodos, son los siguientes:
 
 \begin{itemize}
   \item \textit{random\_death\_test()}: Prueba que indica si hay o no muerte aleatoria de la célula.
@@ -73,7 +148,7 @@ En este módulo, se encuentran las funciones que se utilizan en el módulo
   si tiene presente la mutación asociada al marcador $ei$.
 \end{itemize}
 
-\section{Módulo \textit{grid.py}}
+\subsection{Módulo \textit{grid.py}}
 
 El módulo \textit{grid.py} se encarga, en primer lugar, de almacenar las dimensiones de la
 rejilla. En segundo lugar, tiene las funciones necesarias para obtener un vecindario en
@@ -85,7 +160,7 @@ Por último, contiene funciones para construir una rejilla en tres dimensiones u
 la librería \textit{numPy}, para ser utilizada posteriormente junto a \textit{matplotlib}
 para renderizar dicho cubo.
 
-\section{Módulo \textit{automata.py}}
+\subsection{Módulo \textit{automata.py}}
 
 Módulo principal del sistema que contiene la lógica de ejecución del mismo. El sistema
 está diseñado siguiendo el patrón \textit{Singleton}, es decir, sólo hay un objeto
@@ -99,7 +174,7 @@ encapsula los experimentos necesarios para saber si se aplica o no mitosis a cad
 parámetros de simulación, el objeto con la lógica necesaria para gestionar la rejilla y, por último,
 la responsabilidad de generar las medidas utilizando el módulo de analítica que se describe a continuación.
 
-\section{Módulo \textit{analytics.py}}
+\subsection{Módulo \textit{analytics.py}}
 
 Este último módulo, reune las funciones necesarias para hacer medidas sobre las células
 de la rejilla, como por ejemplo, células sanas o cancerígenas, cuántas células tienen un
