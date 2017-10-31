@@ -39,12 +39,6 @@ de las que se comentan. El programa cuenta con un único punto de entrada, en es
 \textit{Singleton}. En cuanto a los patrones utilizados, se van a describir en la siguiente sección de este
 capítulo donde se presentan los diferentes módulos del mismo.
 
-
-%En este punto de entrada, se establecen los valores de los parámetros por defecto que se desean
-%para cada ejecución. Por defecto, el programa utiliza los valores por defectos establecidos en
-%uno de los módulos en los que se divide el proyecto, y que se comentarán más adelante. Dichos valores,
-%coinciden con los valores por defectos que se presentan en el artículo.
-
 \section{Módulos del sistema}
 
 En este caso, el programa cuenta con 6 módulos. El módulo principal, \textit{automata.py}, presenta
@@ -114,11 +108,15 @@ en el cual se tiene una clase que contiene, sólamente, atributos que almacenan 
 Dichos parámetros son los siguientes:
 
 \begin{itemize}
-    \item .
-    \item .
-    \item .
-    \item .
-    \item .
+    \item Tasa de mutación base o \textit{m}.
+    \item Tamaño del telómero o \textit{tl}.
+    \item Probabilidad de evasión de apoptosis o \textit{e}.
+    \item Factor de incremento de la tasa de mutación base o \textit{i}.
+    \item Probabilidad de matar a un vecino para realizar la mitosis o \textit{g}.
+    \item Probabilidad de muerte aleatoria de la célula o \textit{a}.
+    \item Límite espacial predefinido.
+    \item Límite inferior para evento mitótico en el futuro.
+    \item Límite superior para evento mitótico en el futuro.
 \end{itemize}
 
 En este fichero, además, se encuentran los valores por defecto de la simulación según los autores
@@ -157,8 +155,8 @@ una función que filtra las posiciones de un vecindario dado para devolver un ob
 las posiciones filtradas en función de si estas se encuentran ocupadas o no.
 
 Por último, contiene funciones para construir una rejilla en tres dimensiones utilizando
-la librería \textit{numPy}, para ser utilizada posteriormente junto a \textit{matplotlib}
-para renderizar dicho cubo.
+la librería \textit{numPy}, para ser utilizada posteriormente en la renderización de la rejilla utilizando \textit{matplotlib}
+o \textit{Plotly}.
 
 \subsection{Módulo \textit{automata.py}}
 
