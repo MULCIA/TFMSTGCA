@@ -610,6 +610,10 @@ INPUT implementation.tex
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi7t.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplbi7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmsl7t.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/kpfonts/jkpttmsl7t.vf
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmsle.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmsl8r.tfm
 INPUT experiments.tex
 INPUT experiments.tex
 INPUT ownresults.tex
@@ -622,6 +626,7 @@ INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb

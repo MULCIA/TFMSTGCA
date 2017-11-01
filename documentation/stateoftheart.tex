@@ -4,7 +4,8 @@ realizar una búsqueda de artículos científicos sobre esta temática:
 
 Tras una primera selección, donde se descartaron los artículos de \textit{arXiv}\footnote{\url{https://arxiv.org/}},
 ya que, podrían estar aún en fase de revisión, así como, artículos demasiado antiguos o artículos
-cuyo enfoque quedaran fuera del ámbito de la inteligencia artificial.
+cuyo enfoque quedaran fuera del ámbito de la inteligencia artificial, se obtuvo una lista
+con dos candidatos.
 
 De los artículos seleccionados, se procedió a su estudio y extracción de información. A continuación,
 se presentan y describen los trabajos candidatos.
@@ -14,12 +15,17 @@ se presentan y describen los trabajos candidatos.
 Este artículo \cite{kansal-torquato} es uno de los dos candidatos estudiados con el objetivo
 de desarrollar este proyecto.
 
-Se presenta un nuevo modelo de autómata celular para simular crecimientos emergente de tumores cerebrales.
+En él, se presenta un nuevo modelo de autómata celular para simular crecimientos emergente de tumores cerebrales.
 En concreto, se enfoca a un tipo de tumor, el tumor de Gompertzian. Los autores presentan
 la consecución de simular el crecimiento de dicho tumor en casi tres órdenes de magnitud en radio
 utilizando sólo cuatro parámetros microscópicos.
 
-Completar.
+Su estudio tiene un elevado enfoque clínico y, en consecuencia, sí que modelizan la densidad de células, así como,
+el tamaño de cada célula. Para esto último, emplean el algoritmo de triangulación \textit{Delaunay}\footnote{\url{https://es.wikipedia.org/wiki/Triangulacion_de_Delaunay}}
+junto a Polígonos de \textit{Thiessen} o diagramas de \textit{Voronoi}\footnote{\url{https://es.wikipedia.org/wiki/Poligonos_de_Thiessen}} para su representación.
+
+Realizan también un modelado temporal, para así estudiar la velocidad de crecimiento de los tumores. En cuanto a sus resultados son muy concisos, ya que,
+la simulación está muy especializada y no hacen un estudio de diversos parámetros como en el otro artículo candidato.
 
 \section{\textit{Analysis of behaviour transitions in tumour growth
 using a cellular automaton simulation}}

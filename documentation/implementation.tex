@@ -180,3 +180,59 @@ determinado marcador del cáncer activo, etc.
 
 Además, contiene funciones para construir y mostrar gráficas con vista a presentar la evolución
 del sistema a lo largo de la simulación.
+
+\section{Instalación y ejecución}
+
+En esta última sección del capítulo dedicado a la implementación, se expone la información necesaria
+para su instalación y uso. Existen dos formas de conseguirlo, la primera, a través de una ejecución
+nativa, es decir, sobre la propia máquina local. En segundo lugar, sobre \textit{Docker}, lo cual permite
+no realizar ninguna instalación sobre la máquina local.
+
+\subsection{Prerrequisitos}
+
+Dependiendo del tipo de instalación, se dan los siguientes prerrequisitos:
+
+\begin{itemize}
+  \item Para una ejecución sobre la máquina local, se necesita:
+        \item Instalar la versión 3.6+ de \textit{Python}\footnote{\url{https://www.python.org/downloads/}}.
+        \item Instalar el gestor de paquetes de \textit{Python}, \textit{pip}\footnote{\url{https://pip.pypa.io/en/stable/installing/}}.
+        \item Instalar el control de versiones \textit{Git}\footnote{\url{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}}.
+        \item Clonar el respositorio ejecutando en consola \textit{git clone \url{https://github.com/MULCIA/TFMSTGCA.git}}.
+        \item Instalar dependencias con \textit{pip}, para ello, ejecutar en consola \textit{pip install -r requirements.txt}.
+  \item Para una ejecución con \textit{Docker} se necesita:
+        \item Instalar la última versión de \textit{Docker}\footnote{\url{https://docs.docker.com/engine/installation/}}.
+        \item Instalar el control de versiones \textit{Git}\footnote{\url{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}}.
+        \item Clonar el respositorio ejecutando en consola \textit{git clone \url{https://github.com/MULCIA/TFMSTGCA.git}}.
+\end{itemize}
+
+\subsection{Ejecución}
+
+Dependiendo del modo elegido, es decir, ejecución en máquina local o ejecución en \textit{Docker}, su ejecución es diferente.
+
+En primer lugar, se describe como hacer una ejecución en máquina local. Una vez cumplidos los requisitos descritos anteriormentes,
+para ejecutar el proyecto sólo hay que ejecutar, dentro del directorio que contiene el proyecto, el siguiente comando:
+\textit{python main.py}.
+
+Su ejecución se realiza automáticamente y al finalizar mostrará una serie de gráficas:
+
+\begin{itemize}
+  \item Completar.
+\end{itemize}
+
+En segundo lugar, se describe como hacer la ejecución en \textit{Docker}. Una vez cumplido los requisitos anteriores, existen dos
+formas de ejecutar la simulación: ejecutar los comandos de docker, o emplear unos scripts que se encuentran embebidos en el proyecto.
+Dichos scripts sólo se pueden emplear de tratarse de una máquina \textit{Linux}.
+
+Los comandos de consola de \textit{Docker} son los siguientes:
+
+\begin{itemize}
+  \item Para construir la imagen: \textit{docker build -t TFMSTGCA/tfm .}.
+  \item Para levantar el contenedor: \textit{docker run --name tfm -d TFMSTGCA/tfm:latest tail -f /dev/null}. Se ejecuta en modo demonio y se mantiene su
+  ejecución. Al finalizar el proceso de creación y ejecución del contenedor, se realiza una ejecución de los tests adjuntos al proyecto.
+  \item Para ejecutar la simulación: \textit{docker exec -it tfm bash}. Una vez ejecutado, con la terminal del contenedor en la consola, ejecutar como se describe previamente
+  para la ejecución en máquina local.
+\end{itemize}
+
+Completar (Eliminar contenedores).
+
+\subsection{Parámetros de la simulación}
