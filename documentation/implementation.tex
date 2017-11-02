@@ -92,11 +92,14 @@ Además, presenta algunos atributos más necesarios para la simulación, y son:
 Por último, cuenta con varios métodos necesarios para la simulación, y son los siguientes:
 
 \begin{itemize}
-    \item \textit{decrease\_telomer()}: .
-    \item \textit{increment\_base\_muration\_rate(i)}: .
-    \item \textit{mutations()}: .
-    \item \textit{add\_mutations()}: .
-    \item \textit{perform\_mitosis()}: .
+    \item \textit{decrease\_telomer()}: Método que se encarga de cambiar el estado interno del objeto, realizando un decrecimiento en una unidad del telómero.
+    \item \textit{increment\_base\_muration\_rate(i)}: Las células ven alterada su tasa de mutación base, utilizada para originar nuevas mutaciones durante la mitosis,
+    con la presencia de la mutación asociada a la inestabilidad genética o $GI$. Este método realiza este proceso de acuerdo a una tasa de modificación, o incremento,
+    de esta tasa, la cual es recibida por parámetros.
+    \item \textit{mutations()}: Método que devuelve el número de mutaciones que tiene la célula en su genoma.
+    \item \textit{add\_mutations()}: Método que se encarga de generar las nuevas mutaciones que pueden tener lugar durante la mitosis.
+    \item \textit{perform\_mitosis()}: El proceso de mitosis queda modelado en este método, esto es, incrementar tasa de mutación base, añadir nuevas mutaciones y
+    realizar una copia de sí misma.
 \end{itemize}
 
 \subsection{Módulo \textit{simulation\_globals.py}}
@@ -148,15 +151,22 @@ pruebas se reciben por parámetros. Los métodos, son los siguientes:
 
 \subsection{Módulo \textit{grid.py}}
 
-El módulo \textit{grid.py} se encarga, en primer lugar, de almacenar las dimensiones de la
-rejilla. En segundo lugar, tiene las funciones necesarias para obtener un vecindario en
-tres dimensiones, comprobando que no excede los límites de la rejilla. En tercer lugar, contiene
-una función que filtra las posiciones de un vecindario dado para devolver un objeto que contiene
-las posiciones filtradas en función de si estas se encuentran ocupadas o no.
+El módulo \textit{grid.py} almacena la información relativa a la rejilla en la que tiene lugar
+la simulación. Esto es, tiene como propiedad o atributos el ancho, alto y largo del mismo.
 
-Por último, contiene funciones para construir una rejilla en tres dimensiones utilizando
-la librería \textit{numPy}, para ser utilizada posteriormente en la renderización de la rejilla utilizando \textit{matplotlib}
-o \textit{Plotly}.
+Pero, la parte útil de este módulo son los métodos que permiten a la simulación obtener el vecindario,
+controlando sus límites, y obtener qué celdas del vecindario están ocupadas y cuales no. Por tanto,
+sus métodos son los siguientes:
+
+\begin{itemize}
+  \item \textit{neighborhood(origin, radio)}: Método que recibe un centro de tipo $(x,y,z)$ y un radio, para devolver una lista con las posiciones
+  que conforman el vecindario.
+  \item \textit{filter(value, limit)}: Método que permite saber si un valor está dentro de un límite espacial. Es utilizada en únicamente en el siguiente métodos.
+  \item \textit{check\_limits(cube, limit)}: Método que comprueba que, de una lista de posiciones que conforman el vecindario, no existe una posición que exceda el
+  límite de la rejilla. Devuelve, la lista sin dichas posiciones.
+  \item \textit{classify\_neighborhood(cube, cells)}: Métdodo que clasifica las células de un cubo que representa un vecindario en función de las posiciones
+  ocupadas y las que están libres.
+\end{itemize}
 
 \subsection{Módulo \textit{automata.py}}
 
