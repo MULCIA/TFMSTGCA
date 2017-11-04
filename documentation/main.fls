@@ -642,6 +642,10 @@ INPUT ./figures/experiments/exp8.png
 INPUT ./figures/experiments/exp8.png
 INPUT ownresults.tex
 INPUT ownresults.tex
+INPUT conclusion.tex
+INPUT conclusion.tex
+INPUT glossary.tex
+INPUT glossary.tex
 OUTPUT main.thm
 INPUT main.aux
 INPUT ./main.out
