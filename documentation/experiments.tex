@@ -37,14 +37,19 @@ con los valores considerados por defectos, que son:
 
 \subsection{Experimento 1: Tasa de mutación base igual a 10.000}
 
-En este experimento, los autores obtienen una progresión lenta de las células
-cancerígenas con una aparición de mutaciones similar para cada marcador, excepto
-los marcadores $SG$ y $EA$, los cuales, destacan frente al resto de marcadores. Por su parte,
-se obtiene una alta proliferación del marcador $SG$ respecto al resto.
+En este primer experimento, los autores presentan un valor para el parámetro
+tasa de mutación base de $m=10000$. Realizan una simulación de $1000$ iteraciones.
 
 Es importante recordar, que al utilizar $1/m$ para representar la probabilidad
 de que aparezcan diferentes mutaciones al realizar la mitosis, a mayor valor
 del parámetro $m$, menor probabilidad de que ocurran mutaciones.
+
+En la simulación, el número de células cancerosas es muy bajo y crece muy levemente,
+no superando las $10000$ células de las $125000$ totales. En cuanto a lo marcadores,
+el marcador $SG$ toma ventaja y tiene ocurrencia en la mayoría de células cancerosas
+(una célula cancerosa es aquella que tiene, al menos, una mutación). El siguiente marcador
+presente, aunque con mucha diferencia, es $EA$. El resot de marcadores presenta
+un comportamiento similar y su presencia es casi inexistente.
 
 \begin{figure}[h]
 \centering
@@ -54,11 +59,14 @@ del parámetro $m$, menor probabilidad de que ocurran mutaciones.
 
 \subsection{Experimento 2: Tasa de mutación base igual a 1.000}
 
-En este segundo experimento, los autores obtienen como resultado una mayor proliferación
-de las células cancerígenas frente al experimento anterior.
+En el segundo experimento, los autores alteran el valor para el parámetro tasa de
+mutación base a $m=1000$.
 
-Los marcadores evolucionan de forma parecida y muy homogenea, aunque destaca levemente
-frente al resto el marcador $EA$.
+Los resultados obtenidos para $1000$ iteraciones presentan varias diferencias. En primer lugar,
+el número de células cancerosas aumenta, lo cual, se explica por la mayor probabilidad
+de mutaciones provocadas al realizar la mitosis. En segundo lugar, en cuanto a los marcadores,
+aparecen todos los marcadores, con un comportamiento bastante similar entre ellos. Se pueden
+destacar los marcadores $EA$ y $SG$, que toman algo de ventaja respecto al resto.
 
 \begin{figure}[h]
 \centering
@@ -68,14 +76,22 @@ frente al resto el marcador $EA$.
 
 \subsection{Experimento 3: Tasa de mutación base igual a 100}
 
-En este tercer y último experimento, los autores presentan cambios relevantes frente a los dos
+En este tercer y último experimento de este tipo, los autores obtienen cambios relevantes frente a los dos
 experimentos anteriores.
 
-En primer lugar, se obtiene muy pronto un mayor número de células cancerígenas
-frente a células sanas, las cuales incluso decrecen.
+En primer lugar, el número de células cancerosas pronto supera a las células sanas, e incluso,
+a lo largo de las iteraciones terminan, las células cancerosas, representando casi la totalidad de
+la rejilla. Esto se explica por la mayor probabilidad de aparición de mutaciones durante la mitosis, en
+este caso, la tasa de mutación base es de $m=100$.
 
-En segundo lugar, la presencia de marcadores se mantiene de forma homogenea para todos
-los marcadores, destacando levemente los marcadores $IGI$ y $EA$ frente al resto.
+En segundo lugar, en cuanto a marcadores, ocurren todos los marcadores con un comportamiento similar,
+tomando ventaja, pero muy levemente, los marcadores $EA$ e $IGI$. La principal diferencia en este punto es
+la presencia del marcador $IGI$, el cual, tiene mayor presencia que otros. El marcador $SG$ no toma ventaja en
+este punto, como si lo hacía en los dos experimentos anteriores.
+
+El marcador $EA$ siempre está presente y cobra un papel fundamental, ya que, permite la proliferación
+de células cancerosas debido a que supone que la célula con dicho marcador puede evadir la muerte
+celular programada.
 
 \begin{figure}[h]
 \centering
