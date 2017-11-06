@@ -73,7 +73,14 @@ class Analytics:
             'carcinogenic': [0,0,1,35]
         }
         """
-        plt.plot(measure['iterations'], measure['healthy'], '-', measure['iterations'], measure['carcinogenic'], 'bs')
+
+        plt.plot(measure['iterations'], measure['healthy'],'b-', label='Células sanas')
+        plt.plot(measure['iterations'], measure['carcinogenic'],'r--', label='Células cancerosas')
+
+        plt.legend(loc='upper center')
+
+        #plt.plot(measure['iterations'], measure['healthy'], 'b-', measure['iterations'], measure['carcinogenic'], 'r--')
+
         plt.show()
 
     def plot_mutations(self, measure):
@@ -87,13 +94,24 @@ class Analytics:
             'gi': [0,0,0,0]
         }
         """
-        plt.plot(
-                    measure['iterations'], measure['sg'], '-',
-                    measure['iterations'], measure['igi'], 'bs',
-                    measure['iterations'], measure['ea'], 'g^',
-                    measure['iterations'], measure['ei'], '-',
-                    measure['iterations'], measure['gi'], 'bs',
-                )
+
+        plt.plot(measure['iterations'], measure['sg'], 'o-', label='SG')
+        plt.plot(measure['iterations'], measure['igi'], 'g--', label='IGI')
+        plt.plot(measure['iterations'], measure['ea'], 'r--', label='EA')
+        plt.plot(measure['iterations'], measure['ei'], 'b-', label='EI')
+        plt.plot(measure['iterations'], measure['gi'], 'k:', label='GI')
+
+        plt.legend(loc='upper center')
+
+
+        """plt.plot(
+                    measure['iterations'], measure['sg'], 'o-',
+                    measure['iterations'], measure['igi'], 'g--',
+                    measure['iterations'], measure['ea'], 'r--',
+                    measure['iterations'], measure['ei'], 'b-',
+                    measure['iterations'], measure['gi'], 'k:',
+                )"""
+
         plt.show()
 
     def plot_grid(self, cells_positions):
@@ -117,46 +135,28 @@ class Analytics:
                 c_y.append(position[1])
                 c_z.append(position[2])
 
-        """h_x = [position[0] for position in cells_positions if str(cells_positions[position]) == '00000']
-        h_y = [position[1] for position in cells_positions if str(cells_positions[position]) == '00000']
-        h_z = [position[2] for position in cells_positions if str(cells_positions[position]) == '00000']
-        c_x = [position[0] for position in cells_positions if str(cells_positions[position]) != '00000']
-        c_y = [position[1] for position in cells_positions if str(cells_positions[position]) != '00000']
-        c_z = [position[2] for position in cells_positions if str(cells_positions[position]) != '00000']"""
-
-        #c = [value for value in range(32)]
-
-        #c = [str(cell) for cell in cells_positions.values()]
-
         trace_healthy = go.Scatter3d(
             x=h_x,
             y=h_y,
             z=h_z,
+            name='Células sanas',
             mode='markers',
             marker=dict(
                 size=8,
-                #color=c,        # set color to an array/list of desired values
                 color='rgb(217, 217, 217)',
-                #colorscale='YlOrRd',
-                #colorscale='Viridis',   # choose a colorscale
                 opacity=0.8
             )
         )
-
-        #rgb(127, 127, 127)
-        #rgb(217, 217, 217)
 
         trace_cancer = go.Scatter3d(
             x=c_x,
             y=c_y,
             z=c_z,
             mode='markers',
+            name='Células cancerosas',
             marker=dict(
                 size=8,
-                #color=c,        # set color to an array/list of desired values
                 color='rgb(1, 83, 0)',
-                #colorscale='YlOrRd',
-                #colorscale='Viridis',   # choose a colorscale
                 opacity=0.8
             )
         )
@@ -171,7 +171,7 @@ class Analytics:
             )
         )
         fig = go.Figure(data=data, layout=layout)
-        plotly.offline.plot(fig, filename='3d-scatter-colorscale')
+        plotly.offline.plot(fig, filename='experiments-result')
 
     def sum_analytics_cells(self, cells):
         cont_healty, cont_carcinogenic, cont_sg, cont_igi, cont_ea, cont_ei, cont_gi = 0,0,0,0,0,0,0
