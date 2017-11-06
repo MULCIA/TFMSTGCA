@@ -80,7 +80,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.2}Influencia del resto de par\IeC {\'a}metros}{35}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Influencia de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas}{36}{section.6.3}
+\contentsline {section}{\numberline {6.3}Influencia de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas}{37}{section.6.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.4}Relevancia de los marcadores}{37}{section.6.4}
 \defcounter {refsection}{0}\relax 
