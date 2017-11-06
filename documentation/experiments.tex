@@ -101,8 +101,9 @@ celular programada.
 
 \section{Influencia del resto de parámetros}
 
-Para observar el comportamiento del resto de parámetros, los autores, realizan una variación
-de los parámetros respecto al experimento anterior. Los valores utilizados son los siguientes:
+Los autores realizan un segundo experimento con el objetivo de observar los efectos
+que tienen el resto de parámetros sobre la simulación. Para ello, varían los parámetros de
+la simulación, como se puede observar en la siguiente tabla:
 
 \begin{table}[h!]
   \centering
@@ -122,13 +123,26 @@ de los parámetros respecto al experimento anterior. Los valores utilizados son 
   \end{tabular}
 \end{table}
 
-En este experimento, se observa como ocurre una proliferación inicial muy rápida
-de células sanas, seguido de una proliferación lineal de células cancerígenas.
+Se observa un comportamiento bastante representativo, por ejemplo, un menor valor
+para el número de iteraciones implica menos eventos mitóticos en las células sanas, y
+un menor valor del parámetros $a$ facilita la aparición de sitios vacacntes que
+quedan disponibles para la propagación de células cancerosas, en conexión con una
+mayor probabilidad de reemplazar a un vecino para realizar la mitósis (parámetros $g$).
 
-En cuanto a la presencia y evolución de los marcadores destaca como el marcador $EI$ hace
-presencia muy pronto, y además crece muy rápidamente. El resto de marcadores presentan un
-comportamiento parecido, es decir, aparecen mucho más tarde y presentan un crecimiento moderado,
-destacando $EA$, el cual, presenta un crecimiento cuasi exponencial.
+En la gráfica de evolución de los marcadores se observa que en este caso el marcador
+dominante es $EI$. En este caso, se realizan $5000$ iteraciones. El marcador $EI$ implica
+la progresión de estas células debido a que evitan la muerte por agotamiento del telómero.
+En la simulación, por contra, tener un telómero más corto implica tener menos oportunidades de división, como
+ocurre con la célula inicial del centro de la rejilla.
+
+El resto de marcadores aparecen más tarde en la simulación. El siguiente marcador en hacer
+presencia es $EA$, lo cual permite a las células evadir la muerte celular programada. Este marcador
+también favorece la proliferación del cáncer, por tanto, toma cada vez más ventaja. El marcador
+$SG$ aparece algo más tarde que los anteriores y permite proliferar al cancer
+fuera del límite reproductivo, por tanto, alcanza un límite y se mantiene estable.
+
+El último marcador en aparecer es $IGI$. No prolifera rápidamente debido a no disponer
+de espacio vacante para realizar la división.
 
 \begin{figure}[h]
 \centering
