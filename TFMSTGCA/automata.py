@@ -112,4 +112,4 @@ class Automata(object):
             self.analytics.plot_mutations(result[1])
             #self.analytics.plot_grid(self.cells)
             self.analytics.plot_grid_plotly(self.cells)
-            self.analytics.pretty_show(150, self.cells)
+            self.analytics.pretty_show(self.iterations, self.cells)
