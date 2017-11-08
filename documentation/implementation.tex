@@ -246,3 +246,27 @@ Los comandos de consola de \textit{Docker} son los siguientes:
 Completar (Eliminar contenedores).
 
 \subsection{Parámetros de la simulación}
+
+La simulación cuenta con la posibilidad de ajustar los parámetros que se describen en la sección anterior,
+donde se comenta el módulo \textit{simulation\_globals.py}. En el punto de entrada de la aplicación,
+en \textit{main.py}, se encuentra la declaración del objeto \textit{SimulationGlobals}.
+
+Para realizar ajustes, existen dos formas:
+
+\begin{itemize}
+  \item Utilizar la configuración por defecto de los autores.
+  \item Utilizar una configuración propia.
+\end{itemize}
+
+Para el primer caso, se cuenta con una serie de constantes que permiten dejar el sistema con la
+configuración por defecto que dan los autores
+
+Para el segundo caso, sólo hay que establecer el parámetro deseado sustituyendo cualquiera de las constantes.
+
+Además, existe una configuración en cuanto a tamaño de la rejilla y número de iteraciones, esto es:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{figures/simulations_globals}
+\caption{Completar.}
+\end{figure}
