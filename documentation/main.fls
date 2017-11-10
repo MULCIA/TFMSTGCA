@@ -619,6 +619,9 @@ INPUT implementation.tex
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi7t.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplbi7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
+INPUT figures/alg.png
+INPUT ./figures/alg.png
+INPUT ./figures/alg.png
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmsl7t.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/public/kpfonts/jkpttmsl7t.vf
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmsle.tfm

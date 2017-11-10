@@ -103,13 +103,11 @@ class Automata(object):
                         self.push_event(iteration + self.future_mitotic_event(), event)
                     else: # Telomer is 0 and EI is OFF
                         self.kill_cell(event)
-            if iteration in self.mitotic_agenda:
-                del self.mitotic_agenda[iteration] # TODO: Probar esto para ver si se evita que la agenda ocupe mucha memoria
+            if iteration in self.mitotic_agenda: # Remove current iteration
+                del self.mitotic_agenda[iteration]
         if statics_enable:
             result = self.analytics.get_measurements(statics)
-            #self.analytics.plot_cells(result[0])
             self.analytics.plot_health_vs_carcino(result[0])
             self.analytics.plot_mutations(result[1])
-            #self.analytics.plot_grid(self.cells)
             self.analytics.plot_grid_plotly(self.cells)
             self.analytics.pretty_show(self.iterations, self.cells)
