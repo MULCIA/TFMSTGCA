@@ -152,8 +152,45 @@ unas $77,4$ semanas aproximadamente.
 
 \section{Bucle principal del modelo de eventos}
 
+El modelo de eventos consiste en realizar un número de iteraciones, y en cada iteración realizar
+una serie de pruebas con aquellas células que tienen una posibilidad de evento mitótico en ese
+momento.
+
+Se realizan tres pruebas, la primera prueba consiste en comprobar si a la célula que tiene
+un posible evento mitótico en esta iteración aplica o no muerte aleatoria. Esto se realiza mediante un
+sorte con una probabilidad dada ($1/a$). Mediante esta prueba se pretende simular las diferentes
+causas que pueden llevar a la muerte de una célula.
+
+En la segunda prueba, se pretende simular los mecanismos del cuerpo que evitan que una célula
+siga reproduciéndose con un eleveado daño genético. Esto se realiza mediante un sorte con una probabilidad
+dada ($n/e$) a partir del número de mutaciones de la célula entre un parámetro global establecido para
+la simulación.
+
+Y, por último, se realiza la prueba para ver si dicha célula realiza o no la mitosis.
+Para ello, se realizan tres pruebas que deben ser positivas, estas son: comprobación del factor de crecimiento,
+comprobación de ignorancia de inhibición de crecimiento, y comprobación de potencial replicativo sin limites.
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{figures/pseudo_alg}
 \caption{Modelo de eventos para simulación del cáncer.}
 \end{figure}
+
+La prueba número tres, o comprobación del factor de crecimiento, consiste en comprobar
+si la célula está dentro de un espacio predefinido en el cual llegan los mensajes
+para poder realizar la mitosis, y si no es así, se comprueba que tiene la mutación $SG$
+que le permite realizar la mitosis a pesar de estar en dicha posición. En cuanto a la prueba
+número cuatro, o comprobación de ignorancia de inhibición de crecimiento, consiste en comprobar
+si hay espacio en el vecindario para realizar la mitosis, o en caso contrario, si tiene el marcador
+$IGI$ reemplazará a un vecino con una probabilidad dada ($1/g$) mediante la muerte del vecino elegido.
+Por último, la prueba número cinco, o comprobación de potencial replicativo sin limites,
+consiste en comprobar si el tamaño del telómero es mayor a cero, o en caso contrario,
+si tiene la mutación $EI$ que le permite realizar la mitosis a pesar de no contar con telómero.
+
+Si la célula pasa todas las pruebas se procede a realizar la mitosis y a programar un nuevo evento mitótico para ambas.
+En otro caso, se programa un nuevo evento mitótico para la misma célula si esta no ha muerto como
+resultado de alguno de las pruebas previas a la mitosis.
+
+La implementación final en un lenguaje de programación de propósito general varía dada
+la complejidad de implementación de las pruebas descritas. En el siguiente capítulo se comenta y se muestra
+la implementación final del algoritmo presentado en esta sección.

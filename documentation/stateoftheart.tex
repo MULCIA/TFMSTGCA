@@ -8,7 +8,37 @@ cuyo enfoque quedaran fuera del ámbito de la inteligencia artificial, se obtuvo
 con dos candidatos.
 
 De los artículos seleccionados, se procedió a su estudio y extracción de información. A continuación,
-se presentan y describen los trabajos candidatos.
+se presenta la lista de trabajos obtenidos y, posteriormente, se describen los trabajos candidatos.
+
+\section{Resultado de la búsqueda de artículos}
+
+Los artículos encontrados durante la fase de búsqueda de información respecto a la temática
+\textit{Simulación de crecimiento de tumores con autómatas celulares} son los siguientes:
+
+\begin{itemize}
+    \item \textit{Simulated Bain Tumor Growth Dynamics Using a Three-Dimensional Cellular Automaton}
+    de A.R. Kansal, S. Torquato, G.R. Harsh IV, E.A. Chiocca and T.S. Deisboeck, 2000.
+    \item \textit{A cellular automaton model for tumour growth in inhomogeneous environment}
+    de T. Alarcon, H.M. Byrne, P.K. Maini, 2003.
+    \item \textit{A Cellular automata model of tumor-immune system interactions}
+    de D.G. Mallet, L.G. De Pillis, 2006.
+    \item \textit{Cellular Automaton of Idealized Brain Tumor Growth Dynamics}
+    de , 2009.
+    \item \textit{A Review of Cellular Automata Models of tumor Growth}
+    de Ankana Boondirek, Wannapong Triampo, Narin Nuttavut, 2010.
+    \item \textit{Emergent Behaviors from A Cellular Automaton Model for Invasive Tumor Growth in Heterogeneous Microenvironments}
+    de Yang Jiao, Salvatore Torquato, 2011-2012.
+    \item \textit{Study of cancer hallmarks relevance using a cellular automaton tumor growth model}
+    de José Santos, Ángel Monteagudo, 2012.
+    \item \textit{Studying the capability of different cancer hallmarks to initiate tumor growth using a cellular automaton simulation. Application in a cancer stem cell context}
+    de José Santos, Ángel Monteagudo, 2013.
+    \item \textit{A Cellular Automaton Model for Tumor Dormancy: Emergence of a Proliferative Switch}
+    de Duyu Chen, Yang Jiao, Salvatore Torquato, 2014.
+    \item \textit{Analysis of behaviour transitions in tumor growth using a cellular automaton simulation}
+    de José Santos, Ángel Monteagudo, 2014.
+    \item \textit{Treatment analysis in a cancer stem cell context using a tumor growth model based on cellular automata}
+    de José Santos, Ángel Monteagudo, 2015.
+\end{itemize}
 
 \section{\textit{Cellular automaton of idealized brain tumor growth dynamics}}
 
@@ -20,12 +50,19 @@ En concreto, se enfoca a un tipo de tumor, el tumor de Gompertzian. Los autores 
 la consecución de simular el crecimiento de dicho tumor en casi tres órdenes de magnitud en radio
 utilizando sólo cuatro parámetros microscópicos.
 
-Su estudio tiene un elevado enfoque clínico y, en consecuencia, sí que modelizan la densidad de células, así como,
-el tamaño de cada célula. Para esto último, emplean el algoritmo de triangulación \textit{Delaunay}\footnote{\url{https://es.wikipedia.org/wiki/Triangulacion_de_Delaunay}}
+Su estudio tiene un elevado enfoque clínico modelizando la densidad de células y
+el tamaño de cada célula, empleando el algoritmo de triangulación \textit{Delaunay}\footnote{\url{https://es.wikipedia.org/wiki/Triangulacion_de_Delaunay}}
 junto a Polígonos de \textit{Thiessen} o diagramas de \textit{Voronoi}\footnote{\url{https://es.wikipedia.org/wiki/Poligonos_de_Thiessen}} para su representación.
 
-Realizan también un modelado temporal, para así estudiar la velocidad de crecimiento de los tumores. En cuanto a sus resultados son muy concisos, ya que,
-la simulación está muy especializada y no hacen un estudio de diversos parámetros como en el otro artículo candidato.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{figures/modelado_tamanio}
+\caption{triangulación de Delaunay junto a Polígonos de Thiessen o diagramas de Voronoi para modelizar el tamaño de las células.}
+\end{figure}
+
+Realizan también un modelado temporal, para así estudiar la velocidad de crecimiento de los tumores.
+Sus resultados están muy especializados en un tipo de tumor, por lo que no realizan un estudio genérico
+para varios tipos de tumores, con diferentes parámetros, configuraciones o marcadores.
 
 \section{\textit{Analysis of behaviour transitions in tumour growth
 using a cellular automaton simulation}}

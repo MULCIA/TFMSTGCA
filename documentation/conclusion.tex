@@ -1,7 +1,39 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+El cáncer es una enfermedad compleja y que requiere de una gran cantidad
+de eventualidades para que se dé su aparición y proliferación.
 
-Comentar aquí que las células cancerosas tienden a acumularse en el espacio exterior de la rejilla, debido
-a los marcadores que se tienen en cuenta en el genoma y lo que implican.
+El cuerpo humano cuenta con mecanismos para evitar la aparición de esta enfermedad,
+que van desde muerte por daño genético hasta la intervención del propio sistema inmune.
+Este trabajo se ha centrado en la reproducción de los experimentos para intentar reproducir
+los resultados de los autores del trabajo original \cite{jsantos-amonteagudo-1-2014}.
+
+Desde el punto de vista de los marcadores y los parámetros asociados a la simulación se
+han realizado distintas configuraciones a fin de estudiar qué comportamiento tiene el sistema y, por tanto,
+cómo crece el tumor. La aparición y proliferación de determinadas mutaciones en las células, así como, en qué lugar ocurren,
+provocan determinados comportamientos.
+
+El marcador más destacable es el marcador asociado a la capacidad de las células de generar sus propios mensajes de división celular,
+o $SG$, el cual propicia la proliferación por la parte exterior de la rejilla.
+Esto es algo observado en todos los tipos de tumores, y es lo que hace que se convierta en una
+enfermedad mortal, ya que, provoca que crezca y se expanda provocando compresión en tejidos
+adyacentes.
+
+Este comportamiento se explica porque encuentra espacio suficiente, y esto permite, además, pasar con éxito dos pruebas previas a la mitosis:
+comprobación del factor de crecimiento, y comprobación de ignorancia de inhibición de crecimiento.
+Es decir, obtiene sus propios mensajes para realizar la división celular, y no necesita
+matar a un vecino para poder realizar la mitosis.
+
+El resto de marcadores, excepto el marcador de inestabilidad genética o $GI$, provocan
+que la proliferación e invasividad sea mayor, o lo que es lo mismo, que estemos ante una
+masa anormal maligna, o también llamado carcinoma.
+
+El marcador de inestabilidad genética o $GI$ provoca que existan células más propensas
+a sufrir mutaciones en el proceso de división celular. Esto conlleva la aparición
+de células cancerosas en la parte central de la rejilla, que combinado a otros marcadores
+termina por encontrar el camino a su proliferación. Esto, requiere de mayor tiempo de simulación
+ya que en el centro de la rejilla hay menos espacio y actúan mecanismos de protección contra
+el cáncer de manera más efectiva.
+
+Si esta simulación fuese completa y fiel a la realidad de cualquier tipo de cancer se
+podría utilizar como herramienta de capacidad predictiva y, también, como herramienta
+para probar la acción de fármacos mediante la inhibición de varios de los mecanismos
+que forman la simulación.
