@@ -600,11 +600,11 @@ INPUT ./figures/automata_neighboor.png
 INPUT stateoftheart.tex
 INPUT stateoftheart.tex
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi7t.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplbi7t.vf
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
 INPUT figures/modelado_tamanio.png
 INPUT ./figures/modelado_tamanio.png
 INPUT ./figures/modelado_tamanio.png
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplbi7t.vf
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
 INPUT eventmodel.tex
 INPUT eventmodel.tex
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd
