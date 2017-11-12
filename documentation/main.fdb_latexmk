@@ -1,5 +1,5 @@
 # Fdb version 3
-["bibtex main"] 1510398061 "main.aux" "main.bbl" "main" 1510398069
+["bibtex main"] 1510398061 "main.aux" "main.bbl" "main" 1510511377
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1463430410 63005 2d5c74caa08218e0f9e8bc5ec9474f08 ""
   "main-blx.bib" 1510398063 306 c3dc35a16200f68ad2e5ec8b9d022a30 ""
   "main.aux" 1510398068 33211 c62121a96f8499c93500cba1df611eee ""
@@ -8,7 +8,7 @@
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1510398061 "main.tex" "main.pdf" "main" 1510398069
+["pdflatex"] 1510398061 "main.tex" "main.pdf" "main" 1510511377
   "/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm" 1136768653 1616 371d1ee60c04b008c8fd760060cd34f1 ""
@@ -334,13 +334,13 @@
   "stateoftheart.tex" 1510398050 5929 2fd7e0112c440a8acbb9e66d43ac067f ""
   "trinidad-PhD.sty" 1509133266 27148 2f25da5b7a12dc8b62a5f63daf0f4a17 ""
   (generated)
-  "main.thm"
-  "main-blx.bib"
-  "main.lof"
-  "main.pdf"
   "main.brf"
-  "main.run.xml"
-  "main.toc"
-  "main.log"
-  "main.aux"
   "main.out"
+  "main.run.xml"
+  "main.log"
+  "main.lof"
+  "main-blx.bib"
+  "main.pdf"
+  "main.thm"
+  "main.toc"
+  "main.aux"
