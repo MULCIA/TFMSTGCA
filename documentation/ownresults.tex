@@ -154,3 +154,47 @@ de la rejilla, lo que es coherente con lo que han obtenido los autores.
 \includegraphics[scale=0.6]{figures/experiments/exp3/grid}
 \caption{Rejilla resultante de la simulación para el experimento con $m = 100$.}
 \end{figure}
+
+\section{Influencia del resto de parámetros}
+
+Los autores realizan un segundo experimento con el objetivo de observar los efectos
+que tienen el resto de parámetros sobre la simulación. Para ello, varían los parámetros de
+la simulación, como se puede observar en la siguiente tabla:
+
+\begin{table}[h!]
+  \centering
+  \caption{Valores de los parámetros.}
+  \label{tab:table1}
+  \begin{tabular}{ccc}
+    \toprule
+    Nombre & Símbolo & Valor\\
+    \midrule
+    Tasa de mutación base & m & 100.000\\
+    Tamaño del telómero & tl & 35\\
+    Muerte por daño genético & e & 20\\
+    Factor de incremento de tasa de mutación base & i & 100\\
+    Muerte de un vecino & g & 10\\
+    Muerte aleatoria & a & 400\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Los resultados obtenidos se muestran a continuación.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/experiments/exp4/healthvscarcino}
+\caption{Células sanas frente a células cancerosas como resultado de la simulación para el experimento con $m = 100000$.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/experiments/exp4/mutations}
+\caption{Evolución de los marcadores como resultado de la simulación para el experimento con $m = 100000$.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{figures/experiments/exp4/grid}
+\caption{Rejilla resultante de la simulación para el experimento con $m = 100000$.}
+\end{figure}

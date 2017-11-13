@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.7 $
+% $ biblatex bbl format version 2.8 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -21,9 +21,9 @@
     \name{author}{1}{}{%
       {{hash=AA}{%
          family={Adamatzky},
-         family_i={A\bibinitperiod},
+         familyi={A\bibinitperiod},
          given={Andrew},
-         given_i={A\bibinitperiod},
+         giveni={A\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -43,18 +43,18 @@
     \name{author}{2}{}{%
       {{hash=AKGHIECST}{%
          family={A.R.\bibnamedelima Kansal},
-         family_i={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+         familyi={A\bibinitperiod\bibinitdelim K\bibinitperiod},
          suffix={S.\bibnamedelima Torquato},
-         suffix_i={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+         suffixi={S\bibinitperiod\bibinitdelim T\bibinitperiod},
          given={G.R. Harsh IV E.A.\bibnamedelima Chiocca},
-         given_i={G\bibinitperiod\bibinitdelim H\bibinitperiod I\bibinitperiod
+         giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod I\bibinitperiod
   E\bibinitperiod\bibinitdelim C\bibinitperiod},
       }}%
       {{hash=DT}{%
          family={Deisboeck},
-         family_i={D\bibinitperiod},
+         familyi={D\bibinitperiod},
          given={T.S.},
-         given_i={T\bibinitperiod},
+         giveni={T\bibinitperiod},
       }}%
     }
     \strng{namehash}{AKSTGHIECDT1}
@@ -72,15 +72,15 @@
     \name{author}{2}{}{%
       {{hash=HD}{%
          family={Hanahan},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={Douglas},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
       {{hash=WRA}{%
          family={Weinberg},
-         family_i={W\bibinitperiod},
+         familyi={W\bibinitperiod},
          given={Robert\bibnamedelima A.},
-         given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{HDWRA1}
@@ -98,15 +98,15 @@
     \name{author}{2}{}{%
       {{hash=HD}{%
          family={Hanahan},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={Douglas},
-         given_i={D\bibinitperiod},
+         giveni={D\bibinitperiod},
       }}%
       {{hash=WRA}{%
          family={Weinberg},
-         family_i={W\bibinitperiod},
+         familyi={W\bibinitperiod},
          given={Robert\bibnamedelima A.},
-         given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{HDWRA1}
@@ -124,16 +124,16 @@
     \name{author}{2}{}{%
       {{hash=JKPMS}{%
          family={Jiri\bibnamedelima Kroc},
-         family_i={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+         familyi={J\bibinitperiod\bibinitdelim K\bibinitperiod},
          given={Peter M.A.\bibnamedelima Sloot},
-         given_i={P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+         giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
   S\bibinitperiod},
       }}%
       {{hash=HAG}{%
          family={Hoekstra},
-         family_i={H\bibinitperiod},
+         familyi={H\bibinitperiod},
          given={Alfons\bibnamedelima G.},
-         given_i={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+         giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
@@ -153,19 +153,19 @@
     \name{author}{2}{}{%
       {{hash=SJ}{%
          family={Santos},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Josﾃｩ},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
-      {{hash=ﾃM}{%
+      {{hash=nM}{%
          prefix={ﾃ］gel},
-         prefix_i={ﾃ\bibinitperiod},
+         prefixi={n\bibinitperiod},
          family={Monteagudo},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SJMﾃ1}
-    \strng{fullhash}{SJMﾃ1}
+    \strng{namehash}{SJMn1}
+    \strng{fullhash}{SJMn1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
@@ -180,19 +180,19 @@
     \name{author}{2}{}{%
       {{hash=SJ}{%
          family={Santos},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Josﾃｩ},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
-      {{hash=ﾃM}{%
+      {{hash=nM}{%
          prefix={ﾃ］gel},
-         prefix_i={ﾃ\bibinitperiod},
+         prefixi={n\bibinitperiod},
          family={Monteagudo},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SJMﾃ1}
-    \strng{fullhash}{SJMﾃ1}
+    \strng{namehash}{SJMn1}
+    \strng{fullhash}{SJMn1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
@@ -207,19 +207,19 @@
     \name{author}{2}{}{%
       {{hash=SJ}{%
          family={Santos},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Josﾃｩ},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
-      {{hash=ﾃM}{%
+      {{hash=nM}{%
          prefix={ﾃ］gel},
-         prefix_i={ﾃ\bibinitperiod},
+         prefixi={n\bibinitperiod},
          family={Monteagudo},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SJMﾃ1}
-    \strng{fullhash}{SJMﾃ1}
+    \strng{namehash}{SJMn1}
+    \strng{fullhash}{SJMn1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
@@ -235,19 +235,19 @@
     \name{author}{2}{}{%
       {{hash=SJ}{%
          family={Santos},
-         family_i={S\bibinitperiod},
+         familyi={S\bibinitperiod},
          given={Josﾃｩ},
-         given_i={J\bibinitperiod},
+         giveni={J\bibinitperiod},
       }}%
-      {{hash=ﾃM}{%
+      {{hash=nM}{%
          prefix={ﾃ］gel},
-         prefix_i={ﾃ\bibinitperiod},
+         prefixi={n\bibinitperiod},
          family={Monteagudo},
-         family_i={M\bibinitperiod},
+         familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SJMﾃ1}
-    \strng{fullhash}{SJMﾃ1}
+    \strng{namehash}{SJMn1}
+    \strng{fullhash}{SJMn1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}

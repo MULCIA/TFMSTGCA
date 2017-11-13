@@ -85,7 +85,7 @@ class Automata(object):
             statics = dict()
         for iteration in range(self.iterations):
             print(iteration)
-            if statics_enable and iteration%50 == 0:
+            if statics_enable and iteration%200 == 0:
                 statics[iteration] = copy.deepcopy(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
