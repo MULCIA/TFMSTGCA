@@ -7,12 +7,12 @@ $125.000$ células posibles en la rejilla.
 
 \section{Influencia del parámetro \textit{Tasa de mutación base (m)}}
 
-Los autores en su artículo presentan 3 experimentos utilizando los valores por defecto
-y variando el parámetro \textit{Tasa de mutación base (m)} para estudiar como afecta
+Los autores en su artículo presentan $3$ experimentos utilizando los valores por defecto
+y variando el parámetro \textit{Tasa de mutación base (m)} para estudiar cómo afecta
 dicho parámetro en la proliferación del cáncer.
 
 Cada experimento se muestra en una serie de gráficas en las cuales se presenta
-como resultado la media de 5 ejecuciones diferentes.
+como resultado la media de $5$ ejecuciones diferentes.
 
 A continuación, se muestra cada uno de los experimentos especificando en cada caso
 el valor $m$ utilizado. El resto de parámetros de la simulación se mantiene constante
@@ -38,31 +38,32 @@ con los valores considerados por defectos, que son:
 \subsection{Experimento 1: Tasa de mutación base igual a 10.000}
 
 En este primer experimento, los autores presentan un valor para el parámetro
-tasa de mutación base de $m=10000$. Realizan una simulación de $1000$ iteraciones.
+tasa de mutación base de $m=10.000$. Realizan una simulación de $1.000$ iteraciones.
 
 Es importante recordar, que al utilizar $1/m$ para representar la probabilidad
 de que aparezcan diferentes mutaciones al realizar la mitosis, a mayor valor
 del parámetro $m$, menor probabilidad de que ocurran mutaciones.
 
-En la simulación, el número de células cancerosas es muy bajo y crece muy levemente,
-no superando las $10000$ células de las $125000$ totales. En cuanto a lo marcadores,
+En la simulación~\ref{fig:exp1}, el número de células cancerosas es muy bajo y crece muy levemente,
+no superando las $10.000$ células de las $125.000$ totales. En cuanto a lo marcadores,
 el marcador $SG$ toma ventaja y tiene ocurrencia en la mayoría de células cancerosas
-(una célula cancerosa es aquella que tiene, al menos, una mutación). El siguiente marcador
-presente, aunque con mucha diferencia, es $EA$. El resot de marcadores presenta
+(una célula cancerosa es aquella que tiene, al menos, una mutación en su genoma). El siguiente marcador
+presente, aunque con mucha diferencia, es $EA$. El resto de marcadores presenta
 un comportamiento similar y su presencia es casi inexistente.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{figures/experiments/exp1}
 \caption{Resultados obtenidos por los autores para el experimento con $m=10,000$.}
+\label{fig:exp1}
 \end{figure}
 
 \subsection{Experimento 2: Tasa de mutación base igual a 1.000}
 
 En el segundo experimento, los autores alteran el valor para el parámetro tasa de
-mutación base a $m=1000$.
+mutación base a $m=1.000$.
 
-Los resultados obtenidos para $1000$ iteraciones presentan varias diferencias. En primer lugar,
+Los resultados obtenidos para $1.000$ iteraciones presentan varias diferencias~\ref{fig:exp2}. En primer lugar,
 el número de células cancerosas aumenta, lo cual, se explica por la mayor probabilidad
 de mutaciones provocadas al realizar la mitosis. En segundo lugar, en cuanto a los marcadores,
 aparecen todos los marcadores, con un comportamiento bastante similar entre ellos. Se pueden
@@ -71,12 +72,13 @@ destacar los marcadores $EA$ y $SG$, que toman algo de ventaja respecto al resto
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{figures/experiments/exp2}
-\caption{Resultados obtenidos por los autores para el experimento con $m=1,000$.}
+\caption{Resultados obtenidos por los autores para el experimento con $m=1.000$.}
+\label{fig:exp2}
 \end{figure}
 
 \subsection{Experimento 3: Tasa de mutación base igual a 100}
 
-En este tercer y último experimento de este tipo, los autores obtienen cambios relevantes frente a los dos
+En este tercer y último experimento de este tipo~\ref{fig:exp3}, los autores obtienen cambios relevantes frente a los dos
 experimentos anteriores.
 
 En primer lugar, el número de células cancerosas pronto supera a las células sanas, e incluso,
@@ -97,6 +99,7 @@ celular programada.
 \centering
 \includegraphics[scale=0.6]{figures/experiments/exp3}
 \caption{Resultados obtenidos por los autores para el experimento con $m=100$.}
+\label{fig:exp3}
 \end{figure}
 
 \section{Influencia del resto de parámetros}
@@ -123,14 +126,14 @@ la simulación, como se puede observar en la siguiente tabla:
   \end{tabular}
 \end{table}
 
-Se observa un comportamiento bastante representativo, por ejemplo, un menor valor
+Se observa un comportamiento bastante representativo~\ref{fig:exp4}, por ejemplo, un menor valor
 para el número de iteraciones implica menos eventos mitóticos en las células sanas, y
-un menor valor del parámetros $a$ facilita la aparición de sitios vacacntes que
+un menor valor del parámetros $a$ facilita la aparición de sitios vacantes que
 quedan disponibles para la propagación de células cancerosas, en conexión con una
-mayor probabilidad de reemplazar a un vecino para realizar la mitósis (parámetros $g$).
+mayor probabilidad de reemplazar a un vecino para realizar la mitosis (parámetros $g$).
 
 En la gráfica de evolución de los marcadores se observa que en este caso el marcador
-dominante es $EI$. En este caso, se realizan $5000$ iteraciones. El marcador $EI$ implica
+dominante es $EI$. En este caso, se realizan $5.000$ iteraciones. El marcador $EI$ implica
 la progresión de estas células debido a que evitan la muerte por agotamiento del telómero.
 En la simulación, por contra, tener un telómero más corto implica tener menos oportunidades de división, como
 ocurre con la célula inicial del centro de la rejilla.
@@ -138,7 +141,7 @@ ocurre con la célula inicial del centro de la rejilla.
 El resto de marcadores aparecen más tarde en la simulación. El siguiente marcador en hacer
 presencia es $EA$, lo cual permite a las células evadir la muerte celular programada. Este marcador
 también favorece la proliferación del cáncer, por tanto, toma cada vez más ventaja. El marcador
-$SG$ aparece algo más tarde que los anteriores y permite proliferar al cancer
+$SG$ aparece algo más tarde que los anteriores y permite proliferar al cáncer
 fuera del límite reproductivo, por tanto, alcanza un límite y se mantiene estable.
 
 El último marcador en aparecer es $IGI$. No prolifera rápidamente debido a no disponer
@@ -148,6 +151,7 @@ de espacio vacante para realizar la división.
 \centering
 \includegraphics[scale=0.8]{figures/experiments/exp4}
 \caption{Resultado de la simulación para comprobar la influencia del resto de parámetros.}
+\label{fig:exp4}
 \end{figure}
 
 \section{Influencia de parámetros con rejilla completa de células sanas}
@@ -155,17 +159,27 @@ de espacio vacante para realizar la división.
 En este caso, se parte con una rejilla completa de células sanas. En cuanto a los parámetros,
 se utilizan los mismos que en la sección anterior.
 
-Se realizan diferentes estrategias en cuanto al número de iteraciones, desde $8000$ iteraciones
-hasta $100000$ iteraciones, es decir, la simulación se corresponde con una equivalencia temporal
+Se realizan diferentes estrategias en cuanto al número de iteraciones, desde $8.000$ iteraciones
+hasta $100.000$ iteraciones, es decir, la simulación se corresponde con una equivalencia temporal
 de $2.3$ años y $29.7$ años respectivamente.
-
-Completar.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{figures/experiments/exp5}
-\caption{Completar.}
+\caption{Resultado de la simulación para comprobar la influencia del resto de parámetros con rejilla completa de células sanas.}
+\label{fig:exp5}
 \end{figure}
+
+En el resultado de la primera simulación~\ref{fig:exp5} las células cancerosas van aumentando
+hasta que en la iteración $3.500$ aproximádamente superan en número a las células sanas,
+llegando a sustituir a las células sanas al final de la simulación. Todos los marcadores
+toman ventaja muy pronto, excepto el marcador $EI$.
+
+En el resultado de la segunda simulación se necesita más tiempo, en este caso $100.000$ iteraciones,
+ya que el parámetro tasa de mutación base es $m=100.000$.
+
+El comportamiento para ambos casos es semejante al de las ejecuciones anteriores, por lo cual
+la condición inicial no es relevante.
 
 \section{Relevancia de los marcadores}
 
@@ -184,17 +198,18 @@ del marcador $GI$, se reducen las posibilidades de adquirir una mutación. Respe
 esto se debe a que cuando la rejilla no tiene espacio libre, sobre todo con células sanas, se reduce
 la probabilidad de, para realizar la división, una célula mate a un vecino para conseguir espacio.
 
-Completar.
-
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{figures/experiments/exp6}
-\caption{Completar.}
+\caption{Resultados de la simulaciones con la eliminación de algún marcador con dos configuraciones diferentes.}
+\label{fig:exp6}
 \end{figure}
+
+Completar.
 
 \section{Comportamiento de las transiciones}
 
-El objetivo es estudiar el comportamiento de las transiciones cuando un agente actua contra las células cancerosas.
+El objetivo es estudiar el comportamiento de las transiciones cuando un agente actúa contra las células cancerosas.
 En este caso, la simulación comienza con la rejilla completa de células cancerosas, y se supone una terapia
 perfecta, en el sentido que la droga, en este caso, actúa sólo contra las células cancerosas.
 
@@ -204,10 +219,12 @@ Completar.
 \centering
 \includegraphics[scale=0.7]{figures/experiments/exp7}
 \caption{Completar.}
+\label{fig:exp7}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figures/experiments/exp8}
 \caption{Completar.}
+\label{fig:exp8}
 \end{figure}

@@ -17,7 +17,7 @@ La implementación de $Python$ utilizada es $CPython$\footnote{\url{https://www.
 Además, se han empleado los siguientes paquetes:
 
 \begin{itemize}
-  \item \textit{NumPy} como librería fundamental para computación cientifica del ecosistema \textit{SciPy}.
+  \item \textit{NumPy} como librería fundamental para computación científica del ecosistema \textit{SciPy}.
   \item \textit{Matplotlib} como librería para creación de gráficas del ecosistema \textit{SciPy}.
   \item \textit{Plotly} como librería gráfica, utilizada en este caso sólo para representar figuras en tres dimensiones.
 \end{itemize}
@@ -34,14 +34,21 @@ se describen en la siguiente sección de este capítulo. Por otro lado, se ha se
 diseñar el sistema, o partes de él, en forma de funciones, las cuales para ejecutar su lógica utilizan únicamente
 los parámetros que recibe.
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{figures/architecture}
+\caption{Diagrama de componentes del sistema.}
+\label{fig:arch}
+\end{figure}
+
 Ambos paradigmas, comentado brevemente en el párrafo anterior, tienen muchos más aspectos, enfoques y soluciones
-de las que se comentan. El programa cuenta con un único punto de entrada, en este caso, siguendo el patrón
+de las que se comentan. El programa cuenta con un único punto de entrada~\ref{fig:arch}, en este caso, siguiendo el patrón
 \textit{Singleton}. En cuanto a los patrones utilizados, se van a describir en la siguiente sección de este
 capítulo donde se presentan los diferentes módulos del mismo.
 
 \section{Módulos del sistema}
 
-En este caso, el programa cuenta con 6 módulos. El módulo principal, \textit{automata.py}, presenta
+En este caso, el programa cuenta con 6 módulos~\ref{fig:arch}. El módulo principal, \textit{automata.py}, presenta
 una clase que sigue el patrón \textit{Estrategia} y, el cual, engloba la función principal de ejecución,
 así como, el resto de funciones necesarias para su correcta ejecución. Además, importa y utiliza
 el resto de módulos, los caules, se describen a continuación.
@@ -55,8 +62,8 @@ modeliza en este sistema.
 Como se ha descrito previamente, las mutaciones que contiene esta clase son las siguientes:
 
 \begin{itemize}
-    \item \textbf{SG}: Autogeneración de los mensajes de crecimeinto. Esto es, la mutación que permite que la
-    célula genere sus propios mensajes para ejecutar la división con idependencia externa.
+    \item \textbf{SG}: Autogeneración de los mensajes de crecimiento. Esto es, la mutación que permite que la
+    célula genere sus propios mensajes para ejecutar la división con independencia externa.
     \item \textbf{IGI}: Inhibición de las señales de anticrecimiento. Esto es, ante la recepción de una orden
     de detener su crecimiento, la célula tiene una mutación que le permite un mecanismo de ignorancia de los mismos.
     \item \textbf{EA}: Evasión de apoptosis. Esto es, la célula puede, mediante mutación, no hacer caso ante
@@ -170,7 +177,7 @@ sus métodos son los siguientes:
 
 \subsection{Módulo \textit{automata.py}}
 
-Módulo principal del sistema que contiene la lógica de ejecución del mismo. El sistema
+Módulo principal del sistema que contiene la lógica de ejecución del mismo~\ref{fig:automata}. El sistema
 está diseñado siguiendo el patrón \textit{Singleton}, es decir, sólo hay un objeto
 autómata que, implementando el patrón \textit{estrategia}, tiene un, método con
 la lógica de ejecución.
@@ -186,11 +193,12 @@ la responsabilidad de generar las medidas utilizando el módulo de analítica qu
 \centering
 \includegraphics[scale=0.45]{figures/alg}
 \caption{Código con el bucle principal de la simulación.}
+\label{fig:automata}
 \end{figure}
 
 \subsection{Módulo \textit{analytics.py}}
 
-Este último módulo, reune las funciones necesarias para hacer medidas sobre las células
+Este último módulo, reúne las funciones necesarias para hacer medidas sobre las células
 de la rejilla, como por ejemplo, células sanas o cancerígenas, cuántas células tienen un
 determinado marcador del cáncer activo, etc.
 
@@ -213,12 +221,12 @@ Dependiendo del tipo de instalación, se dan los siguientes prerrequisitos:
         \item Instalar la versión 3.6+ de \textit{Python}\footnote{\url{https://www.python.org/downloads/}}.
         \item Instalar el gestor de paquetes de \textit{Python}, \textit{pip}\footnote{\url{https://pip.pypa.io/en/stable/installing/}}.
         \item Instalar el control de versiones \textit{Git}\footnote{\url{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}}.
-        \item Clonar el respositorio ejecutando en consola \textit{git clone \url{https://github.com/MULCIA/TFMSTGCA.git}}.
+        \item Clonar el repositorio ejecutando en consola \textit{git clone \url{https://github.com/MULCIA/TFMSTGCA.git}}.
         \item Instalar dependencias con \textit{pip}, para ello, ejecutar en consola \textit{pip install -r requirements.txt}.
   \item Para una ejecución con \textit{Docker} se necesita:
         \item Instalar la última versión de \textit{Docker}\footnote{\url{https://docs.docker.com/engine/installation/}}.
         \item Instalar el control de versiones \textit{Git}\footnote{\url{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}}.
-        \item Clonar el respositorio ejecutando en consola \textit{git clone \url{https://github.com/MULCIA/TFMSTGCA.git}}.
+        \item Clonar el repositorio ejecutando en consola \textit{git clone \url{https://github.com/MULCIA/TFMSTGCA.git}}.
 \end{itemize}
 
 \subsection{Ejecución}
@@ -244,14 +252,12 @@ Dichos scripts sólo se pueden emplear de tratarse de una máquina \textit{Linux
 Los comandos de consola de \textit{Docker} son los siguientes:
 
 \begin{itemize}
-  \item Para construir la imagen: \textit{docker build -t TFMSTGCA/tfm .}.
+  \item Para construir la imagen: \textit{docker build -t TFMSTGCA/tfm . }.
   \item Para levantar el contenedor: \textit{docker run --name tfm -d TFMSTGCA/tfm:latest tail -f /dev/null}. Se ejecuta en modo demonio y se mantiene su
   ejecución. Al finalizar el proceso de creación y ejecución del contenedor, se realiza una ejecución de los tests adjuntos al proyecto.
   \item Para ejecutar la simulación: \textit{docker exec -it tfm bash}. Una vez ejecutado, con la terminal del contenedor en la consola, ejecutar como se describe previamente
   para la ejecución en máquina local.
 \end{itemize}
-
-Completar (Eliminar contenedores).
 
 \subsection{Parámetros de la simulación}
 
@@ -271,10 +277,11 @@ configuración por defecto que dan los autores
 
 Para el segundo caso, sólo hay que establecer el parámetro deseado sustituyendo cualquiera de las constantes.
 
-Además, existe una configuración en cuanto a tamaño de la rejilla y número de iteraciones, esto es:
+Además, existe una configuración en cuanto a tamaño de la rejilla y número de iteraciones~\ref{fig:params}, esto es:
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{figures/simulations_globals}
 \caption{Código para configuración por defecto de una simulación.}
+\label{fig:params}
 \end{figure}

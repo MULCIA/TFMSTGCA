@@ -44,7 +44,7 @@ En este trabajo, se esperan alcanzar los siguientes objetivos:
 El presente trabajo tiene como finalidad reproducir el trabajo de José Santos y Ángel Monteagudo \cite{jsantos-amonteagudo-1-2014}, realizando
 una implementación propia del sistema que se describe en su artículo.
 
-No obstante, el comportamiento que se pretende simular cuenta con una serie de pasos en los cuales el comportamiendo dependerá
+No obstante, el comportamiento que se pretende simular cuenta con una serie de pasos en los cuales el comportamiento dependerá
 de ciertos sorteos con una probabilidad dada. Esta es una limitación a tener en cuenta a la hora de obtener los mismos resultados
 que los autores de dicho trabajo.
 
@@ -52,12 +52,12 @@ que los autores de dicho trabajo.
 
 El cáncer es el nombre genérico usado para referirse a más de 200 enfermedades cuyo resultado
 es la proliferación descontrolada de las células que se ven afectadas. Aunque no era común
-encontrar signos de cáncer en los seres vivos en la antiguedad debido a una menor esperanza
+encontrar signos de cáncer en los seres vivos en la antigüedad debido a una menor esperanza
 media de vida, lo cierto es que es inherente al reino animal.
 
 El origen etimológico del nombre proviene de la antigua grecia, donde un médico llamado
 Hipócrates utilizaba los términos \textit{carcino} y \textit{carcinoma} para referirse
-a dicha enfermedad, y las cuales hacian referencia al cangrejo debido a la forma en la
+a dicha enfermedad, y las cuales hacían referencia al cangrejo debido a la forma en la
 que se proyectaban los cánceres.
 
 El cáncer se clasifica como:
@@ -67,7 +67,7 @@ El cáncer se clasifica como:
     material genético (ADN) de las células.
     \item Una \textbf{enfermedad multigénica}, ya que, afecta a diferentes genes.
     \item Una \textbf{enfermedad multifactorial}, es decir, tiene causas muy diversas.
-    \item Una \textbf{enfermedad multiorgánica}, por tanto, afecta a diferentes tejidos y organos.
+    \item Una \textbf{enfermedad multiorgánica}, por tanto, afecta a diferentes tejidos y órganos.
 \end{itemize}
 
 Se conoce como neoplasia a toda masa anormal que tenga lugar en el cuerpo. Esto es, la división
@@ -88,8 +88,8 @@ ocasiones se observa metástasis.
 
 Es obvio, que la célula para llegar a la última fase va a necesitar cierto grado de daño genético,
 así como, superar determinadas barreras. Por un lado, obtener todas las capacidades necesarias para
-poder dividirse sin control, crear sus pripios vasos sanguíneos, etc. dependerá de la obtención
-de mutaciones en su ADN que permitan todo esto. Por otro lado, el cuerpo tiene mecanismos para evitar
+poder dividirse sin control, crear sus propios vasos sanguíneos, etc. dependerá de la obtención
+de mutaciones en su ADN que permita todo esto. Por otro lado, el cuerpo tiene mecanismos para evitar
 que esto ocurra, como por ejemplo, muerte por daño genético, evitar enviar orden de división e, incluso,
 el propio sistema inmune interviene para intentar evitar su crecimiento, además de otros muchos mecanismos.
 
@@ -98,7 +98,7 @@ así como, su tratamiento.
 
 \section{Los autómatas celulares}
 
-El patrón mostrado en ciertas conchas marinas es generado mediante autómatas celulares naturales.
+El patrón mostrado en ciertas conchas marinas~\ref{fig:conus} es generado mediante autómatas celulares naturales.
 Estas conchas muestran un aspecto exterior en el cual se observan patrones, los cuales les han
 permitido en muchas ocasiones ocultarse mejor en su entorno y, por ello, aumentar su supervivencia.
 Dichos patrones son de muy diversos tipos, por ejemplo, forman formas reconocibles, o formas fractales,
@@ -107,7 +107,8 @@ entre otras.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=2]{figures/Conustextile}
-\caption{\textit{Conus textile shell}, especie de gastrópodo que presenta un autómata celular natural en su concha.}
+\caption{\textit{Conus textile shell}, especie de gasterópodo que presenta un autómata celular natural en su concha.}
+\label{fig:conus}
 \end{figure}
 
 En ellos, cada célula toma un color o forma diferente según sus células vecinas, obedeciendo
@@ -129,7 +130,7 @@ década de 1940. A modo de resumen, los autómatas celulares cuentan con los sig
     \item En cada nodo, se coloca un autómata finito, es decir, representa un número finito de estados posibles.
     Aquellos que se encuentran ocupados, reciben el nombre de células o celdas.
     \item Cada célula se comunica con su entorno, pero sólo con una parte de él. Esto se conoce como vecindario,
-    y existen varios tipos, por ejemplo, el vecindario de Moore, o el vecindario de vonNeumann, entre otros.
+    y existen varios tipos, por ejemplo, el vecindario de Moore, o el vecindario de vonNeumann~\ref{fig:neighboor}, entre otros.
     \item Función que determina la evolución de los estados de las distintas células.
 \end{itemize}
 
@@ -137,6 +138,7 @@ década de 1940. A modo de resumen, los autómatas celulares cuentan con los sig
 \centering
 \includegraphics[scale=0.6]{figures/automata_neighboor}
 \caption{Tipos de vecindarios en los autómatas celulares.}
+\label{fig:neighboor}
 \end{figure}
 
 Dada una configuración se puede estudiar las transformaciones aplicando las reglas,
@@ -153,7 +155,7 @@ En el libro \textit{Game of Life Cellular Automata} de Andrew Adamatzky \cite{ga
 el juego de la vida, y en el último capítulo se expone una forma de hacer música con él. Para ello, el autor
 utiliza cada celda ocupada por un autómata en cada iteración para tocar tres notas utilizando
 las coordenadas $(x,y)$ de la posición del autómata en el plano cartesiano. De este modo,
-obtiene las tres notas utlizando una nota fija, y dos notas más mediante el valor de
+obtiene las tres notas utilizando una nota fija, y dos notas más mediante el valor de
 $x$ e $y$ como intervalo entre notas de un piano respecto de la nota fija y de la segunda nota
 respectivamente.
 

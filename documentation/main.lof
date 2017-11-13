@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \textit {Conus textile shell}, especie de gastr\IeC {\'o}podo que presenta un aut\IeC {\'o}mata celular natural en su concha.}}{12}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \textit {Conus textile shell}, especie de gaster\IeC {\'o}podo que presenta un aut\IeC {\'o}mata celular natural en su concha.}}{12}{figure.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Tipos de vecindarios en los aut\IeC {\'o}matas celulares.}}{13}{figure.2.2}
 \defcounter {refsection}{0}\relax 
@@ -20,53 +20,55 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces C\IeC {\'o}digo con el bucle principal de la simulaci\IeC {\'o}n.}}{33}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de componentes del sistema.}}{28}{figure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces C\IeC {\'o}digo para configuraci\IeC {\'o}n por defecto de una simulaci\IeC {\'o}n.}}{36}{figure.5.2}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces C\IeC {\'o}digo con el bucle principal de la simulaci\IeC {\'o}n.}}{33}{figure.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces C\IeC {\'o}digo para configuraci\IeC {\'o}n por defecto de una simulaci\IeC {\'o}n.}}{36}{figure.5.3}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Resultados obtenidos por los autores para el experimento con $m=10,000$.}}{38}{figure.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Resultados obtenidos por los autores para el experimento con $m=1,000$.}}{39}{figure.6.2}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Resultados obtenidos por los autores para el experimento con $m=1.000$.}}{39}{figure.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Resultados obtenidos por los autores para el experimento con $m=100$.}}{40}{figure.6.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Resultado de la simulaci\IeC {\'o}n para comprobar la influencia del resto de par\IeC {\'a}metros.}}{41}{figure.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Completar.}}{42}{figure.6.5}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Resultado de la simulaci\IeC {\'o}n para comprobar la influencia del resto de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas.}}{42}{figure.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Completar.}}{42}{figure.6.6}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Resultados de la simulaciones con la eliminaci\IeC {\'o}n de alg\IeC {\'u}n marcador con dos configuraciones diferentes.}}{43}{figure.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Completar.}}{43}{figure.6.7}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Completar.}}{44}{figure.6.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Completar.}}{44}{figure.6.8}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Completar.}}{45}{figure.6.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{46}{figure.7.1}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{48}{figure.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{47}{figure.7.2}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{49}{figure.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{48}{figure.7.3}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{50}{figure.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.4}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 1,000$.}}{49}{figure.7.4}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 1,000$.}}{51}{figure.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 1,000$.}}{50}{figure.7.5}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 1,000$.}}{52}{figure.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{51}{figure.7.6}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 10,000$.}}{53}{figure.7.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.7}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100$.}}{52}{figure.7.7}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100$.}}{54}{figure.7.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100$.}}{52}{figure.7.8}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100$.}}{54}{figure.7.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 100$.}}{53}{figure.7.9}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 100$.}}{55}{figure.7.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.10}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100000$.}}{53}{figure.7.10}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces C\IeC {\'e}lulas sanas frente a c\IeC {\'e}lulas cancerosas como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100000$.}}{55}{figure.7.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100000$.}}{54}{figure.7.11}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Evoluci\IeC {\'o}n de los marcadores como resultado de la simulaci\IeC {\'o}n para el experimento con $m = 100000$.}}{56}{figure.7.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 100000$.}}{54}{figure.7.12}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Rejilla resultante de la simulaci\IeC {\'o}n para el experimento con $m = 100000$.}}{56}{figure.7.12}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

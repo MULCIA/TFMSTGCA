@@ -4,7 +4,7 @@ realizar una búsqueda de artículos científicos sobre esta temática:
 
 Tras una primera selección, donde se descartaron los artículos de \textit{arXiv}\footnote{\url{https://arxiv.org/}},
 ya que, podrían estar aún en fase de revisión, así como, artículos demasiado antiguos o artículos
-cuyo enfoque quedaran fuera del ámbito de la inteligencia artificial, se obtuvo una lista
+cuyo enfoque quedarán fuera del ámbito de la inteligencia artificial, se obtuvo una lista
 con dos candidatos.
 
 De los artículos seleccionados, se procedió a su estudio y extracción de información. A continuación,
@@ -79,13 +79,14 @@ la consecución de simular el crecimiento de dicho tumor en casi tres órdenes d
 utilizando sólo cuatro parámetros microscópicos.
 
 Su estudio tiene un elevado enfoque clínico modelizando la densidad de células y
-el tamaño de cada célula, empleando el algoritmo de triangulación \textit{Delaunay}\footnote{\url{https://es.wikipedia.org/wiki/Triangulacion_de_Delaunay}}
+el tamaño de cada célula, empleando el algoritmo de triangulación \textit{Delaunay}\footnote{\url{https://es.wikipedia.org/wiki/Triangulacion_de_Delaunay}}~\ref{fig:delaunay}
 junto a Polígonos de \textit{Thiessen} o diagramas de \textit{Voronoi}\footnote{\url{https://es.wikipedia.org/wiki/Poligonos_de_Thiessen}} para su representación.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{figures/modelado_tamanio}
 \caption{Triangulación de Delaunay junto a Polígonos de Thiessen o diagramas de Voronoi para modelizar el tamaño de las células.}
+\label{fig:delaunay}
 \end{figure}
 
 Realizan también un modelado temporal, para así estudiar la velocidad de crecimiento de los tumores.
