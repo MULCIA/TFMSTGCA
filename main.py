@@ -7,6 +7,6 @@ if __name__ == "__main__":
 
     #simulationGlobals = SimulationGlobals(100000, 35, 20, 100, 10, 400, PREDEFINED_SPATIAL_BOUNDARY, MIN_FUTURE_MITOTIC_EVENT, MAX_FUTURE_MITOTIC_EVENT)
 
-    automata = Automata(50, 5000, simulationGlobals)
+    automata = Automata(50, 1000, simulationGlobals)
 
     automata.run(True)
