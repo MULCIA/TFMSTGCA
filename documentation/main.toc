@@ -100,6 +100,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.2}Influencia del resto de par\IeC {\'a}metros}{52}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusi\IeC {\'o}n}{57}{chapter.8}
+\contentsline {section}{\numberline {7.3}Influencia de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas}{52}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Trabajo futuro}{59}{chapter.9}
+\contentsline {chapter}{\numberline {8}Conclusi\IeC {\'o}n}{59}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Trabajo futuro}{61}{chapter.9}

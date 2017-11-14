@@ -15,11 +15,32 @@ class Automata(object):
         self.iterations = iterations+1
         self.simulationGlobals = simulationGlobals
         self.experiments = Experiments(simulationGlobals)
-        position = (self.length//2,self.length//2,self.length//2)
+        # If starting is with a single cell in the middle
+        """position = (self.length//2,self.length//2,self.length//2)
         self.cells = {position: Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)}
-        self.mitotic_agenda = {self.future_mitotic_event(): [position]}
+        self.mitotic_agenda = {self.future_mitotic_event(): [position]}"""
+        # Else if starting is with full grid of cells
+        full_grid = self.get_full_grid()
+        self.cells = full_grid[0]
+        self.mitotic_agenda = full_grid[1]
+        # End if
         self.grid = Grid(self.length, self.length, self.length)
         self.analytics = Analytics()
+
+    def get_full_grid(self):
+        cells = {}
+        mitotic_agenda = {}
+        for i in range(self.length):
+            for j in range(self.length):
+                for z in range(self.length):
+                    cells[(i,j,z)] = Cell((i,j,z), 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)
+                    iteration = self.future_mitotic_event()
+                    if iteration in mitotic_agenda:
+                        events = mitotic_agenda[iteration]
+                        events.append((i,j,z))
+                    else:
+                        mitotic_agenda[iteration] = [(i,j,z)]
+        return (cells, mitotic_agenda)
 
     def future_mitotic_event(self):
         return np.random.randint(self.simulationGlobals.min_future_mitotic_event, self.simulationGlobals.max_future_mitotic_event+1)
@@ -85,7 +106,7 @@ class Automata(object):
             statics = dict()
         for iteration in range(self.iterations):
             print(iteration)
-            if statics_enable and iteration%200 == 0:
+            if statics_enable and iteration%500 == 0:
                 statics[iteration] = copy.deepcopy(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position
