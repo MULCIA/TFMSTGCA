@@ -1,22 +1,18 @@
-José Santos y Ángel Monteagudo realizaron una serie de simulaciones en su artículo
-donde intentan estudiar la influencia de los marcadores en la evolución de la simulación.
-Todas las simulaciones, y sus resultados, se comentan en esta sección.
+José Santos y Ángel Monteagudo presentan una serie de experimentos para estudiar
+las propiedades, características y comportamiento del autómata celular.
 
-El tamaño de rejilla utilizada para todos los experimentos es de $50^3$. Esto son,
-$125.000$ células posibles en la rejilla.
+En esta sección, se presentan los experimentos más relevantes que se presentan
+en el artículo, así como, también sus resultados. Para ello, se utiliza una rejilla
+de $125.000$ celdas, es decir, $50^3$ al tener tres dimensiones.
 
 \section{Influencia del parámetro \textit{Tasa de mutación base (m)}}
 
-Los autores en su artículo presentan $3$ experimentos utilizando los valores por defecto
-y variando el parámetro \textit{Tasa de mutación base (m)} para estudiar cómo afecta
-dicho parámetro en la proliferación del cáncer.
-
-Cada experimento se muestra en una serie de gráficas en las cuales se presenta
-como resultado la media de $5$ ejecuciones diferentes.
-
-A continuación, se muestra cada uno de los experimentos especificando en cada caso
-el valor $m$ utilizado. El resto de parámetros de la simulación se mantiene constante
-con los valores considerados por defectos, que son:
+De cara a estudiar la capacidad del autómata celular para generar diferentes comportamientos,
+los autores realizaron tres experimentos en los que se presenta una configuración de parámetros
+locales por defecto, es decir, como se muestra en la tabla 6.1. En cada experimento, la
+única variación se encuentra en el parámetro \textit{tasa de mutación base (m)}. Respecto al
+número de iteraciones en este conjunto de experimento los autores realizan $1.000$ iteraciones en
+cada caso, y siempre comienza con una única célula sana en el centro de la rejilla.
 
 \begin{table}[h!]
   \centering
@@ -35,21 +31,21 @@ con los valores considerados por defectos, que son:
   \end{tabular}
 \end{table}
 
+Este parámetro influye en la probabilidad de que aparezcan nuevas mutaciones durante
+el proceso de división celular o mitosis. La probabilidad viene dada por la fórmula
+$1/m$, por lo que un valor grande de $m$ dará una probabilidad más baja de que
+aparezca una nueva mutación en cada célula en cada evento mitótico que haya pasado
+las pruebas.
+
+A continuación, se muestra cada uno de los experimentos (media de realizar 5 veces cada experimento) especificando en cada caso
+el valor $m$ utilizado, mostrando tres gráficas: una primera gráfica que muestra la
+evolución de las células cancerosas frente a las células sanas; una segunda gráfica que
+muestra el número de células que contiene qué marcador o marcadores del cáncer.
+
 \subsection{Experimento 1: Tasa de mutación base igual a 10.000}
 
 En este primer experimento, los autores presentan un valor para el parámetro
 tasa de mutación base de $m=10.000$. Realizan una simulación de $1.000$ iteraciones.
-
-Es importante recordar, que al utilizar $1/m$ para representar la probabilidad
-de que aparezcan diferentes mutaciones al realizar la mitosis, a mayor valor
-del parámetro $m$, menor probabilidad de que ocurran mutaciones.
-
-En la simulación~\ref{fig:exp1}, el número de células cancerosas es muy bajo y crece muy levemente,
-no superando las $10.000$ células de las $125.000$ totales. En cuanto a lo marcadores,
-el marcador $SG$ toma ventaja y tiene ocurrencia en la mayoría de células cancerosas
-(una célula cancerosa es aquella que tiene, al menos, una mutación en su genoma). El siguiente marcador
-presente, aunque con mucha diferencia, es $EA$. El resto de marcadores presenta
-un comportamiento similar y su presencia es casi inexistente.
 
 \begin{figure}[h]
 \centering
@@ -58,16 +54,33 @@ un comportamiento similar y su presencia es casi inexistente.
 \label{fig:exp1}
 \end{figure}
 
+En la figura~\ref{fig:exp1} se presentan los resultados obtenidos tras la ejecución de la
+simulación. Aquí, la tasa de mutación base hace que la probabilidad de que suceda una
+mutación durante la mitosis sea especialmente baja.
+
+El número de células cancerosas no presenta una proliferación destacada, y tiende a
+mantenerse constante debido a que actúan determinados mecanismos sobre este tipo de células,
+por ejemplo, la apoptosis.
+
+Observando la gráfica que presenta los marcadores más relevantes se observa como
+$SG$ toma ventaja. Este marcador permite a la célula falsificar los mensajes de
+división celular y realizar así la mitosis. Esto ocurre porque este tipo de células
+encuentra vía libre para proliferar en la zona exterior de la rejilla, debido a que
+en ese lugar las células sanas no pueden proliferar por no disponer de suficiente
+factor de crecimiento, lo que provoca que encuentre espacio libre.
+
+El marcador $EA$ permite a la célula evadir la apoptosis, las cuales escapan
+a los controles que presenta el cuerpo contra el cáncer. Esas células tienden a
+permanecer en el centro de la rejilla, e incluso, a proliferar si no se encuentran con
+algún otro límite, como por ejemplo, la falta de espacio.
+
+El resto de marcadores no tienen presencia o su número es despreciable.
+
 \subsection{Experimento 2: Tasa de mutación base igual a 1.000}
 
 En el segundo experimento, los autores alteran el valor para el parámetro tasa de
-mutación base a $m=1.000$.
-
-Los resultados obtenidos para $1.000$ iteraciones presentan varias diferencias~\ref{fig:exp2}. En primer lugar,
-el número de células cancerosas aumenta, lo cual, se explica por la mayor probabilidad
-de mutaciones provocadas al realizar la mitosis. En segundo lugar, en cuanto a los marcadores,
-aparecen todos los marcadores, con un comportamiento bastante similar entre ellos. Se pueden
-destacar los marcadores $EA$ y $SG$, que toman algo de ventaja respecto al resto.
+mutación base a $m=1.000$. Esto es, una mayor probabilidad de que ocurran mutaciones
+durante la mitosis.
 
 \begin{figure}[h]
 \centering
@@ -76,24 +89,26 @@ destacar los marcadores $EA$ y $SG$, que toman algo de ventaja respecto al resto
 \label{fig:exp2}
 \end{figure}
 
+En la figura~\ref{fig:exp2} se muestran las mismas dos gráficas que en el experimento anterior.
+En la primera de ellas, se observa como al finalizar la simulación el número de células
+cancerosas es mayor, en torno al doble que en el experimento anterior.
+
+En cuanto a los marcadores presentes, en este caso se dan todos los marcadores, aumentan en
+número durante la simulación. El marcador $SG$ toma cierta ventaja, aunque se ve superado por
+otros que se comentan a continuación, por el mismo motivo que en el experimento anterior. El
+marcador más relevante al finalizar la simulación es $EA$. Esto contribuye a evadir
+los mecanismo de proliferación, junto a la presencia del marcador $IGI$, el cual
+provoca con una probabilidad dada la muerte de una célula sana para ser reemplazada por
+la célula hija resultante. Esto último, provoca la proliferación mayor en el centro
+de la rejilla, ya que las células pueden saltarse los límites mayores que se dan en ese lugar.
+
+El resto de marcadores no son especialmente relevantes en esta simulación, como se podrá comprobar
+en experimentos posteriores.
+
 \subsection{Experimento 3: Tasa de mutación base igual a 100}
 
-En este tercer y último experimento de este tipo~\ref{fig:exp3}, los autores obtienen cambios relevantes frente a los dos
-experimentos anteriores.
-
-En primer lugar, el número de células cancerosas pronto supera a las células sanas, e incluso,
-a lo largo de las iteraciones terminan, las células cancerosas, representando casi la totalidad de
-la rejilla. Esto se explica por la mayor probabilidad de aparición de mutaciones durante la mitosis, en
-este caso, la tasa de mutación base es de $m=100$.
-
-En segundo lugar, en cuanto a marcadores, ocurren todos los marcadores con un comportamiento similar,
-tomando ventaja, pero muy levemente, los marcadores $EA$ e $IGI$. La principal diferencia en este punto es
-la presencia del marcador $IGI$, el cual, tiene mayor presencia que otros. El marcador $SG$ no toma ventaja en
-este punto, como si lo hacía en los dos experimentos anteriores.
-
-El marcador $EA$ siempre está presente y cobra un papel fundamental, ya que, permite la proliferación
-de células cancerosas debido a que supone que la célula con dicho marcador puede evadir la muerte
-celular programada.
+En este tercer, y último experimento, se presenta un experimento con una probabilidad de obtención de
+mutaciones durante la mitosis mayor que en los dos anteriores.
 
 \begin{figure}[h]
 \centering
@@ -102,11 +117,27 @@ celular programada.
 \label{fig:exp3}
 \end{figure}
 
+En la figura~\ref{fig:exp3}, se observa como en la primera parte de la simulación la proliferación
+de las células cancerosas es mayor, llegando a suponer casi la totalidad de las células presentes
+al finalizar la simulación.
+
+En cuanto a los marcadores, los dos marcadores más relevantes son $EA$ e $IGI$, los cuales
+permiten la proliferación en el centro de la rejilla, como se ha descrito anteriormente.
+El resto, aunque están presentes, no son especialmente relevantes, y se obtienen debido a
+los siguientes dos factores:
+
+\begin{itemize}
+  \item Las mutaciones son adquiridas de forma aleatoria en una célula, por tanto hay células localizadas aleatoriamente con algún marcador adquirido.
+  \item Cuando una célula adquiere un marcador, como el marcador IGI, puede proliferar en su entorno inmediato (donde las nuevas células pueden adquirir nuevos marcadores durante la división), así que hay clústeres de concentraciones o células localizadas con los marcadores adquiridos.
+\end{itemize}
+
 \section{Influencia del resto de parámetros}
 
-Los autores realizan un segundo experimento con el objetivo de observar los efectos
-que tienen el resto de parámetros sobre la simulación. Para ello, varían los parámetros de
-la simulación, como se puede observar en la siguiente tabla:
+Para comprobar la influencia del resto de parámetros que intervienen en la simulación,
+los autores realizan una modificación de los mismos. En la tabla 6.2 se muestran los valores
+utilizados en esta ocasión, alterando el tamaño del telómero ($tl$), lo que supone
+menos oportunidades de división de la célula original y de sus descendientes, entre otros
+cambios.
 
 \begin{table}[h!]
   \centering
@@ -126,26 +157,9 @@ la simulación, como se puede observar en la siguiente tabla:
   \end{tabular}
 \end{table}
 
-Se observa un comportamiento bastante representativo~\ref{fig:exp4}, por ejemplo, un menor valor
-para el número de iteraciones implica menos eventos mitóticos en las células sanas, y
-un menor valor del parámetros $a$ facilita la aparición de sitios vacantes que
-quedan disponibles para la propagación de células cancerosas, en conexión con una
-mayor probabilidad de reemplazar a un vecino para realizar la mitosis (parámetros $g$).
-
-En la gráfica de evolución de los marcadores se observa que en este caso el marcador
-dominante es $EI$. En este caso, se realizan $5.000$ iteraciones. El marcador $EI$ implica
-la progresión de estas células debido a que evitan la muerte por agotamiento del telómero.
-En la simulación, por contra, tener un telómero más corto implica tener menos oportunidades de división, como
-ocurre con la célula inicial del centro de la rejilla.
-
-El resto de marcadores aparecen más tarde en la simulación. El siguiente marcador en hacer
-presencia es $EA$, lo cual permite a las células evadir la muerte celular programada. Este marcador
-también favorece la proliferación del cáncer, por tanto, toma cada vez más ventaja. El marcador
-$SG$ aparece algo más tarde que los anteriores y permite proliferar al cáncer
-fuera del límite reproductivo, por tanto, alcanza un límite y se mantiene estable.
-
-El último marcador en aparecer es $IGI$. No prolifera rápidamente debido a no disponer
-de espacio vacante para realizar la división.
+Las pruebas anteriores sirven para comprobar la dificultad de aparición del cáncer en
+función del parámetro $m$. La configuración inicial es la misma que en los experimentos
+anteriores, exceptuando el número de iteraciones, que en este caso asciende a $5.000$
 
 \begin{figure}[h]
 \centering
@@ -154,13 +168,34 @@ de espacio vacante para realizar la división.
 \label{fig:exp4}
 \end{figure}
 
+En la figura~\ref{fig:exp4} se presentan las mismas dos gráficas. La primera muestra como
+al finalizar la simulación se dan el mismo números de células cancerosas que sanas, por
+lo que el tumor ha proliferado antes de finalizar. Esto se explica, entre otros, por
+un menor valor de $tl$, lo que provoca que aparezcan huecos libres en el centro que
+permiten la proliferación de las células cancerosas.
+
+En cuanto a los marcadores, $EI$ toma una gran ventaja respecto al resto. Debido, también,
+a un menor valor de $tl$, este marcador permite la progresión del cáncer incluso con un tamaño de telómero igual a $0$.
+
+El siguiente marcador que toma ventaja al finalizar la simulación es $EA$. Aparece sobre la iteración 2000,
+por lo que las células que adquieren este marcador permite que las células cancerosas incrementen en número
+al permitirles evadir el límite que existe por daño genético.
+
+El marcador $IGI$ no prolifera rápidamente como en el caso previo, porque ahora hay más sitios vacantes
+porque muchas más células han muerto por alcanzar el número límite de divisiones y han dejado hueco,
+junto a una mayor tasa de muerte aleatoria por el parámetro $a$.
+
+Por último, el marcador $SG$ prolifera fuera del límite espacial replicativo, como
+se ha observado en los experimentos anteriores.
+
 \section{Influencia de parámetros con rejilla completa de células sanas}
 
 En este caso, se parte con una rejilla completa de células sanas. En cuanto a los parámetros,
-se utilizan los mismos que en la sección anterior.
+se utilizan los mismos que en la secciones anteriores. Primero una simulación de $8.000$ iteraciones
+con los parámetros por defecto, y luego una segunda de $100.000$ iteraciones con los parámetros
+utilizados en el experimento de la figura~\ref{fig:exp4}.
 
-Se realizan diferentes estrategias en cuanto al número de iteraciones, desde $8.000$ iteraciones
-hasta $100.000$ iteraciones, es decir, la simulación se corresponde con una equivalencia temporal
+En este caso, la simulación se corresponde con una equivalencia temporal
 de $2.3$ años y $29.7$ años respectivamente.
 
 \begin{figure}[h]
@@ -170,16 +205,18 @@ de $2.3$ años y $29.7$ años respectivamente.
 \label{fig:exp5}
 \end{figure}
 
-En el resultado de la primera simulación~\ref{fig:exp5} las células cancerosas van aumentando
-hasta que en la iteración $3.500$ aproximádamente superan en número a las células sanas,
-llegando a sustituir a las células sanas al final de la simulación. Todos los marcadores
-toman ventaja muy pronto, excepto el marcador $EI$.
+En el primer caso, es importante la aparición del marcador $IGI$ ya que no existe espacio
+para proliferar en el centro de la rejilla. El siguiente marcador, por relevancia, es $EA$
+el cual permite la proliferación evitando otro límite por apoptosis.
 
-En el resultado de la segunda simulación se necesita más tiempo, en este caso $100.000$ iteraciones,
-ya que el parámetro tasa de mutación base es $m=100.000$.
+El marcador $GI$ permite la aparición de más mutaciones en las células durante la mitosis, por ello,
+se acumulan más mutaciones que no son relevante en esta primera simulación.
 
-El comportamiento para ambos casos es semejante al de las ejecuciones anteriores, por lo cual
-la condición inicial no es relevante.
+En el segundo caso, el marcador $EI$ toma ventaja debido a que permite saltarse el límite por un
+menor valor de $tl$, combinado a marcadores como $IGI$ o $EA$ se obtiene una proliferación mayor del
+tumor.
+
+El resto de mutaciones no son especialmente relevantes.
 
 \section{Relevancia de los marcadores}
 
@@ -204,5 +241,3 @@ la probabilidad de, para realizar la división, una célula mate a un vecino par
 \caption{Resultados de la simulaciones con la eliminación de algún marcador con dos configuraciones diferentes.}
 \label{fig:exp6}
 \end{figure}
-
-Completar.
