@@ -225,15 +225,8 @@ el comportamiento emergente si algún marcador no estuviera presente y no aplica
 sus efectos?}.
 
 Conocer el efecto de cada marcador en el comportamiento emergente para crecimiento de tumores
-puede resultar útil para mejorar las terapias contra el cáncer.
-
-En su estudio, los autores encuentran el marcador $EA$ o de evasión de apoptosis como el más
-relevante de todos, debido a que se reduce drásticamente el número de células cancerígenas.
-Tras él, los siguientes marcadores más relevantes por orden son $GI$ o de inestabilidad genética y,
-a continuación, $IGI$ o inhibición de señal de parada de crecimiento. Esto se debe a, en el caso
-del marcador $GI$, se reducen las posibilidades de adquirir una mutación. Respecto al marcador $IGI$,
-esto se debe a que cuando la rejilla no tiene espacio libre, sobre todo con células sanas, se reduce
-la probabilidad de, para realizar la división, una célula mate a un vecino para conseguir espacio.
+puede resultar útil para mejorar las terapias contra el cáncer. Esto se debe a que una terapia
+consiste en inhibir un determinado camino del cáncer, aunque diferentes drogas actúan contra marcadores específicos.
 
 \begin{figure}[h]
 \centering
@@ -241,3 +234,23 @@ la probabilidad de, para realizar la división, una célula mate a un vecino par
 \caption{Resultados de la simulaciones con la eliminación de algún marcador con dos configuraciones diferentes.}
 \label{fig:exp6}
 \end{figure}
+
+En la figura~\ref{fig:exp4}, se observa el resultado de la simulación. En este caso, el marcador
+más importante de acuerdo al crecimiento del tumor es $EA$,
+porque su eliminación implica un alto decrecimiento en el número de células cancerosas.
+Esto es, sin considerar $EA$, todos las células cancerosas tienen una probabilidad de morir
+por apoptosis, así la proliferación del cáncer disminuye. Del análisis mostrado se extrae
+que los siguientes marcadores más relevantes en este caso son $GI$ e $IGI$. La relevancia de $GI$
+se explica porque cuando la rejilla está completa hay menor adquisición de mutaciones durante la división.
+La relevancia de $IGI$ es explicada porque cuando la rejilla está completa, el principal
+límite para la división durante la mitosis es el espacio libre. En esta situación,
+las células del cáncer con el marcador $IGI$ activado tienen una ventaja,
+tal que pueden reemplazar (con una probabilidad dada) a un vecino para replicarse.
+Además, si esta ventaja no existiera cuando el marcador $IGI$ no es considerado, las células
+cancerosas tienden a estabilizarse, incluso con una tasa de mutación base elevada.
+Los otros marcadores no son especialmente relevantes.
+
+En el otro caso de estudio, es similar pero utilizando los parámetros del experimento utilizados en ~\ref{fig:exp4},
+el cual facilita la aparición de células cancerosas. Como se ha sugerido, el marcador más relevante en este caso
+es $EI$, porque es mantenido casi a $0$ de forma estable, porque todas las células tienen el mismo límite de replicación
+impuesto por el tamaño inicial del telómero.
