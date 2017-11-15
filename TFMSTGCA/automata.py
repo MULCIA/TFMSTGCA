@@ -16,13 +16,13 @@ class Automata(object):
         self.simulationGlobals = simulationGlobals
         self.experiments = Experiments(simulationGlobals)
         # If starting is with a single cell in the middle
-        """position = (self.length//2,self.length//2,self.length//2)
+        position = (self.length//2,self.length//2,self.length//2)
         self.cells = {position: Cell(position, 0, 0, 0, 0, 0, self.simulationGlobals.tl, self.simulationGlobals.m)}
-        self.mitotic_agenda = {self.future_mitotic_event(): [position]}"""
+        self.mitotic_agenda = {self.future_mitotic_event(): [position]}
         # Else if starting is with full grid of cells
-        full_grid = self.get_full_grid()
+        """full_grid = self.get_full_grid()
         self.cells = full_grid[0]
-        self.mitotic_agenda = full_grid[1]
+        self.mitotic_agenda = full_grid[1]"""
         # End if
         self.grid = Grid(self.length, self.length, self.length)
         self.analytics = Analytics()
@@ -106,7 +106,7 @@ class Automata(object):
             statics = dict()
         for iteration in range(self.iterations):
             print(iteration)
-            if statics_enable and iteration%500 == 0:
+            if statics_enable and iteration%5000 == 0:
                 statics[iteration] = copy.deepcopy(self.cells)
             events = self.pop_events(iteration) if iteration in self.mitotic_agenda else []
             for event in events: # event is a tuple with three elements == position

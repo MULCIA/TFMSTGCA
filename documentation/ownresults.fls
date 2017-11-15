@@ -1,0 +1,6 @@
+PWD C:/Users/sergio_rodriguez/Repositorios/TFMSTGCA/documentation
+INPUT C:/Users/sergio_rodriguez/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT ownresults.tex
+OUTPUT ownresults.log
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmti10.tfm
