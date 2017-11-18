@@ -100,8 +100,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.3}Influencia de par\IeC {\'a}metros con rejilla completa de c\IeC {\'e}lulas sanas}{59}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Relevancia de los marcadores}{59}{section.7.4}
+\contentsline {section}{\numberline {7.4}Relevancia de los marcadores}{62}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusi\IeC {\'o}n}{63}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusi\IeC {\'o}n}{65}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Trabajo futuro}{65}{chapter.9}
+\contentsline {chapter}{\numberline {9}Trabajo futuro}{67}{chapter.9}

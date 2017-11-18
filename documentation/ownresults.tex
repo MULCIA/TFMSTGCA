@@ -211,34 +211,92 @@ Finalmente, se presenta el resultado de la rejilla para este experimento en la f
 
 \section{Influencia de parámetros con rejilla completa de células sanas}
 
+En este caso, se parte con una rejilla completa de células sanas. En cuanto a los parámetros,
+se utilizan los mismos que en la secciones anteriores. Primero una simulación de $8.000$ iteraciones
+con los parámetros por defecto, y luego una segunda de $100.000$ iteraciones con los parámetros
+utilizados en el experimento de la figura~\ref{fig:exp4}.
+
+En este caso, la simulación se corresponde con una equivalencia temporal
+de $2.3$ años y $29.7$ años respectivamente.
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{figures/experiments/exp5/healthvscarcino}
 \caption{Evolución de las células sanas frente a células cancerosas con rejilla completa de células sanas y parámetros por defecto.}
+\label{fig:ownexp5-1}
 \end{figure}
+
+El resultado obtenido desde el punto de vista de las células sanas frente a células cancerosas
+es similar. La única diferencia, como se observa en la figura~\ref{fig:ownexp5-1}, es
+que el paso de las células cancerosas en número frente a las células sanas ocurre unas
+$1.000$ iteraciones después que en el resultado obtenido por los autores.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{figures/experiments/exp5/mutations}
 \caption{Evolución de los marcadores cancerosos con rejilla completa de células sanas y parámetros por defecto.}
+\label{fig:ownexp5-2}
 \end{figure}
+
+Desde el munto de vista de los marcadores, como se muestra en la figura~\ref{fig:ownexp5-1}, es muy
+parecido. Como ambos comportamientos son similares a los obtenidos por los autores se entiende
+que la explicación es la misma que se presenta en el capítulo anterior donde
+se presentan los resultados de los autores.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{figures/experiments/exp5/grid}
 \caption{Rejilla resultante de la simulación iniciada completa de células sanas.}
+\label{fig:ownexp5-3}
 \end{figure}
 
+Para finalizar este experimento, en la figura~\ref{fig:ownexp5-3} se muestra sobre la rejilla el resultado
+obtenido al finalizar la simulación.
+
+\clearpage
+
 \section{Relevancia de los marcadores}
+
+En este caso, se intenta responder a la siguiente pregunta: \textit{¿Cuál sería
+el comportamiento emergente si algún marcador no estuviera presente y no aplicaran
+sus efectos?}.
+
+Conocer el efecto de cada marcador en el comportamiento emergente para crecimiento de tumores
+puede resultar útil para mejorar las terapias contra el cáncer. Esto se debe a que una terapia
+consiste en inhibir un determinado camino del cáncer, aunque diferentes drogas actúan contra marcadores específicos.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{figures/experiments/exp7/exp7-1}
 \caption{Efecto de la eliminación de un marcador con parámetros por defecto excpeto con $m = 100$.}
+\label{fig:ownexp7-1}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{figures/experiments/exp7/exp7-2}
 \caption{Efecto de la eliminación de un marcador con parámetros del cuadro 7.1.}
+\label{fig:ownexp7-2}
 \end{figure}
+
+En la figura~\ref{fig:ownexp7-1}, se observa el resultado de la simulación. En este caso, el marcador
+más importante de acuerdo al crecimiento del tumor es $EA$,
+porque su eliminación implica un alto decrecimiento en el número de células cancerosas.
+Esto es, sin considerar $EA$, todos las células cancerosas tienen una probabilidad de morir
+por apoptosis, así la proliferación del cáncer disminuye. Del análisis mostrado se extrae
+que los siguientes marcadores más relevantes en este caso son $GI$ e $IGI$. La relevancia de $GI$
+se explica porque cuando la rejilla está completa hay menor adquisición de mutaciones durante la división.
+La relevancia de $IGI$ es explicada porque cuando la rejilla está completa, el principal
+límite para la división durante la mitosis es el espacio libre.
+
+En esta situación,
+las células del cáncer con el marcador $IGI$ activado tienen una ventaja,
+tal que pueden reemplazar (con una probabilidad dada) a un vecino para replicarse.
+Además, si esta ventaja no existiera cuando el marcador $IGI$ no es considerado, las células
+cancerosas tienden a estabilizarse, incluso con una tasa de mutación base elevada.
+Los otros marcadores no son especialmente relevantes.
+
+En el otro caso de estudio, es similar pero utilizando los parámetros del experimento utilizados en ~\ref{fig:ownexp7-2},
+el cual facilita la aparición de células cancerosas. Como se ha sugerido, el marcador más relevante en este caso
+es $EI$, porque es mantenido casi a $0$ de forma estable, porque todas las células tienen el mismo límite de replicación
+impuesto por el tamaño inicial del telómero.
