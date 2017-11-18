@@ -65,43 +65,43 @@ Too many commas in name 1 of "A.R. Kansal, S. Torquato, G.R. Harsh IV, E.A. Chio
 while executing---line 2746 of file biblatex.bst
 You've used 10 entries,
             6256 wiz_defined-function locations,
-            1240 strings with 9968 characters,
-and the built_in function-call counts, 53709 in all, are:
+            1242 strings with 10021 characters,
+and the built_in function-call counts, 53787 in all, are:
 = -- 3629
 > -- 1204
 < -- 374
 + -- 1139
-- -- 416
-* -- 3989
-:= -- 5046
+- -- 420
+* -- 4003
+:= -- 5050
 add.period$ -- 0
 call.type$ -- 10
 change.case$ -- 214
 chr.to.int$ -- 35
 cite$ -- 18
-duplicate$ -- 5270
-empty$ -- 5045
+duplicate$ -- 5278
+empty$ -- 5057
 format.name$ -- 624
-if$ -- 11466
+if$ -- 11478
 int.to.chr$ -- 0
 int.to.str$ -- 34
 missing$ -- 0
-newline$ -- 312
+newline$ -- 318
 num.names$ -- 536
-pop$ -- 3031
+pop$ -- 3027
 preamble$ -- 1
 purify$ -- 256
 quote$ -- 0
 skip$ -- 1976
 stack$ -- 0
-substring$ -- 6105
-swap$ -- 1490
+substring$ -- 6109
+swap$ -- 1500
 text.length$ -- 271
 text.prefix$ -- 9
 top$ -- 1
 type$ -- 328
 warning$ -- 0
-while$ -- 577
+while$ -- 579
 width$ -- 0
-write$ -- 303
+write$ -- 309
 (There were 21 error messages)

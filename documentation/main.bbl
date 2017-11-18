@@ -243,6 +243,9 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
     \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.4236/am.2014.51017
+    \endverb
     \field{pages}{489\bibrangedash 499}
     \field{title}{Study of cancer hallmarks relevance using a cellular
   automaton tumor growth model}
@@ -275,6 +278,9 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
     \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1016/j.biosystems.2013.11.001
+    \endverb
     \field{title}{Studying the capability of different cancer hallmarks to
   initiate tumor growth using a cellular automaton simulation. Application in a
   cancer stem cell context}
