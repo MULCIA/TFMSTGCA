@@ -11,8 +11,12 @@ celulares como técnica para simular dicho comportamiento dada su idoneidad.
 
 Se propone una modelización en la cual se utiliza una rejilla en tres dimensiones donde, sin
 tener en cuenta el tamaño de la célula, se presenta al comienzo una única célula en el centro de dicha
-rejilla. Cada célula, cuenta con un genoma asociado que representa la aparición de mutaciones,
-así como, dos propiedades: tamaño del telómero, y tasa de mutación base.
+rejilla. Cada célula cuenta con su propio genoma, conjunto de genes que las distingue, y que provoca
+diferentes comportamientos entre ellas. Además, cuenta con dos propiedades adicionales:
+tamaño del telómero, y tasa de mutación base. El tamaño del telómero supone un límite al
+número de veces que una célula puede realizar la división celular, ya que este se ve acortado cada vez.
+La tasa de mutación base define la probabilidad de una célula de adquirir una nueva mutación
+en su genoma al realizar la división celular.
 
 Todo ello, es utilizado dentro de un modelo de eventos, en el cual, se programan eventos mitóticos
 en el futuro y en el que se consideran una serie de pruebas previas a la mitosis. Dichas pruebas,
