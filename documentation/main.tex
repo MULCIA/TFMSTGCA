@@ -30,6 +30,10 @@
 %\usepackage[xindy]{imakeidx}
 %\makeindex
 
+%Lineas huerfanas y viudas
+\clubpenalty=10000
+\widowpenalty=10000
+
 \usepackage[style=numeric-comp,backend=bibtex]{biblatex}
 \bibliography{refs.bib}
 
@@ -86,7 +90,6 @@
 
   \chapter*{Glosario de términos}
   \input{glossary}
-  
 
   \printbibliography
 
