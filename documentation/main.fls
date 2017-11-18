@@ -172,8 +172,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/xspace.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/xspace.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/fncylab/fncylab.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/fncylab/fncylab.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/ifdraft.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/ifdraft.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/todonotes/todonotes.sty
@@ -591,13 +589,9 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmne.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/kpfonts/jkpttmn8r.tfm
 INPUT introduction.tex
 INPUT introduction.tex
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplr8c.tfm
 INPUT figures/Conustextile.jpg
 INPUT ./figures/Conustextile.jpg
 INPUT ./figures/Conustextile.jpg
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT figures/automata_neighboor.png
 INPUT ./figures/automata_neighboor.png
 INPUT ./figures/automata_neighboor.png
@@ -611,6 +605,10 @@ INPUT ./figures/modelado_tamanio.png
 INPUT ./figures/modelado_tamanio.png
 INPUT eventmodel.tex
 INPUT eventmodel.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplr8c.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT figures/pseudo_alg.png
 INPUT ./figures/pseudo_alg.png
 INPUT ./figures/pseudo_alg.png
