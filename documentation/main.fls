@@ -711,7 +711,10 @@ INPUT futureworks.tex
 INPUT futureworks.tex
 INPUT glossary.tex
 INPUT glossary.tex
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplrc7t.tfm
 OUTPUT main.thm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplrc7t.vf
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

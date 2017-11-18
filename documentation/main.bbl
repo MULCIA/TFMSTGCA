@@ -35,6 +35,7 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{A}
     \field{sortinithash}{A}
+    \field{pages}{489\bibrangedash 501}
     \field{title}{Game of Life Cellular Automata}
     \field{year}{2010}
   \endentry
@@ -57,15 +58,26 @@
          given_i={T\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
     \strng{namehash}{AKSTGHIECDT1}
     \strng{fullhash}{AKSTGHIECDT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{A}
     \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.1016/S0303-2647(99)00089-1
+    \endverb
+    \field{issn}{0303-2647}
+    \field{issue}{1-3}
+    \field{pages}{119\bibrangedash 127}
     \field{title}{Cellular automaton of idealized brain tumor growth dynamics}
-    \field{journaltitle}{BioSystem, Elsevier}
+    \field{volume}{55}
+    \field{journaltitle}{BioSystem}
     \field{year}{2000}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{hanahan-weinberg-2000}{article}{}
@@ -83,15 +95,25 @@
          given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {Cell Press}%
+    }
     \strng{namehash}{HDWRA1}
     \strng{fullhash}{HDWRA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{H}
     \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1016/j.cell.2011.02.013
+    \endverb
+    \field{issue}{1}
+    \field{pages}{57\bibrangedash 70}
     \field{title}{The hallmarks of cancer}
-    \field{journaltitle}{Cell, Cell Press}
+    \field{volume}{100}
+    \field{journaltitle}{Cell}
     \field{year}{2000}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{hanahan-weinberg-2011}{article}{}
@@ -109,14 +131,23 @@
          given_i={R\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {Cell Press}%
+    }
     \strng{namehash}{HDWRA1}
     \strng{fullhash}{HDWRA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{H}
     \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1016/j.cell.2011.02.013
+    \endverb
+    \field{issue}{5}
+    \field{pages}{646â€“\bibrangedash 674}
     \field{title}{The hallmarks of cancer: The next generation}
-    \field{journaltitle}{Cell, Cell Press}
+    \field{volume}{144}
+    \field{journaltitle}{Cell}
     \field{year}{2011}
   \endentry
 
@@ -164,14 +195,24 @@
          family_i={M\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {IET Journals}%
+    }
     \strng{namehash}{SJMÃ1}
     \strng{fullhash}{SJMÃ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
     \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1049/iet-syb.2014.0015
+    \endverb
+    \field{issn}{1751-8849}
+    \field{issue}{3}
+    \field{pages}{75\bibrangedash 87}
     \field{title}{Analysis of behaviour transitions in tumor growth using a
   cellular automaton simulation}
+    \field{volume}{9}
     \field{journaltitle}{IET Systems Biology}
     \field{year}{2014}
   \endentry
@@ -191,16 +232,21 @@
          family_i={M\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
     \strng{namehash}{SJMÃ1}
     \strng{fullhash}{SJMÃ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
     \field{sortinithash}{S}
+    \field{pages}{489\bibrangedash 499}
     \field{title}{Study of cancer hallmarks relevance using a cellular
   automaton tumor growth model}
-    \field{journaltitle}{Springer}
+    \field{volume}{7491}
     \field{year}{2012}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{jsantos-amonteagudo-2013}{article}{}
@@ -218,6 +264,9 @@
          family_i={M\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
     \strng{namehash}{SJMÃ1}
     \strng{fullhash}{SJMÃ1}
     \field{labelnamesource}{author}
@@ -227,8 +276,10 @@
     \field{title}{Studying the capability of different cancer hallmarks to
   initiate tumor growth using a cellular automaton simulation. Application in a
   cancer stem cell context}
-    \field{journaltitle}{BioSystem, Elsevier}
-    \field{year}{2013}
+    \field{volume}{115}
+    \field{journaltitle}{BioSystem}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{jsantos-amonteagudo-2015}{article}{}
@@ -252,10 +303,15 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
     \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1371/journal.pone.0132306
+    \endverb
+    \field{issue}{7}
     \field{title}{Treatment analysis in a cancer stem cell context using a
   tumor growth model based on cellular automata}
-    \field{journaltitle}{PLoS ONE}
+    \field{journaltitle}{PLoS ONE10}
     \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 \endsortlist
 \endinput

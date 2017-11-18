@@ -19,6 +19,8 @@ Este trabajo, como se ha comentado previamente, pretende reproducir el trabajo d
 uno de los trabajos \cite{jsantos-amonteagudo-2012} \cite{jsantos-amonteagudo-2013} \cite{jsantos-amonteagudo-2015} que dichos autores han realizado siguiendo la idea de realizar simulaciones sobre esta enfermedad y, por ello, aquí
 se realiza una nueva implementación con el fin de reproducir los resultados obtenidos en el citado artículo.
 
+\newpage
+
 La implementación consiste en seguir un modelo de eventos, es decir, se pretende simular el proceso que siguen las células para su división, que
 consiste en, la realización de una serie de pruebas para comprobar si la célula debe reproducirse, la realización de la propia división, y
 la programación de un nuevo evento de división en el futuro. A lo largo de la ejecución del programa en cada iteración puede haber ninguna, una o
@@ -101,8 +103,9 @@ así como, su tratamiento.
 
 \section{Los autómatas celulares}
 
-El patrón mostrado en ciertas conchas marinas~\ref{fig:conus} es generado mediante autómatas celulares naturales.
-Estas conchas muestran un aspecto exterior en el cual se observan patrones, los cuales les han
+El patrón mostrado en ciertas conchas marinas, como se muestra en la figura ~\ref{fig:conus},
+es generado mediante autómatas celulares naturales. Estas conchas muestran un aspecto exterior
+en el cual se observan patrones, los cuales les han
 permitido en muchas ocasiones ocultarse mejor en su entorno y, por ello, aumentar su supervivencia.
 Dichos patrones son de muy diversos tipos, por ejemplo, forman formas reconocibles, o formas fractales,
 entre otras.
@@ -113,6 +116,8 @@ entre otras.
 \caption{\textit{Conus textile shell}, especie de gasterópodo que presenta un autómata celular natural en su concha.}
 \label{fig:conus}
 \end{figure}
+
+\newpage
 
 En ellos, cada célula toma un color o forma diferente según sus células vecinas, obedeciendo
 a una versión natural de unas reglas matemáticas. Basándose en esto, se conoce como autómata celular
@@ -133,7 +138,8 @@ década de 1940. A modo de resumen, los autómatas celulares cuentan con los sig
     \item En cada nodo, se coloca un autómata finito, es decir, representa un número finito de estados posibles.
     Aquellos que se encuentran ocupados, reciben el nombre de células o celdas.
     \item Cada célula se comunica con su entorno, pero sólo con una parte de él. Esto se conoce como vecindario,
-    y existen varios tipos, por ejemplo, el vecindario de Moore, o el vecindario de vonNeumann~\ref{fig:neighboor}, entre otros.
+    y existen varios tipos, por ejemplo, el vecindario de Moore, o el vecindario de vonNeumann,
+    como se muestra en la figura ~\ref{fig:neighboor}.
     \item Función que determina la evolución de los estados de las distintas células.
 \end{itemize}
 
