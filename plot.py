@@ -25,30 +25,38 @@ from TFMSTGCA.analytics import Analytics
 iterations_cells = {
     10: copy.deepcopy(cells),
     20: copy.deepcopy(cells)
-}
+}"""
 
 measure = {
-    'iterations': [100,200,300,400,500,600,700,800,900,1000],
-    'all': [1000,32000,50000,82000,86000,95000,101000,108000,112000,118000],
-    'sg': [1000,30000,65000,65000,68000,71000,76000,80000,83000,85000],
-    'igi': [1000,40000,60000,65000,68000,70000,72000,74000,75000,77000],
-    'ea': [1000,8000,25000,25000,20000,15000,15000,10000,5000,2000],
-    'ei': [1000,43000,67000,75000,80000,85000,90000,100000,110000,112000],
-    'gi': [1000,5000,10000,30000,35000,35000,40000,74000,70000,65000]
+    'iterations': [0,5000,10000,15000,20000,25000,30000,35000,40000,45000,50000,55000,60000,65000,70000,75000,80000,85000,90000,95000,100000],
+    'h': [125000,120000,120000,118000,117000,116500,115000,110000,108000,80000,55000,40000,25000,20000,5000,4000,1000,800,500,500,100],
+    'c': [0,1000,1000,2700,3000,5000,6000,7000,7500,40000,60000,85000,98000,109000,112000,115000,122000,125000,125000,126000,127000]
 }
 
-plt.plot(measure['iterations'], measure['all'], 'black', label='ALL')
+plt.plot(measure['iterations'], measure['h'], 'b-', label='Células sanas')
+plt.plot(measure['iterations'], measure['c'], 'r--', label='Células cancerosas')
+
+"""measure = {
+    'iterations': [50000,55000,60000,65000,70000,75000],
+    'sg': [0,6000,33000,65000,113000,117000],
+    'igi': [0,2000,6000,74000,121000,121000],
+    'ea': [0,3000,4000,117000,120000,123000],
+    'ei': [0,14000,65000,121000,124000,124000],
+    'gi': [0,1000,1500,2300,2400,2600]
+}
+
+#plt.plot(measure['iterations'], measure['all'], 'black', label='ALL')
 plt.plot(measure['iterations'], measure['sg'], 'o-', label='SG')
 plt.plot(measure['iterations'], measure['igi'], 'g--', label='IGI')
 plt.plot(measure['iterations'], measure['ea'], 'r--', label='EA')
 plt.plot(measure['iterations'], measure['ei'], 'b-', label='EI')
-plt.plot(measure['iterations'], measure['gi'], 'k:', label='GI')
+plt.plot(measure['iterations'], measure['gi'], 'k:', label='GI')"""
 
 plt.legend(loc='best')
 
 plt.show()
 
-analytics = Analytics()
+"""analytics = Analytics()
 
 #analytics.plot_grid(cells.keys())
 analytics.plot_grid_plotly(cells)
