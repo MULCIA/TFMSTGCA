@@ -18,9 +18,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Resultado de la b\IeC {\'u}squeda de art\IeC {\'\i }culos}{15}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}\textit {Analysis of behaviour transitions in tumour growth using a cellular automaton simulation}}{16}{section.3.2}
+\contentsline {section}{\numberline {3.2}\textit {Cellular automaton of idealized brain tumor growth dynamics}}{17}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}\textit {Cellular automaton of idealized brain tumor growth dynamics}}{17}{section.3.3}
+\contentsline {section}{\numberline {3.3}\textit {Analysis of behaviour transitions in tumour growth using a cellular automaton simulation}}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Modelo de eventos}{19}{chapter.4}
 \defcounter {refsection}{0}\relax 
