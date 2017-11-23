@@ -597,6 +597,8 @@ INPUT ./figures/automata_neighboor.png
 INPUT ./figures/automata_neighboor.png
 INPUT stateoftheart.tex
 INPUT stateoftheart.tex
+INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/palatino/pplbi7t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/adobe/palatino/pplbi7t.vf
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/palatino/pplbi8r.tfm
@@ -635,11 +637,6 @@ INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmsl7t.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/vf/public/kpfonts/jkpttmsl7t.vf
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmsle.tfm
 INPUT C:/Program Files/MiKTeX 2.9/fonts/tfm/public/kpfonts/jkpttmsl8r.tfm
-INPUT figures/simulations_globals.png
-INPUT ./figures/simulations_globals.png
-INPUT ./figures/simulations_globals.png
-INPUT ./figures/simulations_globals.png
-INPUT ./figures/simulations_globals.png
 INPUT experiments.tex
 INPUT experiments.tex
 INPUT figures/experiments/exp1.png
@@ -729,11 +726,6 @@ INPUT ./figures/experiments/exp4/mutations.png
 INPUT ./figures/experiments/exp4/mutations.png
 INPUT ./figures/experiments/exp4/mutations.png
 INPUT ./figures/experiments/exp4/mutations.png
-INPUT figures/experiments/exp4/grid.png
-INPUT ./figures/experiments/exp4/grid.png
-INPUT ./figures/experiments/exp4/grid.png
-INPUT ./figures/experiments/exp4/grid.png
-INPUT ./figures/experiments/exp4/grid.png
 INPUT figures/experiments/exp5/healthvscarcino.png
 INPUT ./figures/experiments/exp5/healthvscarcino.png
 INPUT ./figures/experiments/exp5/healthvscarcino.png
@@ -744,11 +736,6 @@ INPUT ./figures/experiments/exp5/mutations.png
 INPUT ./figures/experiments/exp5/mutations.png
 INPUT ./figures/experiments/exp5/mutations.png
 INPUT ./figures/experiments/exp5/mutations.png
-INPUT figures/experiments/exp5/grid.png
-INPUT ./figures/experiments/exp5/grid.png
-INPUT ./figures/experiments/exp5/grid.png
-INPUT ./figures/experiments/exp5/grid.png
-INPUT ./figures/experiments/exp5/grid.png
 INPUT figures/experiments/exp6/healthvscarcino.png
 INPUT ./figures/experiments/exp6/healthvscarcino.png
 INPUT ./figures/experiments/exp6/healthvscarcino.png
@@ -759,11 +746,6 @@ INPUT ./figures/experiments/exp6/mutations.png
 INPUT ./figures/experiments/exp6/mutations.png
 INPUT ./figures/experiments/exp6/mutations.png
 INPUT ./figures/experiments/exp6/mutations.png
-INPUT figures/experiments/exp6/grid.png
-INPUT ./figures/experiments/exp6/grid.png
-INPUT ./figures/experiments/exp6/grid.png
-INPUT ./figures/experiments/exp6/grid.png
-INPUT ./figures/experiments/exp6/grid.png
 INPUT figures/experiments/exp7/exp7-1.png
 INPUT ./figures/experiments/exp7/exp7-1.png
 INPUT ./figures/experiments/exp7/exp7-1.png
@@ -792,6 +774,8 @@ OUTPUT main.run.xml
 INPUT C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttmn8a.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttmn8a.pfb
 INPUT C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpttmn8a.pfb
