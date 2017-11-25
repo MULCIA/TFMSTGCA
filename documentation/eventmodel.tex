@@ -115,7 +115,7 @@ En este trabajo, el proceso de mitosis cuenta con los siguientes pasos:
     \item Decrementar el telómero en ambas células en una unidad, siempre que su tamaño no sea 0.
 \end{itemize}
 
-A continuación, se describe como se programan nuevos eventos mitóticos para ambas hijas.
+A continuación, se describe cómo se programan nuevos eventos mitóticos para ambas hijas.
 
 \section{Eventos mitóticos}
 
@@ -184,7 +184,7 @@ que le permite realizar la mitosis a pesar de estar en dicha posición. En cuant
 número cuatro, o comprobación de ignorancia de inhibición de crecimiento, consiste en comprobar
 si hay espacio en el vecindario para realizar la mitosis, o en caso contrario, si tiene el marcador
 $IGI$ reemplazará a un vecino con una probabilidad dada ($1/g$) mediante la muerte del vecino elegido.
-Por último, la prueba número cinco, o comprobación de potencial replicativo sin limites,
+Por último, la prueba número cinco, o comprobación de potencial replicativo sin límites,
 consiste en comprobar si el tamaño del telómero es mayor a cero, o en caso contrario,
 si tiene la mutación $EI$ que le permite realizar la mitosis a pesar de no contar con telómero.
 
