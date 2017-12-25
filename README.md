@@ -32,6 +32,8 @@ For running it, type:
 
 ![Grid example. Grey is healty and green is cancer.](./readme_images/grid_example.png)
 
+[![Video demo on Youtube](https://img.youtube.com/vi/RFAnCaUXp7E/0.jpg)](https://www.youtube.com/watch?v=RFAnCaUXp7E)
+
 ## Running on Docker
 
 If you prefer not to install anything in your environment, you can use Docker.
